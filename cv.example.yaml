@@ -1,0 +1,173 @@
+lang: en
+basic:
+  name: David
+  surnames: Álvarez de la Torre
+  profession: Data Scientist
+  birthday: 20/01/1996
+  location: Barcelona
+  nationality: Spanish
+  biography: >
+    Electrical engineer with a strong focus on data science. Junior researcher with experience implementing neural
+    networks and publishing in international conferences, mainly about generative models. Passionate about
+    entrepreneurship, self-improvement and acquiring new knowledge. Open-minded and always willing to help.
+contact:
+  email: davidalvarezdlt@gmail.com
+  phone: (+34) 666 77 88 99
+  website:
+    anchor: es.davidalvarezdlt.com
+    href: https://es.davidalvarezdlt.com/
+  twitter:
+    anchor: "@DavidAlvarezDLT"
+    href: https://www.twitter.com/davidalvarezdlt
+  linkedin:
+    anchor: "@DavidAlvarezDLT"
+    href: https://www.linkedin.com/in/davidalvarezdlt/
+  github:
+    anchor: "@DavidAlvarezDLT"
+    href: https://github.com/davidalvarezdlt
+experience:
+  - position: AI Research Assistant
+    institution: Telefonica Research
+    date_start: 01/06/2019
+    description: >
+      Working on anomaly detection with normalizing flows under the supervision of Dr. Joan Serrà.
+education:
+  - name: MSc. Telecommunications Engineering
+    specialization: Multimedia Intensification
+    institution: Polytechnic University of Catalonia
+    date_start: 01/09/2018
+    gpa: 9.08
+    gpa_max: 10.00
+    performance: 100
+    description: >
+      The Telecommunications Engineering master's degree of UPC is a 2-year program which grants the status of the
+      Spanish regulated profession of telecommunications engineer. Among its advantages, it highlights the fact that
+      you can specialize in many different fields of knowledge. In my case, I chose the multimedia intensification,
+      which includes courses such as Machine Learning, Computer Vision or Advanced Human Language Technologies. I
+      obtained a scholarship to work on the voice processing department doing research on generative models under
+      the supervision of Dr. Antonio Bonafonte and Santiago Pascual.
+  - name: BSc. Telecommunications Technologies and Services Engineering
+    specialization: Audiovisual Specialization
+    institution: Polytechnic University of Catalonia
+    date_start: 01/09/2014
+    date_end: 30/06/2018
+    gpa: 7.72
+    gpa_max: 10.00
+    performance: 100
+    description: >
+      The Telecommunications Technologies and Services Engineering bachelor's degree of UPC is a 4-year program which
+      grants the status of the Spanish regulated profession of technical telecommunications engineer. In the first
+      two years, I acquired knowledge about mathematics, physics, electronics and programming. On the third and fourth
+      year, I took advanced courses on digital communications and signal processing, ending up with a specialization
+      in audiovisual systems. Courses taken in the specialization included image and video processing, speech and audio
+      processing, audiovisual content compression, acoustics and pattern recognition. I obtained the mention of
+      excellence, granted to those students who passed all the subjects in the first attempt without failing.
+awards:
+  - name: Hackathon Mobility 2018 - First Place of the SEAT Challenge
+    institution: CARNET Barcelona
+    date: 01/03/2018
+    description: >
+      The challenge consisted of helping SEAT to improve driving user experience using a camera robot and Amazon Alexa
+      to simulate a real car assistant. Our solution included functionalities such as face detection and recognition,
+      facial expression recognition, alarm system for nearby events and the self-designed algorithm to find the best
+      moment to refuel the car depending on predicted travels. The prize was €2000.
+courses:
+  - name: Deep Learning Specialization
+    institution: Coursera
+    date: 01/01/2019
+    diploma:
+      anchor: View Diploma
+      href: https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN
+publications:
+  - title: Problem-Agnostic Speech Embeddings for Multi-Speaker Text-to-Speech with SampleRNN
+    abstract: >
+      In this paper, we first use SampleRNN to create the acoustic model of a two-stage text-to-speech system. Then,
+      we compare the performance of classical one-hot embeddings against the use of previously-extracted acoustic
+      embeddings using a problem-agnostic encoder. Our results show that the use of our embeddings increase convergence
+      and, most important, we are able to perform a first approximation of speaker adaptation using the latent space
+      without model fine-tuning.
+    date: 01/06/2019
+    comment: Accepted at ISCA SSW 2019
+    manuscript_link:
+      anchor: arXiv PrePrint
+      href: https://arxiv.org/abs/1906.00733
+    code_link:
+      anchor: GitHub Code
+      href: https://github.com/davidalvarezdlt/samplernn_pase
+languages:
+  - name: Spanish
+    level: Native
+    score: 1
+  - name: English
+    level: C1
+    score: 0.8
+  - name: Catalan
+    level: Native
+    score: 0.9
+skills:
+  - name: Python
+    category: Data Science
+    score: 100
+    highlighted: True
+  - name: PyTorch
+    category: Data Science
+    score: 90
+    highlighted: True
+  - name: Numpy
+    category: Data Science
+    score: 90
+    highlighted: True
+  - name: Pandas
+    category: Data Science
+    score: 80
+    highlighted: True
+  - name: Scikit-Learn
+    category: Data Science
+    score: 80
+    highlighted: True
+  - name: MatPlotLib
+    category: Data Science
+    score: 90
+  - name: SQL
+    score: 90
+    category: Programming and Databases
+  - name: Java
+    category: Programming and Databases
+    score: 70
+  - name: C
+    category: Programming and Databases
+    score: 50
+  - name: HTML
+    category: Web Development
+    score: 100
+  - name: CSS
+    category: Web Development
+    score: 100
+  - name: JavaScript
+    category: Web Development
+    score: 90
+  - name: PHP
+    category: Web Development
+    score: 80
+  - name: Angular
+    category: Web Development
+    score: 80
+  - name: GIT
+    category: Others
+    score: 80
+    highlighted: False
+  - name: MATLAB
+    category: Others
+    score: 90
+  - name: SEO
+    category: Others
+    score: 80
+  - name: LaTeX
+    category: Others
+    score: 80
+    highlighted: False
+  - name: PhotoShop
+    category: Others
+    score: 80
+misc:
+  hobbies: Gym, traveling, Netflix and to wait for delayed trains
