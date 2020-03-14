@@ -1,8 +1,9 @@
 lang: en
+last_update: 14/03/2020
 basic:
   name: David
   surnames: Álvarez de la Torre
-  profession: Data Scientist
+  profession: Telecommunication Engineer
   birthday: 20/01/1996
   location: Barcelona
   nationality: Spanish
@@ -17,14 +18,17 @@ contact:
     anchor: en.davidalvarezdlt.com
     href: https://en.davidalvarezdlt.com/
   twitter:
-    anchor: "@DavidAlvarezDLT"
+    anchor: "Twitter"
     href: https://www.twitter.com/davidalvarezdlt
   linkedin:
-    anchor: "@DavidAlvarezDLT"
+    anchor: "LinkedIn"
     href: https://www.linkedin.com/in/davidalvarezdlt/
   github:
-    anchor: "@DavidAlvarezDLT"
+    anchor: "GitHub"
     href: https://github.com/davidalvarezdlt
+  scholar:
+    anchor: "Google Scholar"
+    href: https://scholar.google.com/citations?user=WK4V8VUAAAAJ
 experience:
   - position: Research Intern
     institution: Telefonica Research
@@ -93,6 +97,9 @@ awards:
     description: >
       Granted to those students who pass all subjects in the first attempt without failing any one of them. Yearly
       students with this recognition between 10-20%.
+    link:
+      anchor: Read Letter
+      href: https://prismic-io.s3.amazonaws.com/davidalvarezdlt/661dd369-0264-40aa-9236-edbaeb32502b_sobre-mi-reconocimientos-excelencia.pdf
   - name: Hackathon Mobility 2018 - First Place of the SEAT Challenge
     institution: CARNET Barcelona
     date: 01/03/2018
@@ -100,13 +107,9 @@ awards:
       The Hackathon consisted of combining the sensors of a robot with Amazon Alexa to create a smart driving assistant.
       Our solution included functionalities such as face detection, face recognition, facial gesture detection, event
       alerts and the inclusion of an innovative optimal refueling algorithm.
-courses:
-  - name: Deep Learning Specialization
-    institution: Coursera
-    date: 01/01/2019
-    diploma:
-      anchor: View Diploma
-      href: https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN
+    link:
+      anchor: View Prize
+      href: https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2F9c868325-3e7a-40a7-a961-6afaf25f67b3_sobre-mi-premios-hackmob2018.pdf
 publications:
   - title: Input complexity and out-of-distribution detection with likelihood-based generative models
     abstract: >
@@ -119,10 +122,30 @@ publications:
       likelihood-ratio test akin to Bayesian model comparison. We find such score to perform comparably to, or even
       better than, existing OOD detection approaches under a wide range of data sets, models, and complexity estimates.
     date: 20/12/2019
-    comment: International Conference on Learning Representations (ICLR)
+    comment: International Conference on Learning Representations 2020
     manuscript_link:
       anchor: Publication
       href: https://openreview.net/forum?id=SyxIWpVYvr
+  - title: Problem-agnostic speech embeddings for multi-speaker text-to-speech with SampleRNN
+    abstract: >
+      Text-to-speech (TTS) acoustic models map linguistic features into an acoustic representation out of
+      which an audible waveform is generated. The latest and most natural TTS systems build a direct mapping between
+      linguistic and waveform domains, like SampleRNN. This way, possible signal naturalness losses are avoided as
+      intermediate acoustic representations are discarded. Another important dimension of study apart from naturalness
+      is their adaptability to generate voice from new speakers that were unseen during training. In this paper we first
+      propose the use of problem-agnostic speech embeddings in a multi-speaker acoustic model for TTS based on
+      SampleRNN. This way we feed the acoustic model with speaker acoustically dependent representations that enrich the
+      waveform generation more than discrete embeddings unrelated to these factors. Our first results suggest that the
+      proposed embeddings lead to better quality voices than those obtained with discrete embeddings. Furthermore, as we
+      can use any speech segment as an encoded representation during inference, the model is capable to generalize to
+      new speaker identities without retraining the network. We finally show that, with a small increase of speech
+      duration in the embedding extractor, we dramatically reduce the spectral distortion to close the gap towards the
+      target identities.
+    date: 03/06/2019
+    comment: 10th ISCA Speech Synthesis Workshop
+    manuscript_link:
+      anchor: Publication
+      href: https://www.isca-speech.org/archive/SSW_2019/abstracts/SSW10_O_2-3.html
     code_link:
       anchor: Implementation
       href: https://github.com/davidalvarezdlt/samplernn_pase
@@ -130,12 +153,43 @@ languages:
   - name: Spanish
     level: Native
     score: 1
+  - name: Catalan
+    level: Native
+    score: 1
   - name: English
     level: C1
     score: 0.8
-  - name: Catalan
-    level: Native
-    score: 0.9
+courses:
+  - name: Deep Learning Specialization
+    institution: Coursera
+    date: 01/01/2019
+    diploma:
+      anchor: View Diploma
+      href: https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN
+projects:
+  - name: Skeltorch
+    description: >
+      Light-weight framework that helps researchers to prototype faster using PyTorch. To do so, Skeltorch
+      provides developers with a set of predefined pipelines to organize projects and train/test their models.
+    link:
+      anchor: Repository
+      href: https://github.com/davidalvarezdlt/skeltorch
+  - name: CV Generator
+    description: >
+      Transforms plain JSON or YML files into a fully-formatted CV. It provides an easy-to-use interface to translate a
+      CV into different languages while maintaining the design and without having to deal with any design tool. It also
+      provides the option to generate the CV using various templates.
+    link:
+      anchor: Repository
+      href: https://github.com/davidalvarezdlt/cv_generator
+  - name: Text-to-Speech Dataset Creator
+    description: >
+      Tool to create custom voice datasets for text-to-speech systems using YouTube videos. It uses the official API of
+      YouTube to find videos related to a given public figure and other tools to download its audios and captions and
+      identify the chunks containing the target voice.
+    link:
+      anchor: Repository
+      href: https://github.com/davidalvarezdlt/tts_dataset_creator
 skills:
   - name: Python
     category: Data Science

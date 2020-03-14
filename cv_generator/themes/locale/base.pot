@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-26 15:48+0200\n"
+"POT-Creation-Date: 2020-03-14 15:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,102 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: __init__.py:93
-msgid "SITGES_DATES_NOW"
-msgstr ""
-
-#: __init__.py:97
+#: sitges.py:87
 msgid "SITGES_EXPERIENCE_TITLE"
 msgstr ""
 
-#: __init__.py:117
-msgid "SITGES_GPA_LABEL"
+#: sitges.py:108
+msgid "SITGES_DATES_NOW"
 msgstr ""
 
-#: __init__.py:128
-msgid "SITGES_PERFORMANCE_LABEL"
-msgstr ""
-
-#: __init__.py:133
+#: sitges.py:113
 msgid "SITGES_EDUCATION_TITLE"
 msgstr ""
 
-#: __init__.py:154
-msgid "SITGES_AWARDS_TITLE"
-msgstr ""
-
-#: __init__.py:186
-msgid "SITGES_PUBLICATIONS_TITLE"
-msgstr ""
-
-#: __init__.py:198
-msgid "SITGES_LOCATION_LABEL"
-msgstr ""
-
-#: __init__.py:199
-msgid "SITGES_AGE_LABEL"
-msgstr ""
-
-#: __init__.py:200
-msgid "SITGES_NATIONALITY_LABEL"
-msgstr ""
-
-#: __init__.py:201
-msgid "SITGES_EMAIL_LABEL"
-msgstr ""
-
-#: __init__.py:202
-msgid "SITGES_PHONE_LABEL"
-msgstr ""
-
-#: __init__.py:205
-msgid "SITGES_LANGUAGES_TITLE"
-msgstr ""
-
-#: __init__.py:214
-msgid "SITGES_COURSES_TITLE"
-msgstr ""
-
-#: __init__.py:224
-msgid "SITGES_SKILLS_TITLE"
-msgstr ""
-
-#: __init__.py:234
-msgid "SITGES_HOBBIES_TITLE"
-msgstr ""
-
-#: __init__.py:316
-msgid "DEVELOPER_BIOGRAPHY_TITLE"
-msgstr ""
-
-#: __init__.py:352
-msgid "DEVELOPER_EXPERIENCE_TITLE"
-msgstr ""
-
-#: __init__.py:357 __init__.py:371
+#: sitges.py:117 developer.py:89 developer.py:103
 msgid "DEVELOPER_DATES_NOW"
 msgstr ""
 
-#: __init__.py:366
+#: sitges.py:138
+msgid "SITGES_GPA_LABEL"
+msgstr ""
+
+#: sitges.py:149
+msgid "SITGES_PERFORMANCE_LABEL"
+msgstr ""
+
+#: sitges.py:155
+msgid "SITGES_AWARDS_TITLE"
+msgstr ""
+
+#: sitges.py:182
+msgid "SITGES_PUBLICATIONS_TITLE"
+msgstr ""
+
+#: sitges.py:216
+msgid "SITGES_LOCATION_LABEL"
+msgstr ""
+
+#: sitges.py:217
+msgid "SITGES_AGE_LABEL"
+msgstr ""
+
+#: sitges.py:218
+msgid "SITGES_NATIONALITY_LABEL"
+msgstr ""
+
+#: sitges.py:219
+msgid "SITGES_EMAIL_LABEL"
+msgstr ""
+
+#: sitges.py:220
+msgid "SITGES_PHONE_LABEL"
+msgstr ""
+
+#: sitges.py:223
+msgid "SITGES_LANGUAGES_TITLE"
+msgstr ""
+
+#: sitges.py:233
+msgid "SITGES_COURSES_TITLE"
+msgstr ""
+
+#: sitges.py:245
+msgid "SITGES_PROJECTS_TITLE"
+msgstr ""
+
+#: sitges.py:260
+msgid "SITGES_SKILLS_TITLE"
+msgstr ""
+
+#: sitges.py:271
+msgid "SITGES_HOBBIES_TITLE"
+msgstr ""
+
+#: developer.py:47
+msgid "DEVELOPER_BIOGRAPHY_TITLE"
+msgstr ""
+
+#: developer.py:84
+msgid "DEVELOPER_EXPERIENCE_TITLE"
+msgstr ""
+
+#: developer.py:98
 msgid "DEVELOPER_EDUCATION_TITLE"
 msgstr ""
 
-#: __init__.py:380
+#: developer.py:113
 msgid "DEVELOPER_AWARDS_TITLE"
 msgstr ""
 
-#: __init__.py:390
+#: developer.py:123
 msgid "DEVELOPER_PUBLICATIONS_TITLE"
 msgstr ""
 
-#: __init__.py:400
+#: developer.py:133
 msgid "DEVELOPER_COURSES_TITLE"
 msgstr ""
 
-#: __init__.py:410
+#: developer.py:143
 msgid "DEVELOPER_LANGUAGES_TITLE"
 msgstr ""
 
-#: __init__.py:418
+#: developer.py:152
 msgid "DEVELOPER_HOBBIES_TITLE"
 msgstr ""

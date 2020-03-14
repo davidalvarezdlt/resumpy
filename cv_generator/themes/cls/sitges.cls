@@ -17,6 +17,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{fancyhdr}
 \RequirePackage{progressbar}
+\RequirePackage{paracol}
 %\RequirePackage[demo]{graphicx}
 
 \usepackage{setspace}
@@ -25,6 +26,7 @@
 \newcommand{\name}[1]{\newcommand{\@name}{#1}}
 \newcommand{\profession}[1]{\newcommand{\@profession}{#1}}
 \newcommand{\email}[1]{\newcommand{\@email}{#1}}
+\newcommand{\scholar}[2]{\newcommand{\@scholarurl}{#1}\newcommand{\@scholarlabel}{#2}}
 \newcommand{\github}[2]{\newcommand{\@githuburl}{#1}\newcommand{\@githublabel}{#2}}
 \newcommand{\linkedin}[2]{\newcommand{\@linkedinurl}{#1}\newcommand{\@linkedinlabel}{#2}}
 \newcommand{\twitter}[2]{\newcommand{\@twitterurl}{#1}\newcommand{\@twitterlabel}{#2}}
@@ -40,6 +42,8 @@
 % HEADER COMMANDS
 \pagestyle{fancy}
 \fancyfoot[CE,CO]{
+{\faGoogle\hspace{3pt}\texttt{\href{\@scholarurl}{\@scholarlabel}}}
+\hspace{5pt}|\hspace{5pt}
 {\faGithub\hspace{3pt}\texttt{\href{\@githuburl}{\@githublabel}}}
 \hspace{5pt}|\hspace{5pt}
 {\faLinkedin\hspace{3pt}\texttt{\href{\@linkedinurl}{\@linkedinlabel}}}
@@ -50,19 +54,19 @@
 }
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\parindent}{0pt}
+
+% LAST UPDATE
+\newcommand{\lastupdate}[1]{
+    {\footnotesize\color{accent_color}Last Update: #1}
+}
 
 % HEADER COMMANDS
-\newcommand{\cvheader}{
-%\begin{minipage}[b]{60pt}
-%    \includegraphics[width=60pt]{img/profile-picture.png}
-%\end{minipage}
-%\hspace{5pt}
-\begin{minipage}[b]{1000pt}
-{\Huge\bfseries\@name\par}
-    \smallskip
+\newcommand{\cvheader}[1]{
+    {\Huge\bfseries\@name}
+    \par\smallskip
     {\large\color{accent_color}\@profession\par}
     %\vspace{0.4cm}
-\end{minipage}
 \par
 }
 
@@ -86,7 +90,7 @@
 
 \newcommand{\languageitem}[3]{
 {\par\footnotesize #1 (#2) \par}
-\progressbar[width=0.75\textwidth, roundnessr=0, ticksheight=0pt, heightr=0.5, borderwidth=0pt, emptycolor=bg_color, filledcolor=accent_color]{#3}
+\progressbar[width=0.20\textwidth, roundnessr=0, ticksheight=0pt, heightr=0.5, borderwidth=0pt, emptycolor=bg_color, filledcolor=accent_color]{#3}
 }
 
 \newcommand{\skillitem}[1]{
@@ -108,9 +112,20 @@
 \par
 }
 
+% PROJECTS SECTION
+\newcommand{\projectitem}[3]{
+\par
+#1
+\par
+{\footnotesize\color{accent_color} #2}
+\par
+\smallskip
+{\footnotesize #3}
+}
+
 % WORK EXPERIENCE SECTION
 \newenvironment{experienceitem}[3]{
-{\noindent\bfseries #1 @ #2}
+{\par \noindent\bfseries #1 @ #2}
 \par
 {\noindent\footnotesize\color{accent_color} #3}
 \par \medskip
@@ -118,14 +133,15 @@
 }{}
 
 % EDUCATION EXPERIENCE SECTION
-\newenvironment{educationitem}[5]{
+\newenvironment{educationitem}[4]{
 \par
 {\small{#1 \hfill {\footnotesize }}}
+{\footnotesize\color{accent_color} {#2}}
 \par
-{\noindent\bfseries #2}
+{\noindent\bfseries #3}
 \par
-\def\temp{#3}\ifx\temp\empty\else
-{\footnotesize\color{accent_color}#3}
+\def\temp{#4}\ifx\temp\empty\else
+{\footnotesize\color{accent_color}#4}
 \fi
 \par \medskip
 \footnotesize
@@ -133,18 +149,20 @@
 
 % AWARDS SECTION
 \newenvironment{awarditem}[2]{
+\par
 \textbf{#1}
 \par
 {\footnotesize\color{accent_color} #2}
 \par \smallskip \footnotesize
 }{\normalsize}
 
-% PROJECT SECTION
+% PUBLICATIONS SECTION
 \newenvironment{publicationitem}[3]{
+\par
 {\footnotesize\color{accent_color} #2}
 \par
 \textbf{#1}
 \par
-{\footnotesize #3}
+{\footnotesize\color{accent_color} #3}
 \par \medskip \footnotesize
-}{\par}
+}{}
