@@ -6,11 +6,11 @@ import random
 import shutil
 
 # Create the ArgumentParse and parse the arguments inside `args`
-parser = argparse.ArgumentParser(description='Run CVGenerator')
-parser.add_argument('--cv-file', required=True, help='Path of the global configuration file')
-parser.add_argument('--theme', choices=['sitges', 'developer'], help='Path of the global configuration file')
+parser = argparse.ArgumentParser(description='Run CV Generator')
+parser.add_argument('--cv-file', required=True, help='Relative or absolute path to the raw .json or .yaml resume file')
+parser.add_argument('--theme', choices=['sitges', 'developer'], help='Name of the theme of the generated resume')
 parser.add_argument('--filename', required=False, type=str, help='Generated file name, without extension')
-parser.add_argument('--keep-tex', action='store_true', help='Avoid removing the intermediate .tex file')
+parser.add_argument('--keep-tex', action='store_true', help='Keep LaTeX files used to generate the resume')
 args = parser.parse_args()
 
 # Define required files and folders
