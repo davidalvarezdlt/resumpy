@@ -7,15 +7,15 @@ basic:
   location: Barcelona
   nationality: Spanish
   biography: >
-    Electrical engineer with a strong focus on data science. Junior researcher with experience implementing neural
-    networks and publishing in international conferences, mainly about generative models. Passionate about
-    entrepreneurship, self-improvement and acquiring new knowledge. Open-minded and always willing to help.
+    Passionate about technology and engineering. Junior researcher working on generative models, with two accepted
+    peer-reviewed papers (one of them at ICLR). Currently doing my MSc. thesis working on video inpainting at Computer
+    Vision Laboratory of ETH Zürich.
 contact:
   email: davidalvarezdlt@gmail.com
   phone: (+34) 666 77 88 99
   website:
-    anchor: es.davidalvarezdlt.com
-    href: https://es.davidalvarezdlt.com/
+    anchor: en.davidalvarezdlt.com
+    href: https://en.davidalvarezdlt.com/
   twitter:
     anchor: "@DavidAlvarezDLT"
     href: https://www.twitter.com/davidalvarezdlt
@@ -26,26 +26,50 @@ contact:
     anchor: "@DavidAlvarezDLT"
     href: https://github.com/davidalvarezdlt
 experience:
-  - position: AI Research Assistant
+  - position: Research Intern
     institution: Telefonica Research
     date_start: 01/06/2019
+    date_end: 30/11/2019
     description: >
-      Working on anomaly detection with normalizing flows under the supervision of Dr. Joan Serrà.
+      Worked hand-in-hand with Dr. Joan Serrà on the detection of out-of-distribution using generative models.
+      Implemented both the experiments and models (Glow and PixelCNN++) used in the paper "Input Complexity and
+      Out-of-distribution Detection with Likelihood-based Generative Models", accepted at the International Conference
+      on Learning Representations of 2020.
+      I also worked on the creation of a tool to generate text-to-speech voice data sets from YouTube videos, published
+      in my GitHub profile.
+  - position: Research Fellow
+    institution: Polytechnic University of Catalonia
+    date_start: 01/12/2018
+    date_end: 30/05/2019
+    description: >
+      Obtained a scholarship from the Spanish Government to intern in the department of my choice. I chose the VEU
+      department, led by Dr. Antonio Bonafonte and focused on the development of voice technologies.
+      Worked under the supervision of Dr. Santiago Pascual on text-to-speech systems, publishing the paper
+      "Problem-agnostic speech embeddings for multi-speaker text-to-speech with SampleRNN", accepted as an oral at the
+      10th ISCA Speech Synthesis Workshop.
 education:
+  - name: Exchange Student
+    specialization: Computer Vision Laboratory
+    institution: ETH Zürich
+    date_start: 01/02/2020
+    description: >
+      Working on video inpainting under the supervision of Sergi Caelles, Dr. Martin Danelljan, Prof. Xavier
+      Giró-i-Nieto, and Prof. Luc Van Gool.
   - name: MSc. Telecommunications Engineering
     specialization: Multimedia Intensification
     institution: Polytechnic University of Catalonia
     date_start: 01/09/2018
-    gpa: 9.08
+    gpa: 8.87
     gpa_max: 10.00
     performance: 100
     description: >
-      The Telecommunications Engineering master's degree of UPC is a 2-year program which grants the status of the
-      Spanish regulated profession of telecommunications engineer. Among its advantages, it highlights the fact that
-      you can specialize in many different fields of knowledge. In my case, I chose the multimedia intensification,
-      which includes courses such as Machine Learning, Computer Vision or Advanced Human Language Technologies. I
-      obtained a scholarship to work on the voice processing department doing research on generative models under
-      the supervision of Dr. Antonio Bonafonte and Santiago Pascual.
+      Official 2-year master's program (120 ECTS) leading to the title of Telecommunications Engineer, which grants the
+      right to lead and sign Telecommunications projects in the Spanish territory.
+      Chose the intensification in multimedia systems, with coursework including subjects such as "Computer Vision",
+      "Machine Learning" or "Advanced Human Language Technologies". I also took 15 elective ECTS credits of
+      "Introduction to Research", obtaining the maximum qualification and honors.
+      Obtained the nomination of my university to complete the master writing my thesis at ETH Zürich, one of the most
+      competed universities in the exchange program.
   - name: BSc. Telecommunications Technologies and Services Engineering
     specialization: Audiovisual Specialization
     institution: Polytechnic University of Catalonia
@@ -55,22 +79,27 @@ education:
     gpa_max: 10.00
     performance: 100
     description: >
-      The Telecommunications Technologies and Services Engineering bachelor's degree of UPC is a 4-year program which
-      grants the status of the Spanish regulated profession of technical telecommunications engineer. In the first
-      two years, I acquired knowledge about mathematics, physics, electronics and programming. On the third and fourth
-      year, I took advanced courses on digital communications and signal processing, ending up with a specialization
-      in audiovisual systems. Courses taken in the specialization included image and video processing, speech and audio
-      processing, audiovisual content compression, acoustics and pattern recognition. I obtained the mention of
-      excellence, granted to those students who passed all the subjects in the first attempt without failing.
+      Official 4-year bachelor’s program (240 ECTS) leading to the title of Technical Telecommunications Engineer, a
+      regulated profession in the Spanish territory.
+      Chose the audiovisual specialization, with coursework including subjects such as “Audio and voice signal
+      processing, “Image and video signal processing”, “Audiovisual coding”, “Acoustics and electroacoustic” or
+      “Pattern recognition”.
+      Wrote my thesis titled “Real-time stock predictions with Deep Learning and news scrapping” under the supervision
+      of Prof. José Adrián Rodríguez Fonollosa, obtaining a final qualification of 9.70 / 10.00.
 awards:
+  - name: Letter of Excellence
+    institution: Polytechnic University of Catalonia
+    date: 01/11/2018
+    description: >
+      Granted to those students who pass all subjects in the first attempt without failing any one of them. Yearly
+      students with this recognition between 10-20%.
   - name: Hackathon Mobility 2018 - First Place of the SEAT Challenge
     institution: CARNET Barcelona
     date: 01/03/2018
     description: >
-      The challenge consisted of helping SEAT to improve driving user experience using a camera robot and Amazon Alexa
-      to simulate a real car assistant. Our solution included functionalities such as face detection and recognition,
-      facial expression recognition, alarm system for nearby events and the self-designed algorithm to find the best
-      moment to refuel the car depending on predicted travels. The prize was €2000.
+      The Hackathon consisted of combining the sensors of a robot with Amazon Alexa to create a smart driving assistant.
+      Our solution included functionalities such as face detection, face recognition, facial gesture detection, event
+      alerts and the inclusion of an innovative optimal refueling algorithm.
 courses:
   - name: Deep Learning Specialization
     institution: Coursera
@@ -79,20 +108,23 @@ courses:
       anchor: View Diploma
       href: https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN
 publications:
-  - title: Problem-Agnostic Speech Embeddings for Multi-Speaker Text-to-Speech with SampleRNN
+  - title: Input complexity and out-of-distribution detection with likelihood-based generative models
     abstract: >
-      In this paper, we first use SampleRNN to create the acoustic model of a two-stage text-to-speech system. Then,
-      we compare the performance of classical one-hot embeddings against the use of previously-extracted acoustic
-      embeddings using a problem-agnostic encoder. Our results show that the use of our embeddings increase convergence
-      and, most important, we are able to perform a first approximation of speaker adaptation using the latent space
-      without model fine-tuning.
-    date: 01/06/2019
-    comment: Accepted at ISCA SSW 2019
+      Likelihood-based generative models are a promising resource to detect out-of-distribution (OOD) inputs which could
+      compromise the robustness or reliability of a machine learning system. However, likelihoods derived from such
+      models have been shown to be problematic for detecting certain types of inputs that significantly differ from
+      training data. In this paper, we pose that this problem is due to the excessive influence that input complexity
+      has in generative models' likelihoods. We report a set of experiments supporting this hypothesis, and use an
+      estimate of input complexity to derive an efficient and parameter-free OOD score, which can be seen as a
+      likelihood-ratio test akin to Bayesian model comparison. We find such score to perform comparably to, or even
+      better than, existing OOD detection approaches under a wide range of data sets, models, and complexity estimates.
+    date: 20/12/2019
+    comment: International Conference on Learning Representations (ICLR)
     manuscript_link:
-      anchor: arXiv PrePrint
-      href: https://arxiv.org/abs/1906.00733
+      anchor: Publication
+      href: https://openreview.net/forum?id=SyxIWpVYvr
     code_link:
-      anchor: GitHub Code
+      anchor: Implementation
       href: https://github.com/davidalvarezdlt/samplernn_pase
 languages:
   - name: Spanish
