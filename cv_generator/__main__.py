@@ -1,5 +1,4 @@
 import argparse
-import cv_generator
 import cv_generator.themes
 import logging
 import os
@@ -15,8 +14,8 @@ parser.add_argument('--keep-tex', action='store_true', help='Avoid removing the 
 args = parser.parse_args()
 
 # Define required files and folders
-basepath = os.path.dirname(os.path.dirname(__file__))
-cv_schema_path = os.path.join(basepath, 'cv.schema.json')
+base_path = os.path.dirname(os.path.dirname(__file__))
+cv_schema_path = os.path.join(base_path, 'cv.schema.json')
 
 # Create a logging.Logger object to be used in the execution
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - [%(levelname)s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
@@ -32,10 +31,11 @@ theme = themes_dict[args.theme](cv, logger)
 
 # Define the name (and path) of the generated file random.randint(1, 10E6)
 generated_file_name = args.filename if args.filename else '{}-{}'.format(theme.theme_name, random.randint(1, 1E6))
-generated_file_path = os.path.join(basepath, 'generated_documents') + os.sep + '{}'.format(generated_file_name)
+generated_file_path = os.path.join(base_path, 'generated_documents') + os.sep + '{}'.format(generated_file_name)
 
 # Get the document calling the `BaseTheme.format()` method and store it in `generated_file_path`
 shutil.copy(theme.get_cls_path(), os.path.dirname(generated_file_path))
 theme.format().generate_pdf(generated_file_path, clean_tex=not args.keep_tex)
-os.remove(os.path.join(os.path.dirname(generated_file_path), os.path.basename(theme.get_cls_path())))
+if not args.keep_tex:
+    os.remove(os.path.join(os.path.dirname(generated_file_path), os.path.basename(theme.get_cls_path())))
 logger.info('File {}.pdf generated inside /generated_documents'.format(generated_file_name))
