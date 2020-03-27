@@ -59,6 +59,14 @@ class BaseTheme:
         raise NotImplemented
 
     def save(self, file_path, keep_tex):
+        """Saves the generated CV inside `file_path`.
+
+        Stores the generated file in the path given by `file_path`. It also handles the copy of required files.
+
+        Args:
+            file_path (str): path where the generated file should be stored, without extension.
+            keep_tex (bool): whether to delete or keep LaTeX files such as .cls or .tex.
+        """
         cls_path = os.path.join(os.path.dirname(__file__), 'themes', 'cls', self.theme_name + '.cls')
         shutil.copy(cls_path, os.path.dirname(file_path))
         self.format().generate_pdf(file_path, clean_tex=not keep_tex)

@@ -7,8 +7,7 @@ import random
 # Create the ArgumentParse and parse the arguments inside `args`
 parser = argparse.ArgumentParser(description='Run CV Generator')
 parser.add_argument('--cv-file', required=True, help='Relative or absolute path to the raw .json or .yaml resume file')
-parser.add_argument('--theme', choices=['awesome', 'developer', 'sitges'],
-                    help='Name of the theme of the generated resume')
+parser.add_argument('--theme', choices=['sitges', 'developer'], help='Name of the theme of the generated resume')
 parser.add_argument('--filename', required=False, type=str, help='Generated file name, without extension')
 parser.add_argument('--keep-tex', action='store_true', help='Keep LaTeX files used to generate the resume')
 args = parser.parse_args()
