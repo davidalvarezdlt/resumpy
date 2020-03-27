@@ -34,7 +34,6 @@ class CV:
         self._load_raw_data(cv_file_path)
         self._validate_raw_data(cv_schema_path)
         self._load_data()
-        a = 1
 
     def _load_raw_data(self, cv_file_path: str):
         """Loads the input JSON or YAML file

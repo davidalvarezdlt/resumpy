@@ -1,6 +1,7 @@
 import gettext
 import os
 import pylatex
+import shutil
 
 
 class BaseTheme:
@@ -46,14 +47,6 @@ class BaseTheme:
         localedir = os.path.join(os.path.dirname(__file__), 'themes', 'locale')
         gettext.translation('base', localedir=localedir, languages=[self.cv.lang]).install()
 
-    def get_cls_path(self):
-        """Returns full path to `.cls` file of the theme.
-
-        Returns:
-            cls_path (str): absolute path to the `.cls` file of the current theme.
-        """
-        return os.path.join(os.path.dirname(__file__), 'themes', 'cls', self.theme_name + '.cls')
-
     def format(self):
         """Creates a new `pylatex.Document`.
 
@@ -64,3 +57,10 @@ class BaseTheme:
             doc (pylatex.Document): document to be stored in disk.
         """
         raise NotImplemented
+
+    def save(self, file_path, keep_tex):
+        cls_path = os.path.join(os.path.dirname(__file__), 'themes', 'cls', self.theme_name + '.cls')
+        shutil.copy(cls_path, os.path.dirname(file_path))
+        self.format().generate_pdf(file_path, clean_tex=not keep_tex)
+        if not keep_tex:
+            os.remove(os.path.join(os.path.dirname(file_path), os.path.basename(cls_path)))
