@@ -3,7 +3,6 @@ import cv_generator.themes
 import logging
 import os
 import random
-import shutil
 
 # Create the ArgumentParse and parse the arguments inside `args`
 parser = argparse.ArgumentParser(description='Run CV Generator')
@@ -26,16 +25,16 @@ logger.propagate = True
 cv = cv_generator.CV(args.cv_file, cv_schema_path, logger)
 
 # Get the child class of cv_generator.themes.BaseTheme to use
-themes_dict = {'sitges': cv_generator.themes.ThemeSitges, 'developer': cv_generator.themes.ThemeDeveloper}
+themes_dict = {
+    'developer': cv_generator.themes.ThemeDeveloper,
+    'sitges': cv_generator.themes.ThemeSitges
+}
 theme = themes_dict[args.theme](cv, logger)
 
 # Define the name (and path) of the generated file random.randint(1, 10E6)
-generated_file_name = args.filename if args.filename else '{}-{}'.format(theme.theme_name, random.randint(1, 1E6))
-generated_file_path = os.path.join(base_path, 'generated_documents') + os.sep + '{}'.format(generated_file_name)
+file_name = args.filename if args.filename else '{}-{}'.format(theme.theme_name, random.randint(1, 1E6))
+file_path = os.path.join(base_path, 'generated_documents') + os.sep + '{}'.format(file_name)
 
-# Get the document calling the `BaseTheme.format()` method and store it in `generated_file_path`
-shutil.copy(theme.get_cls_path(), os.path.dirname(generated_file_path))
-theme.format().generate_pdf(generated_file_path, clean_tex=not args.keep_tex)
-if not args.keep_tex:
-    os.remove(os.path.join(os.path.dirname(generated_file_path), os.path.basename(theme.get_cls_path())))
-logger.info('File {}.pdf generated inside /generated_documents'.format(generated_file_name))
+# Save the generated document in generated_file_path
+theme.save(file_path, args.keep_tex)
+logger.info('File {}.pdf generated inside /generated_documents'.format(file_name))
