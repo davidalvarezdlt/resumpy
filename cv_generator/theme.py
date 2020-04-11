@@ -2,6 +2,7 @@ import gettext
 import os
 import pylatex
 import shutil
+import locale
 
 
 class BaseTheme:
@@ -46,6 +47,7 @@ class BaseTheme:
        """
         localedir = os.path.join(os.path.dirname(__file__), 'themes', 'locale')
         gettext.translation('base', localedir=localedir, languages=[self.cv.lang]).install()
+        locale.setlocale(locale.LC_TIME, self.cv.lang.replace('-', '_'))
 
     def format(self):
         """Creates a new `pylatex.Document`.

@@ -57,7 +57,7 @@ class ThemeSitges(cv_generator.BaseTheme):
         return self.doc
 
     def _format_last_update(self):
-        last_update = self.cv.last_update.strftime('%B %d, %Y')
+        last_update = _('SITGES_LAST_UPDATE_LABEL') + ' ' + self.cv.last_update.strftime('%B %Y')
         self.doc.append(self.LastUpdateItem(
             arguments=['20.5cm'],
             data=['(0cm,0.2cm)', pylatex.position.FlushRight(data=Command('lastupdate', last_update))]
@@ -77,13 +77,13 @@ class ThemeSitges(cv_generator.BaseTheme):
             self.doc.append(Command('twitter', [self.cv.contact.twitter.href, self.cv.contact.twitter.anchor]))
         if self.cv.contact.personal_website:
             self.doc.append(
-                Command('website', [self.cv.contact.personal_website.href, self.cv.contact.personal_website.anchor]))
-        self.doc.append(pylatex.base_classes.command.Command('cvheader', '9th of January of 2020'))
+                Command('website', [self.cv.contact.personal_website.href, self.cv.contact.personal_website.anchor])
+            )
 
     def _format_experience(self):
-        if self.cv.experience and len(self.cv.experience.items) > 0:
+        if self.cv.experience and len(self.cv.experience) > 0:
             self.doc.append(pylatex.base_classes.command.Command('cvsection', _('SITGES_EXPERIENCE_TITLE')))
-            for experience_item in self.cv.experience.items:
+            for experience_item in self.cv.experience:
                 experience_subtitle = self._format_experience_subtitle(experience_item)
                 self.doc.append(
                     self.ExperienceItem(
@@ -98,18 +98,15 @@ class ThemeSitges(cv_generator.BaseTheme):
         container.append(experience_item.date_start.strftime('%B %Y'))
         container.append(pylatex.NoEscape('\\,-\\,'))
         if experience_item.date_end:
-            experience_time = round((experience_item.date_end - experience_item.date_start).days / 30)
             container.append(experience_item.date_end.strftime('%B %Y'))
-            container.append(pylatex.NoEscape('\\,'))
-            container.append('({} months)'.format(experience_time))
         else:
             container.append(_('SITGES_DATES_NOW'))
         return container
 
     def _format_eductation(self):
-        if self.cv.education and len(self.cv.education.items) > 0:
+        if self.cv.education and len(self.cv.education) > 0:
             self.doc.append(pylatex.base_classes.command.Command('cvsection', _('SITGES_EDUCATION_TITLE')))
-            for i, education_item in enumerate(self.cv.education.items):
+            for education_item in self.cv.education:
                 education_item_date_start = education_item.date_start.strftime('%B %Y')
                 education_item_date_end = education_item.date_end.strftime('%B %Y') \
                     if education_item.date_end is not None else _('DEVELOPER_DATES_NOW')
@@ -117,7 +114,7 @@ class ThemeSitges(cv_generator.BaseTheme):
                 education_subtitle = self._format_education_subtitle(education_item)
                 self.doc.append(
                     self.EducationItem(
-                        arguments=[education_item.institution, education_period, education_item.name,
+                        arguments=[education_item.institution, education_period, education_item.degree,
                                    education_subtitle],
                         data=education_item.description
                     )
@@ -126,9 +123,9 @@ class ThemeSitges(cv_generator.BaseTheme):
 
     def _format_education_subtitle(self, education_item):
         container = self.MultiCommandContainer()
-        if education_item.specialization is not None:
-            container.append(Command('textbf', education_item.specialization))
-        if education_item.gpa is not None:
+        if education_item.major != '':
+            container.append(Command('textbf', education_item.major))
+        if education_item.gpa > 0:
             if len(container) > 0:
                 container.append(Command('quad'))
                 container.append('|')
@@ -136,10 +133,10 @@ class ThemeSitges(cv_generator.BaseTheme):
             container.append(Command('textbf', _('SITGES_GPA_LABEL')))
             container.append(pylatex.NoEscape(':\\,'))
             container.append(education_item.gpa)
-        if education_item.gpa_max is not None:
+        if education_item.gpa_max > 0:
             container.append(pylatex.NoEscape('\\,/\\,'))
             container.append(education_item.gpa_max)
-        if education_item.performance is not None:
+        if education_item.performance > 0:
             if len(container) > 0:
                 container.append(Command('quad'))
                 container.append('|')
@@ -149,13 +146,12 @@ class ThemeSitges(cv_generator.BaseTheme):
         return container
 
     def _format_awards(self):
-        if self.cv.awards and len(self.cv.awards.items) > 0:
+        if self.cv.awards and len(self.cv.awards) > 0:
             self.doc.append(pylatex.base_classes.command.Command('cvsection', _('SITGES_AWARDS_TITLE')))
-            for i, awards_item in enumerate(self.cv.awards.items):
-                award_subtitle = self._format_award_subtitle(awards_item)
+            for awards_item in self.cv.awards:
                 self.doc.append(
                     self.AwardItem(
-                        arguments=[awards_item.name, award_subtitle],
+                        arguments=[awards_item.name, self._format_award_subtitle(awards_item)],
                         data=awards_item.description
                     )
                 )
@@ -168,9 +164,9 @@ class ThemeSitges(cv_generator.BaseTheme):
         container.append('|')
         container.append(Command('quad'))
         container.append(award_item.institution)
-        if award_item.link is not None:
-            href_escaped = cv_generator.utils.escape_link(award_item.link.href)
-            anchor_escaped = pylatex.utils.escape_latex(award_item.link.anchor)
+        if award_item.diploma is not None:
+            href_escaped = cv_generator.utils.escape_link(award_item.diploma.href)
+            anchor_escaped = pylatex.utils.escape_latex(award_item.diploma.anchor)
             container.append(Command('quad'))
             container.append(pylatex.NoEscape('\\,|\\,'))
             container.append(Command('quad'))
@@ -178,14 +174,13 @@ class ThemeSitges(cv_generator.BaseTheme):
         return container
 
     def _format_publications(self):
-        if self.cv.publications and len(self.cv.publications.items) > 0:
+        if self.cv.publications and len(self.cv.publications) > 0:
             self.doc.append(pylatex.base_classes.command.Command('cvsection', _('SITGES_PUBLICATIONS_TITLE')))
-            for i, publication_item in enumerate(self.cv.publications.items):
-                publication_comment = self._format_publication_subtitle(publication_item)
+            for publication_item in self.cv.publications:
                 self.doc.append(
                     self.PublicationItem(
                         arguments=[publication_item.title, publication_item.date.strftime('%B %Y'),
-                                   publication_comment],
+                                   self._format_publication_subtitle(publication_item)],
                         data=publication_item.abstract
                     )
                 )
@@ -193,8 +188,8 @@ class ThemeSitges(cv_generator.BaseTheme):
 
     def _format_publication_subtitle(self, publication_item):
         container = self.MultiCommandContainer()
-        if publication_item.comment:
-            container.append(publication_item.comment)
+        if publication_item.authors:
+            container.append(publication_item.authors)
         if publication_item.manuscript_link:
             if len(container) > 0:
                 container.append(Command('quad'))
@@ -215,38 +210,38 @@ class ThemeSitges(cv_generator.BaseTheme):
 
     def _format_info(self):
         self.doc.append(Command('cvsidebarsection', ''))
-        self.doc.append(Command('detailitem', ['\\faFlag', _('SITGES_LOCATION_LABEL'), self.cv.basic.location]))
-        self.doc.append(Command('detailitem', ['\\faCalendar', _('SITGES_AGE_LABEL'), self.cv.basic.get_age()]))
-        self.doc.append(Command('detailitem', ['\\faGlobe', _('SITGES_NATIONALITY_LABEL'), self.cv.basic.nationality]))
         self.doc.append(Command('detailitem', ['\\faEnvelope', _('SITGES_EMAIL_LABEL'), self.cv.contact.email]))
         self.doc.append(Command('detailitem', ['\\faPhone', _('SITGES_PHONE_LABEL'), self.cv.contact.phone]))
+        self.doc.append(Command('detailitem', ['\\faCalendar', _('SITGES_AGE_LABEL'), self.cv.get_age()]))
+        self.doc.append(Command('detailitem', ['\\faGlobe', _('SITGES_NATIONALITY_LABEL'), self.cv.basic.birthplace]))
+        self.doc.append(Command('detailitem', ['\\faFlag', _('SITGES_LOCATION_LABEL'), self.cv.basic.residence]))
 
     def _format_languages(self):
         self.doc.append(Command('cvsidebarsection', _('SITGES_LANGUAGES_TITLE')))
-        for i, languages_item in enumerate(self.cv.languages.items):
-            self.doc.append(
-                Command('languageitem', [languages_item.name, languages_item.level, languages_item.score])
-            )
-            if i < len(self.cv.languages.items) - 1:
+        for i, languages_item in enumerate(self.cv.languages):
+            self.doc.append(Command('languageitem', [
+                languages_item.name, languages_item.level, self.cv.get_language_score(languages_item.level) / 100
+            ]))
+            if i < len(self.cv.languages) - 1:
                 self.doc.append(Command('medskip'))
 
     def _format_courses(self):
-        if self.cv.courses and len(self.cv.courses.items) > 0:
+        if self.cv.courses and len(self.cv.courses) > 0:
             self.doc.append(Command('cvsidebarsection', _('SITGES_COURSES_TITLE')))
-            for i, courses_item in enumerate(self.cv.courses.items):
+            for i, courses_item in enumerate(self.cv.courses):
                 href_escaped = cv_generator.utils.escape_link(courses_item.diploma.href)
                 anchor_escaped = pylatex.utils.escape_latex(courses_item.diploma.anchor)
                 course_diploma = UnsafeCommand('href', [href_escaped, anchor_escaped])
                 self.doc.append(
                     Command('courseitem', [courses_item.name, courses_item.institution, course_diploma])
                 )
-                if i < len(self.cv.languages.items) - 1:
+                if i < len(self.cv.languages) - 1:
                     self.doc.append(Command('medskip'))
 
     def _format_projects(self):
-        if self.cv.projects and len(self.cv.projects.items) > 0:
+        if self.cv.projects and len(self.cv.projects) > 0:
             self.doc.append(Command('cvsidebarsection', _('SITGES_PROJECTS_TITLE')))
-            for i, project_item in enumerate(self.cv.projects.items):
+            for i, project_item in enumerate(self.cv.projects):
                 project_subtitle = self._format_project_subtitle(project_item)
                 project_item = Command('projectitem', [project_item.name, project_subtitle, project_item.description])
                 self.doc.append(project_item)
@@ -261,15 +256,14 @@ class ThemeSitges(cv_generator.BaseTheme):
 
     def _format_skills(self):
         self.doc.append(Command('cvsidebarsection', _('SITGES_SKILLS_TITLE')))
-        skills_categories = self.cv.skills.get_categories()
-        for i, (skills_category) in enumerate(skills_categories):
-            skills_items = self.cv.skills.filter(category=skills_category)
+        for i, skills_category in enumerate(self.cv.get_skills_categories()):
+            skills_items = self.cv.filter_skills_by_category(skills_category)
             skills_str = ', '.join([skill_item.name for skill_item in skills_items])
             self.doc.append(Command('skillset', [skills_category, skills_str]))
-            if i < len(self.cv.skills.items) - 1:
+            if i < len(self.cv.skills) - 1:
                 self.doc.append(Command('medskip'))
 
     def _format_hobbies(self):
-        if self.cv.misc.hobbies:
+        if self.cv.basic.hobbies:
             self.doc.append(Command('cvsidebarsection', _('SITGES_HOBBIES_TITLE')))
-            self.doc.append(Command('footnotesize', self.cv.misc.hobbies))
+            self.doc.append(Command('footnotesize', self.cv.basic.hobbies))

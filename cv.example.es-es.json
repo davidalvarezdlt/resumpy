@@ -1,0 +1,535 @@
+{
+  "lang": "es-ES",
+  "last_update": "2020-04-11",
+  "basic": {
+    "name": "David",
+    "surnames": "Álvarez de la Torre",
+    "profession": "Data Scientist | Ingeniero de Telecomunicaciones",
+    "birthday": "1996-01-20",
+    "birthplace": "Barcelona",
+    "residence": "Zúrich",
+    "marital_status": "Soltero",
+    "biography": "Apasionado por la tecnología y la ingeniería. Investigador junior con experiencia en modelos generativos y dos artículos publicados (uno de ellos en ICLR). Actualmente haciendo mi tesis de máster trabajando en video inpainting en el Computer Vision Laboratory de ETH Zürich.\nEstudié mi grado y máster en Ingeniería de Telecomunicaciones en la Universidad Politécnica de Cataluña (UPC), clasificada como la mejor universidad de ingeniería de España y 51-100 a nivel mundial en el campo de la Ingeniería Eléctrica (QS World Ranking 2020).\nHe tenido el placer de trabajar codo con codo con los mejores investigadores (de mi rama) de España. En 2019, realicé internships tanto en el departamento VEU de UPC como en Telefónica Research, uno de los pocos laboratorios privados de investigación del país.\nCon experiencia en proyectos de código abierto. Apasionado por compartir código fácil de usar y experimentos que se puedan replicar. También con experiencia en el desarrollo web y los negocios en Internet.",
+    "hobbies": "El gimnasio, viajar, Netflix y esperar trenes retrasados."
+  },
+  "contact": {
+    "email": "davidalvarezdlt@gmail.com",
+    "phone": "(+34) 666 77 88 99",
+    "personal_website": {
+      "anchor": "davidalvarezdlt.com",
+      "href": "https://es.davidalvarezdlt.com/"
+    },
+    "twitter": {
+      "anchor": "Twitter",
+      "href": "https://twitter.com/DavidAlvarezDLT"
+    },
+    "linkedin": {
+      "anchor": "LinkedIn",
+      "href": "https://www.linkedin.com/in/davidalvarezdlt/"
+    },
+    "github": {
+      "anchor": "GitHub",
+      "href": "https://github.com/davidalvarezdlt"
+    },
+    "scholar": {
+      "anchor": "Google Scholar",
+      "href": "https://scholar.google.es/citations?user=WK4V8VUAAAAJ&hl=es"
+    }
+  },
+  "experience": [
+    {
+      "institution": "Telefónica Research",
+      "position": "Research Intern",
+      "date_start": "2019-06-01",
+      "date_end": "2019-11-30",
+      "description": "Trabajé codo con codo con el Dr. Joan Serrà en la detección de muestras que no pertenecen a una distribución utilizando modelos generativos. Implementé tanto los experimentos como los modelos (Glow y PixelCNN++) utilizados en el paper \"Input Complexity and Out-of-distribution Detection with Likelihood-based Generative Models\", aceptado en la International Conference on Learning Representations de 2020.\nTambién trabajé en la creación de una herramienta para generar bases de datos para sistemas de síntesis de voz partir de videos de YouTube, publicada en mi perfil de GitHub."
+    },
+    {
+      "institution": "Universidad Politécnica de Cataluña",
+      "position": "Research Fellow",
+      "date_start": "2018-12-01",
+      "date_end": "2019-05-31",
+      "description": "Obtuve una beca del Gobierno español para realizar una estancia en el departamento de mi elección. Elegí el departamento VEU, dirigido por el Prof. Antonio Bonafonte y enfocado en el desarrollo de tecnologías relacionadas con la voz.\nTrabajé bajo la supervisión del Dr. Santiago Pascual en sistemas de síntesis de voz, publicando el paper \"Problem-agnostic speech embeddings for multi-speaker text-to-speech with SampleRNN\", aceptado como presentación oral en el décimo ISCA Speech Synthesis Workshop."
+    }
+  ],
+  "education": [
+    {
+      "institution": "ETH Zürich",
+      "degree": "Estudiante de Intercambio",
+      "major": "Computer Vision Laboratory",
+      "date_start": "2020-02-01",
+      "date_end": "2020-07-31",
+      "description": "Trabajando en video inpainting bajo la supervisión de Sergi Caelles, el Dr. Martin Danelljan, el Prof. Xavier Giró-i-Nieto y el Prof. Luc Van Gool."
+    },
+    {
+      "institution": "Universidad Politécnica de Cataluña",
+      "degree": "Máster en Ingeniería de Telecomunicaciones",
+      "major": "Intensificación en Multimedia",
+      "date_start": "2018-09-01",
+      "date_end": "2020-07-31",
+      "description": "Programa oficial de máster de 2 años (120 ECTS) que proporciona la obtención del título de Ingeniero de Telecomunicaciones, necesario para dirigir y firmar proyectos del ámbito teleco en territorio español.\nEscogí la intensificación en sistemas multimedia, con asignaturas como \"Computer Vision\", \"Machine Learning\" o \"Advanced Human Language Technologies\". También cursé 15 créditos optativos de \"Introduction to Research\", obteniendo la máxima calificación y honores.\nObtuve la nominación de mi universidad para realizar mi tesis de máster en ETH Zürich, una de las universidades más competidas del programa de intercambio.",
+      "gpa": 8.87,
+      "gpa_max": 10.0,
+      "performance": 100.0
+    },
+    {
+      "institution": "Universidad Politécnica de Cataluña",
+      "degree": "Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación",
+      "major": "Mención en Sistemas Audiovisuales",
+      "date_start": "2014-09-01",
+      "date_end": "2018-07-31",
+      "description": "Programa oficial de grado de 4 años (240 ECTS) que proporciona la obtención del título de Ingeniero Técnico de Telecomunicaciones, profesión regulada en territorio español.\nEscogí la especialización en multimedia, con asignaturas como \"Procesado de audio y voz\", \"Procesado de imagen y vídeo\", \"Codificación de contenidos audiovisuales\", \"Acústica y electroacústica\" o \"Clasificación de patrones\".\nEscribí mi tesis titulada \"Real-time stock predictions with Deep Learning and news scrapping\" bajo la supervisión del Prof. José Adrián Rodríguez Fonollosa, obteniendo una calificación de 9.70 / 10.00.",
+      "gpa": 7.72,
+      "gpa_max": 10.0,
+      "performance": 100.0,
+      "promotion_order": "22 / 373"
+    }
+  ],
+  "awards": [
+    {
+      "institution": "Ministerio de Educación y Cultura",
+      "name": "Beca Colaboración",
+      "date": "2018-11-01",
+      "description": "Beca de 2000€ cuya finalidad es la de iniciar a los estudiantes en tareas de investigación en el departamento de su elección. Otorgada anualmente a cerca de 2000 solicitantes con mejor nota media del territorio español."
+    },
+    {
+      "institution": "Universidad Politécnica de Cataluña",
+      "name": "Carta de Excelencia de Grado",
+      "date": "2018-11-26",
+      "description": "Otorgado a aquellos estudiantes que han aprobado todas las asignaturas a la primera sin suspender ninguna. Reconocimiento recibido por un 10-20% de los alumnos, dependiendo del año.",
+      "diploma": {
+        "anchor": "Reconocimiento",
+        "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt/661dd369-0264-40aa-9236-edbaeb32502b_sobre-mi-reconocimientos-excelencia.pdf"
+      }
+    },
+    {
+      "institution": "CARNET Barcelona",
+      "name": "Hackathon Mobility 2018 - Primer Premio del Reto SEAT",
+      "date": "2018-03-11",
+      "description": "El Hackathon consistió en combinar los sensores de un robot con un dispositivo Alexa para create un asistente inteligente de conducción. Nuestra solución incluyó funcionalidades como la detección facial, reconocimiento del conductor, detección de gestos faciales, alerta de eventos y un innovador algoritmo capaz de calcular el momento óptico para echar gasolina.",
+      "diploma": {
+        "anchor": "Premio",
+        "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2F9c868325-3e7a-40a7-a961-6afaf25f67b3_sobre-mi-premios-hackmob2018.pdf"
+      }
+    }
+  ],
+  "publications": [
+    {
+      "title": "Input complexity and out-of-distribution detection with likelihood-based generative models",
+      "abstract": "Likelihood-based generative models are a promising resource to detect out-of-distribution (OOD) inputs which could compromise the robustness or reliability of a machine learning system. However, likelihoods derived from such models have been shown to be problematic for detecting certain types of inputs that significantly differ from training data. In this paper, we pose that this problem is due to the excessive influence that input complexity has in generative models' likelihoods. We report a set of experiments supporting this hypothesis, and use an estimate of input complexity to derive an efficient and parameter-free OOD score, which can be seen as a likelihood-ratio, akin to Bayesian model comparison. We find such score to perform comparably to, or even better than, existing OOD detection approaches under a wide range of data sets, models, model sizes, and complexity estimates.",
+      "authors": "Joan Serrà, David Álvarez, Vicenç Gómez, Olga Slizovskaia, José F Núñez y Jordi Luque",
+      "date": "2020-04-20"
+    },
+    {
+      "title": "Problem-agnostic speech embeddings for multi-speaker text-to-speech with SampleRNN",
+      "abstract": "Text-to-speech (TTS) acoustic models map linguistic features into an acoustic representation out of which an audible waveform is generated. The latest and most natural TTS systems build a direct mapping between linguistic and waveform domains, like SampleRNN. This way, possible signal naturalness losses are avoided as intermediate acoustic representations are discarded. Another important dimension of study apart from naturalness is their adaptability to generate voice from new speakers that were unseen during training. In this paper we first propose the use of problem-agnostic speech embeddings in a multi-speaker acoustic model for TTS based on SampleRNN. This way we feed the acoustic model with speaker acoustically dependent representations that enrich the waveform generation more than discrete embeddings unrelated to these factors. Our first results suggest that the proposed embeddings lead to better quality voices than those obtained with discrete embeddings. Furthermore, as we can use any speech segment as an encoded representation during inference, the model is capable to generalize to new speaker identities without retraining the network. We finally show that, with a small increase of speech duration in the embedding extractor, we dramatically reduce the spectral distortion to close the gap towards the target identities.",
+      "authors": "David Álvarez, Santiago Pascual y Antonio Bonafonte",
+      "date": "2019-09-20"
+    },
+    {
+      "title": "Real-time stock predictions with deep learning and news scrapping",
+      "abstract": "Predict the stock market has always been one of the most challenging problems of the world. It is known that the market is influenced by uncountable things, however intuition says that one of the most correlated information is in fact public and accessible: the news. The goal of this thesis is to use neural networks to check if it is possible to predict the stock market using only news previous to the opening of the session. To deal with the problem first we acquire the data, pre-process it and then we test different models to check if we can improve a random predictor. Finally, the different models are compared and conclusions related with the correlation between news and stock market variations are exposed.",
+      "authors": "David Álvarez y José Adrián Rodríguez",
+      "date": "2019-07-01"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Español",
+      "level": "Native"
+    },
+    {
+      "name": "Catalán",
+      "level": "Native"
+    },
+    {
+      "name": "Inglés",
+      "level": "C1",
+      "diploma": {
+        "anchor": "Reporte IELTS",
+        "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2Fe689f732-e9ed-4f59-a089-279498aa2d09_sobre-mi-idiomas-ingles-ielts.pdf"
+      }
+    }
+  ],
+  "courses": [
+    {
+      "institution": "Coursera",
+      "name": "Deep Learning Specialization",
+      "date": "2018-06-02",
+      "diploma": {
+        "anchor": "Diploma",
+        "href": "https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "name": "Skeltorch",
+      "description": "Framework ligero que ayuda a investigadores a prototipar más rápido utilizando PyTorch. Para ello, Skeltorch proporciona a los desarrolladores una serie de pipelines predefinidas para organizar y entrenar/evaluar sus modelos.",
+      "link": {
+        "anchor": "Repositorio",
+        "href": "https://github.com/davidalvarezdlt/skeltorch"
+      }
+    },
+    {
+      "name": "Text-to-Speech Dataset Creator",
+      "description": "Crea una base de datos con la voz de personajes conocidos de Internet a partir de vídeos suyos en YouTube. El proyecto, que está en construcción, incluye la descarga automática de los audios y la segmentación de éstos en trozos.",
+      "link": {
+        "anchor": "Repositorio",
+        "href": "https://github.com/davidalvarezdlt/tts_dataset_creator"
+      }
+    },
+    {
+      "name": "Curriculum Vitae Generator",
+      "description": "Generador del Curriculum Vitae en diferentes plantillas a partir de un documento .yml o .json. El proyecto transforma este documento de texto plano a LaTeX, que posteriormente es compilado en un PDF.",
+      "link": {
+        "anchor": "Repositorio",
+        "href": "https://github.com/davidalvarezdlt/cv-generator"
+      }
+    }
+  ],
+  "skills": [
+    {
+      "name": "Machine Learning",
+      "type": "Topic",
+      "category": "Tecnologías de la Información",
+      "score": 100.0
+    },
+    {
+      "name": "Computer Vision",
+      "type": "Topic",
+      "category": "Tecnologías de la Información",
+      "score": 100.0
+    },
+    {
+      "name": "Procesado del Lenguaje Natural",
+      "type": "Topic",
+      "category": "Tecnologías de la Información",
+      "score": 80.0
+    },
+    {
+      "name": "Procesado de Señal",
+      "type": "Topic",
+      "category": "Tecnologías de la Información",
+      "score": 80.0
+    },
+    {
+      "name": "Desarrollo Web",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 100.0
+    },
+    {
+      "name": "Desarrollo de Software",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "Administración de Sistemas",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "Redes",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 60.0
+    },
+    {
+      "name": "Algoritmos",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 40.0
+    },
+    {
+      "name": "Pruebas de Software",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 40.0
+    },
+    {
+      "name": "Bases de Datos",
+      "type": "Topic",
+      "category": "Informática",
+      "score": 20.0
+    },
+    {
+      "name": "Comunicaciones Digitales",
+      "type": "Topic",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "Diseño Digital",
+      "type": "Topic",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "Antenas",
+      "type": "Topic",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "Circuitos Lineales",
+      "type": "Topic",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "Probabilidad",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 60.0
+    },
+    {
+      "name": "Teoría de la Información",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 60.0
+    },
+    {
+      "name": "Cálculo",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 60.0
+    },
+    {
+      "name": "Algebra",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 60.0
+    },
+    {
+      "name": "Criptografía",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 60.0
+    },
+    {
+      "name": "Optimización",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 40.0
+    },
+    {
+      "name": "Matemáticas Financieras",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 20.0
+    },
+    {
+      "name": "Teoría de Juegos",
+      "type": "Topic",
+      "category": "Matemáticas",
+      "score": 20.0
+    },
+    {
+      "name": "Electromagnetismo",
+      "type": "Topic",
+      "category": "Física",
+      "score": 60.0
+    },
+    {
+      "name": "Mecánica Clásica",
+      "type": "Topic",
+      "category": "Física",
+      "score": 60.0
+    },
+    {
+      "name": "SEO",
+      "type": "Topic",
+      "category": "Marketing & Negocios",
+      "score": 80.0
+    },
+    {
+      "name": "Marketing en Redes Sociales",
+      "type": "Topic",
+      "category": "Marketing & Negocios",
+      "score": 80.0
+    },
+    {
+      "name": "Experiencia de Usuario",
+      "type": "Topic",
+      "category": "Marketing & Negocios",
+      "score": 80.0
+    },
+    {
+      "name": "Emprendimiento",
+      "type": "Topic",
+      "category": "Otros",
+      "score": 80.0
+    },
+    {
+      "name": "Hablar en Público",
+      "type": "Topic",
+      "category": "Otros",
+      "score": 80.0
+    },
+    {
+      "name": "Investigación",
+      "type": "Topic",
+      "category": "Otros",
+      "score": 80.0
+    },
+    {
+      "name": "PyTorch",
+      "type": "Tool",
+      "category": "Tecnologías de la Información",
+      "score": 100.0
+    },
+    {
+      "name": "Numpy",
+      "type": "Tool",
+      "category": "Tecnologías de la Información",
+      "score": 80.0
+    },
+    {
+      "name": "Pandas",
+      "type": "Tool",
+      "category": "Tecnologías de la Información",
+      "score": 80.0
+    },
+    {
+      "name": "Matplotlib",
+      "type": "Tool",
+      "category": "Tecnologías de la Información",
+      "score": 80.0
+    },
+    {
+      "name": "TensorFlow",
+      "type": "Tool",
+      "category": "Tecnologías de la Información",
+      "score": 40.0
+    },
+    {
+      "name": "R",
+      "type": "Tool",
+      "category": "Tecnologías de la Información",
+      "score": 20.0
+    },
+    {
+      "name": "Python",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 100.0
+    },
+    {
+      "name": "HTML",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 100.0
+    },
+    {
+      "name": "CSS",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 100.0
+    },
+    {
+      "name": "SQL",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "JavaScript",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "Angular",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "jQuery",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "GIT",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "PHP",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 80.0
+    },
+    {
+      "name": "C",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 60.0
+    },
+    {
+      "name": "Java",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 60.0
+    },
+    {
+      "name": "C++",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 40.0
+    },
+    {
+      "name": "Node.js",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 40.0
+    },
+    {
+      "name": "VIM",
+      "type": "Tool",
+      "category": "Informática",
+      "score": 20.0
+    },
+    {
+      "name": "MATLAB",
+      "type": "Tool",
+      "category": "Ingeniería Eléctrica",
+      "score": 80.0
+    },
+    {
+      "name": "LabVIEW",
+      "type": "Tool",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "Xilinx Vivado",
+      "type": "Tool",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "CST Microwave Studio",
+      "type": "Tool",
+      "category": "Ingeniería Eléctrica",
+      "score": 60.0
+    },
+    {
+      "name": "LaTeX",
+      "type": "Tool",
+      "category": "Otros",
+      "score": 80.0
+    },
+    {
+      "name": "Photoshop",
+      "type": "Tool",
+      "category": "Otros",
+      "score": 40.0
+    }
+  ]
+}

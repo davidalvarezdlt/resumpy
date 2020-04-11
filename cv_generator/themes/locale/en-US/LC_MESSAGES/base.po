@@ -7,115 +7,120 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-14 15:35+0100\n"
-"PO-Revision-Date: 2020-03-14 15:38+0100\n"
+"POT-Creation-Date: 2020-04-11 23:17+0200\n"
+"PO-Revision-Date: 2020-04-11 23:18+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: es\n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: sitges.py:87
+#: sitges.py:60
+msgid "SITGES_LAST_UPDATE_LABEL"
+msgstr "Last Update:"
+
+#: sitges.py:85
 msgid "SITGES_EXPERIENCE_TITLE"
-msgstr "Experiencia"
+msgstr "Experience"
 
-#: sitges.py:108
+#: sitges.py:106
 msgid "SITGES_DATES_NOW"
-msgstr "Actualidad"
+msgstr "Now"
 
-#: sitges.py:113
+#: sitges.py:111
 msgid "SITGES_EDUCATION_TITLE"
-msgstr "Educación"
+msgstr "Education"
 
-#: sitges.py:117 developer.py:89 developer.py:103
+#: sitges.py:115 developer.py:88 developer.py:102
 msgid "DEVELOPER_DATES_NOW"
-msgstr "Actualidad"
+msgstr "Now"
 
-#: sitges.py:138
+#: sitges.py:136
 msgid "SITGES_GPA_LABEL"
-msgstr "Nota Media"
+msgstr "GPA"
 
-#: sitges.py:149
+#: sitges.py:147
 msgid "SITGES_PERFORMANCE_LABEL"
-msgstr "Rendimiento"
+msgstr "Performance"
 
-#: sitges.py:155
+#: sitges.py:153
 msgid "SITGES_AWARDS_TITLE"
-msgstr "Premios"
+msgstr "Awards"
 
-#: sitges.py:182
+#: sitges.py:181
 msgid "SITGES_PUBLICATIONS_TITLE"
-msgstr "Publicaciones"
+msgstr "Publications"
 
 #: sitges.py:216
-msgid "SITGES_LOCATION_LABEL"
-msgstr "Ciudad"
-
-#: sitges.py:217
-msgid "SITGES_AGE_LABEL"
-msgstr "Edad"
-
-#: sitges.py:218
-msgid "SITGES_NATIONALITY_LABEL"
-msgstr "Nacionalidad"
-
-#: sitges.py:219
 msgid "SITGES_EMAIL_LABEL"
 msgstr "Email"
 
-#: sitges.py:220
+#: sitges.py:217
 msgid "SITGES_PHONE_LABEL"
-msgstr "Teléfono Móvil"
+msgstr "Phone"
+
+#: sitges.py:218
+msgid "SITGES_AGE_LABEL"
+msgstr "Age"
+
+#: sitges.py:219
+msgid "SITGES_NATIONALITY_LABEL"
+msgstr "Birthplace"
+
+#: sitges.py:220
+msgid "SITGES_LOCATION_LABEL"
+msgstr "Location"
 
 #: sitges.py:223
 msgid "SITGES_LANGUAGES_TITLE"
-msgstr "Idiomas"
+msgstr "Languages"
 
 #: sitges.py:233
 msgid "SITGES_COURSES_TITLE"
-msgstr "Cursos"
+msgstr "Courses"
 
-#: sitges.py:245
+#: sitges.py:246
 msgid "SITGES_PROJECTS_TITLE"
-msgstr "Proyectos"
+msgstr "Projects"
 
-#: sitges.py:260
+#: sitges.py:261
 msgid "SITGES_SKILLS_TITLE"
-msgstr "Habilidades"
+msgstr "Skills"
 
 #: sitges.py:271
 msgid "SITGES_HOBBIES_TITLE"
 msgstr "Hobbies"
 
-#: developer.py:47
+#: developer.py:36
 msgid "DEVELOPER_BIOGRAPHY_TITLE"
-msgstr "¿Quien soy?"
+msgstr "Who am I"
 
-#: developer.py:84
+#: developer.py:83
 msgid "DEVELOPER_EXPERIENCE_TITLE"
-msgstr "Experiencia"
+msgstr "Experience"
 
-#: developer.py:98
+#: developer.py:97
 msgid "DEVELOPER_EDUCATION_TITLE"
-msgstr "Educación"
+msgstr "Education"
 
 #: developer.py:113
 msgid "DEVELOPER_AWARDS_TITLE"
-msgstr "Premios"
+msgstr "Awards"
 
 #: developer.py:123
 msgid "DEVELOPER_PUBLICATIONS_TITLE"
-msgstr "Publicaciones"
+msgstr "Publications"
 
 #: developer.py:133
 msgid "DEVELOPER_COURSES_TITLE"
-msgstr "Cursos"
+msgstr "Courses"
 
 #: developer.py:143
 msgid "DEVELOPER_LANGUAGES_TITLE"
-msgstr "Idiomas"
+msgstr "Languages"
 
 #: developer.py:152
 msgid "DEVELOPER_HOBBIES_TITLE"

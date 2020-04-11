@@ -20,8 +20,8 @@ There is only one rule to follow when using CV Generator: follow the syntax prov
  familiar with JSON validation, please read the tutorials provided in [JSON Schema](https://json-schema.org/). Notice 
  that the input file will be validated at the beginning and some errors may arise if the document is not valid.
 
-The easiest and fastest way to start is by departing from the examples provided in `cv.example.json` and 
-`cv.example.yaml`.
+The easiest and fastest way to start is by departing from the examples provided in `cv.example.en-us.json`,  
+`cv.example.es-es.json`, `cv.example.en-us.yaml` and `cv.example.es-es.yaml`.
 
 ## How to execute the code
 First of all, install the dependencies required by the project. You can do it using `pip` as:
@@ -49,10 +49,10 @@ Options:
 Example:
 
 ```
-python -m cv_generator --cv-file cv.example.json --theme sitges --filename example-cv
+python -m cv_generator --cv-file cv.example.en-us.json --theme sitges --filename example-cv
 ```
 
-Uses `cv.example.json` as raw input and formats it using the `sitges` theme. The output file will be stored in 
+Uses `cv.example.en-us.json` as raw input and formats it using the `sitges` theme. The output file will be stored in 
 `./generated_documents/example-cv.pdf`.
 
 ## Available themes and examples
@@ -60,8 +60,8 @@ Only two themes are available at the moment:
 
 |Theme Name (`<theme_name>`)|Example|Source|
 |-|-|-|
-|Sitges (`sitges`)|[Example](https://storage.googleapis.com/davidalvarezdlt/cv-generator-theme-sitges.pdf)|Self-designed|
-|Developer CV (`developer`)|[Example](https://storage.googleapis.com/davidalvarezdlt/cv-generator-theme-developer.pdf)|[LaTeXTemplates.com](https://www.latextemplates.com/template/developer-cv)|
+|Sitges (`sitges`)|[Example](https://storage.googleapis.com/dlt_projects/cv_generator_samples_sitges.pdf)|Self-designed|
+|Developer CV (`developer`)|[Example](https://storage.googleapis.com/dlt_projects/cv_generator_samples_developer.pdf)|[LaTeXTemplates.com](https://www.latextemplates.com/template/developer-cv)|
 
 ## Contribute
 I encourage open-source lovers to implement their designs and to send a pull request so we can all benefit from it. 

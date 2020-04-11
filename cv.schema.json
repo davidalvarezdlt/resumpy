@@ -5,13 +5,13 @@
 		"lang": {
 			"type": "string",
 			"enum": [
-				"es",
-				"en"
+				"es-ES",
+				"en-US"
 			]
 		},
 		"last_update": {
 			"type": "string",
-			"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+			"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 		},
 		"basic": {
 			"type": "object",
@@ -27,15 +27,21 @@
 				},
 				"birthday": {
 					"type": "string",
-					"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+					"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 				},
-				"location": {
+				"birthplace": {
 					"type": "string"
 				},
-				"nationality": {
+				"residence": {
+					"type": "string"
+				},
+				"marital_status": {
 					"type": "string"
 				},
 				"biography": {
+					"type": "string"
+				},
+				"hobbies": {
 					"type": "string"
 				}
 			},
@@ -44,8 +50,9 @@
 				"surnames",
 				"profession",
 				"birthday",
-				"location",
-				"nationality",
+				"birthplace",
+				"residence",
+				"marital_status",
 				"biography"
 			]
 		},
@@ -144,19 +151,19 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"position": {
+					"institution": {
 						"type": "string"
 					},
-					"institution": {
+					"position": {
 						"type": "string"
 					},
 					"date_start": {
 						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"date_end": {
 						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"description": {
 						"type": "string",
@@ -164,10 +171,9 @@
 					}
 				},
 				"required": [
-					"position",
 					"institution",
-					"date_start",
-					"description"
+					"position",
+					"date_start"
 				]
 			},
 			"uniqueItems": true
@@ -177,22 +183,25 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"specialization": {
-						"type": "string"
-					},
 					"institution": {
+						"type": "string"
+					},
+					"degree": {
+						"type": "string"
+					},
+					"major": {
 						"type": "string"
 					},
 					"date_start": {
 						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"date_end": {
 						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+					},
+					"description": {
+						"type": "string"
 					},
 					"gpa": {
 						"type": "number",
@@ -207,15 +216,14 @@
 						"minimum": 0,
 						"maximum": 100
 					},
-					"description": {
+					"promotion_order": {
 						"type": "string"
 					}
 				},
 				"required": [
-					"name",
 					"institution",
-					"date_start",
-					"description"
+					"degree",
+					"date_start"
 				]
 			},
 			"uniqueItems": true
@@ -225,20 +233,20 @@
 			"items": {
 				"type": "object",
 				"properties": {
-					"name": {
+					"institution": {
 						"type": "string"
 					},
-					"institution": {
+					"name": {
 						"type": "string"
 					},
 					"date": {
 						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"description": {
 						"type": "string"
 					},
-					"link": {
+					"diploma": {
 						"type": "object",
 						"properties": {
 							"anchor": {
@@ -255,8 +263,8 @@
 					}
 				},
 				"required": [
-					"name",
 					"institution",
+					"name",
 					"date"
 				]
 			}
@@ -272,12 +280,12 @@
 					"abstract": {
 						"type": "string"
 					},
+					"authors": {
+						"type": "string"
+					},
 					"date": {
 						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
-					},
-					"comment": {
-						"type": "string"
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"manuscript_link": {
 						"type": "object",
@@ -313,6 +321,7 @@
 				"required": [
 					"title",
 					"abstract",
+					"authors",
 					"date"
 				]
 			},
@@ -338,35 +347,6 @@
 							"Native"
 						]
 					},
-					"score": {
-						"type": "number",
-						"minimum": 0,
-						"maximum": 100
-					}
-				},
-				"required": [
-					"name",
-					"level"
-				]
-			},
-			"minItems": 1,
-			"unique": true
-		},
-		"courses": {
-			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"name": {
-						"type": "string"
-					},
-					"institution": {
-						"type": "string"
-					},
-					"date": {
-						"type": "string",
-						"pattern": "\\d{2}\\/\\d{2}\\/\\d{4}"
-					},
 					"diploma": {
 						"type": "object",
 						"properties": {
@@ -385,7 +365,46 @@
 				},
 				"required": [
 					"name",
+					"level"
+				]
+			},
+			"minItems": 1,
+			"unique": true
+		},
+		"courses": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"institution": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"date": {
+						"type": "string",
+						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+					},
+					"diploma": {
+						"type": "object",
+						"properties": {
+							"anchor": {
+								"type": "string"
+							},
+							"href": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"anchor",
+							"href"
+						]
+					}
+				},
+				"required": [
 					"institution",
+					"name",
 					"date"
 				]
 			},
@@ -420,8 +439,7 @@
 				},
 				"required": [
 					"name",
-					"description",
-					"link"
+					"description"
 				]
 			}
 		},
@@ -433,6 +451,9 @@
 					"name": {
 						"type": "string"
 					},
+					"type": {
+						"type": "string"
+					},
 					"category": {
 						"type": "string"
 					},
@@ -440,34 +461,19 @@
 						"type": "number",
 						"minimum": 0,
 						"maximum": 100
-					},
-					"highlighted": {
-						"type": "boolean"
 					}
 				},
 				"required": [
-					"name",
-					"category"
+					"name"
 				]
 			},
 			"minItems": 1,
 			"unique": true
-		},
-		"misc": {
-			"type": "object",
-			"parameters": {
-				"hobbies": {
-					"type": "string"
-				}
-			}
 		}
 	},
 	"required": [
 		"lang",
 		"last_update",
-		"basic",
-		"contact",
-		"languages",
-		"skills"
+		"basic"
 	]
 }

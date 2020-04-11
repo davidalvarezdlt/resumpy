@@ -22,7 +22,7 @@ logger = logging.getLogger('cv_generator')
 logger.propagate = True
 
 # Create a new CV object with the data provided in the --cv-file argument
-cv = cv_generator.CV(args.cv_file, cv_schema_path, logger)
+cv = cv_generator.CV(logger).load(args.cv_file, cv_schema_path)
 
 # Get the child class of cv_generator.themes.BaseTheme to use
 themes_dict = {

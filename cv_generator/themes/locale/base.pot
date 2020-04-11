@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-14 15:35+0100\n"
+"POT-Creation-Date: 2020-04-11 23:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,56 +17,60 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: sitges.py:87
+#: sitges.py:60
+msgid "SITGES_LAST_UPDATE_LABEL"
+msgstr ""
+
+#: sitges.py:85
 msgid "SITGES_EXPERIENCE_TITLE"
 msgstr ""
 
-#: sitges.py:108
+#: sitges.py:106
 msgid "SITGES_DATES_NOW"
 msgstr ""
 
-#: sitges.py:113
+#: sitges.py:111
 msgid "SITGES_EDUCATION_TITLE"
 msgstr ""
 
-#: sitges.py:117 developer.py:89 developer.py:103
+#: sitges.py:115 developer.py:88 developer.py:102
 msgid "DEVELOPER_DATES_NOW"
 msgstr ""
 
-#: sitges.py:138
+#: sitges.py:136
 msgid "SITGES_GPA_LABEL"
 msgstr ""
 
-#: sitges.py:149
+#: sitges.py:147
 msgid "SITGES_PERFORMANCE_LABEL"
 msgstr ""
 
-#: sitges.py:155
+#: sitges.py:153
 msgid "SITGES_AWARDS_TITLE"
 msgstr ""
 
-#: sitges.py:182
+#: sitges.py:181
 msgid "SITGES_PUBLICATIONS_TITLE"
 msgstr ""
 
 #: sitges.py:216
-msgid "SITGES_LOCATION_LABEL"
-msgstr ""
-
-#: sitges.py:217
-msgid "SITGES_AGE_LABEL"
-msgstr ""
-
-#: sitges.py:218
-msgid "SITGES_NATIONALITY_LABEL"
-msgstr ""
-
-#: sitges.py:219
 msgid "SITGES_EMAIL_LABEL"
 msgstr ""
 
-#: sitges.py:220
+#: sitges.py:217
 msgid "SITGES_PHONE_LABEL"
+msgstr ""
+
+#: sitges.py:218
+msgid "SITGES_AGE_LABEL"
+msgstr ""
+
+#: sitges.py:219
+msgid "SITGES_NATIONALITY_LABEL"
+msgstr ""
+
+#: sitges.py:220
+msgid "SITGES_LOCATION_LABEL"
 msgstr ""
 
 #: sitges.py:223
@@ -77,11 +81,11 @@ msgstr ""
 msgid "SITGES_COURSES_TITLE"
 msgstr ""
 
-#: sitges.py:245
+#: sitges.py:246
 msgid "SITGES_PROJECTS_TITLE"
 msgstr ""
 
-#: sitges.py:260
+#: sitges.py:261
 msgid "SITGES_SKILLS_TITLE"
 msgstr ""
 
@@ -89,15 +93,15 @@ msgstr ""
 msgid "SITGES_HOBBIES_TITLE"
 msgstr ""
 
-#: developer.py:47
+#: developer.py:36
 msgid "DEVELOPER_BIOGRAPHY_TITLE"
 msgstr ""
 
-#: developer.py:84
+#: developer.py:83
 msgid "DEVELOPER_EXPERIENCE_TITLE"
 msgstr ""
 
-#: developer.py:98
+#: developer.py:97
 msgid "DEVELOPER_EDUCATION_TITLE"
 msgstr ""
 

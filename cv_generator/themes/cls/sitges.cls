@@ -58,7 +58,7 @@
 
 % LAST UPDATE
 \newcommand{\lastupdate}[1]{
-    {\footnotesize\color{accent_color}Last Update: #1}
+    {\footnotesize\color{accent_color}#1}
 }
 
 % HEADER COMMANDS
