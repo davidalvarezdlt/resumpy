@@ -157,12 +157,12 @@
 }{\normalsize}
 
 % PUBLICATIONS SECTION
-\newenvironment{publicationitem}[3]{
+\newenvironment{publicationitem}[4]{
 \par
-{\footnotesize\color{accent_color} #2}
+{\footnotesize\color{accent_color} #2 - #3}
 \par
 \textbf{#1}
 \par
-{\footnotesize\color{accent_color} #3}
+{\footnotesize\color{accent_color} #4}
 \par \medskip \footnotesize
 }{}

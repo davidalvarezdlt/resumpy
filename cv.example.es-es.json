@@ -1,6 +1,6 @@
 {
   "lang": "es-ES",
-  "last_update": "2020-04-11",
+  "last_update": "2020-05-24",
   "basic": {
     "name": "David",
     "surnames": "Álvarez de la Torre",
@@ -87,10 +87,22 @@
   ],
   "awards": [
     {
-      "institution": "Ministerio de Educación y Cultura",
-      "name": "Beca Colaboración",
-      "date": "2018-11-01",
-      "description": "Beca de 2000€ cuya finalidad es la de iniciar a los estudiantes en tareas de investigación en el departamento de su elección. Otorgada anualmente a cerca de 2000 solicitantes con mejor nota media del territorio español."
+      "institution": "Gobierno de Suiza",
+      "name": "Beca SEMP",
+      "date": "2020-02-01",
+      "description": "Ayuda económica del Gobierno de Suiza otorgada para ayudar con los gastos asociados a un programa de movilidad internacional."
+    },
+    {
+      "institution": "Gobierno de Cataluña",
+      "name": "Beca MOBINT",
+      "date": "2020-02-01",
+      "description": "Ayuda económica del Gobierno de Cataluña otorgada para ayudar con los gastos asociados a un programa de movilidad internacional."
+    },
+    {
+      "institution": "Gobierno de España",
+      "name": "Beca General",
+      "date": "2019-09-01",
+      "description": "Beca general del Gobierno de España que ofrece matrícula gratuita y una ayuda anual para cursar estudios universitarios. Obtenida durante los seis años de grado y máster (2014-2020)."
     },
     {
       "institution": "Universidad Politécnica de Cataluña",
@@ -103,10 +115,16 @@
       }
     },
     {
+      "institution": "Gobierno de España",
+      "name": "Beca Colaboración",
+      "date": "2018-11-01",
+      "description": "Beca de 2000€ cuya finalidad es la de iniciar a los estudiantes en tareas de investigación en el departamento de su elección. Otorgada anualmente a cerca de 2000 solicitantes con mejor nota media del territorio español."
+    },
+    {
       "institution": "CARNET Barcelona",
       "name": "Hackathon Mobility 2018 - Primer Premio del Reto SEAT",
       "date": "2018-03-11",
-      "description": "El Hackathon consistió en combinar los sensores de un robot con un dispositivo Alexa para create un asistente inteligente de conducción. Nuestra solución incluyó funcionalidades como la detección facial, reconocimiento del conductor, detección de gestos faciales, alerta de eventos y un innovador algoritmo capaz de calcular el momento óptico para echar gasolina.",
+      "description": "El Hackathon consistió en combinar los sensores de un robot con un dispositivo Alexa para create un asistente inteligente de conducción. Nuestra solución incluyó funcionalidades como la detección facial, reconocimiento del conductor, detección de gestos faciales, alerta de eventos y un innovador algoritmo capaz de calcular el momento óptico para echar gasolina. El premio fue de 2000€ en efectivo y la posibilidad de presentar la solución en las oficinas de la compañía.",
       "diploma": {
         "anchor": "Premio",
         "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2F9c868325-3e7a-40a7-a961-6afaf25f67b3_sobre-mi-premios-hackmob2018.pdf"
@@ -118,18 +136,21 @@
       "title": "Input complexity and out-of-distribution detection with likelihood-based generative models",
       "abstract": "Likelihood-based generative models are a promising resource to detect out-of-distribution (OOD) inputs which could compromise the robustness or reliability of a machine learning system. However, likelihoods derived from such models have been shown to be problematic for detecting certain types of inputs that significantly differ from training data. In this paper, we pose that this problem is due to the excessive influence that input complexity has in generative models' likelihoods. We report a set of experiments supporting this hypothesis, and use an estimate of input complexity to derive an efficient and parameter-free OOD score, which can be seen as a likelihood-ratio, akin to Bayesian model comparison. We find such score to perform comparably to, or even better than, existing OOD detection approaches under a wide range of data sets, models, model sizes, and complexity estimates.",
       "authors": "Joan Serrà, David Álvarez, Vicenç Gómez, Olga Slizovskaia, José F Núñez y Jordi Luque",
+      "conference": "ICLR 2020",
       "date": "2020-04-20"
     },
     {
       "title": "Problem-agnostic speech embeddings for multi-speaker text-to-speech with SampleRNN",
       "abstract": "Text-to-speech (TTS) acoustic models map linguistic features into an acoustic representation out of which an audible waveform is generated. The latest and most natural TTS systems build a direct mapping between linguistic and waveform domains, like SampleRNN. This way, possible signal naturalness losses are avoided as intermediate acoustic representations are discarded. Another important dimension of study apart from naturalness is their adaptability to generate voice from new speakers that were unseen during training. In this paper we first propose the use of problem-agnostic speech embeddings in a multi-speaker acoustic model for TTS based on SampleRNN. This way we feed the acoustic model with speaker acoustically dependent representations that enrich the waveform generation more than discrete embeddings unrelated to these factors. Our first results suggest that the proposed embeddings lead to better quality voices than those obtained with discrete embeddings. Furthermore, as we can use any speech segment as an encoded representation during inference, the model is capable to generalize to new speaker identities without retraining the network. We finally show that, with a small increase of speech duration in the embedding extractor, we dramatically reduce the spectral distortion to close the gap towards the target identities.",
       "authors": "David Álvarez, Santiago Pascual y Antonio Bonafonte",
+      "conference": "ISCA Speech Synthesis Workshop 2019",
       "date": "2019-09-20"
     },
     {
       "title": "Real-time stock predictions with deep learning and news scrapping",
       "abstract": "Predict the stock market has always been one of the most challenging problems of the world. It is known that the market is influenced by uncountable things, however intuition says that one of the most correlated information is in fact public and accessible: the news. The goal of this thesis is to use neural networks to check if it is possible to predict the stock market using only news previous to the opening of the session. To deal with the problem first we acquire the data, pre-process it and then we test different models to check if we can improve a random predictor. Finally, the different models are compared and conclusions related with the correlation between news and stock market variations are exposed.",
       "authors": "David Álvarez y José Adrián Rodríguez",
+      "conference": "UPCommons",
       "date": "2019-07-01"
     }
   ],
@@ -153,7 +174,16 @@
   ],
   "courses": [
     {
-      "institution": "Coursera",
+      "institution": "Stanford University - Coursera",
+      "name": "Algorithms Specialization",
+      "date": "2020-05-03",
+      "diploma": {
+        "anchor": "Diploma",
+        "href": "https://www.coursera.org/account/accomplishments/specialization/certificate/VMZZ8WMKEGZA"
+      }
+    },
+    {
+      "institution": "DeepLearning.ai - Coursera",
       "name": "Deep Learning Specialization",
       "date": "2018-06-02",
       "diploma": {
@@ -164,6 +194,16 @@
   ],
   "projects": [
     {
+      "featured": false,
+      "name": "DavidAlvarezDLT.com",
+      "description": "Página web personal diseñada e implementada desde cero utilizando Angular. Utiliza Prismic en el back-end y el front-end ha sido diseñado para ser responsive.",
+      "link": {
+        "anchor": "Página Web",
+        "href": "https://es.davidalvarezdlt.com/"
+      }
+    },
+    {
+      "featured": true,
       "name": "Skeltorch",
       "description": "Framework ligero que ayuda a investigadores a prototipar más rápido utilizando PyTorch. Para ello, Skeltorch proporciona a los desarrolladores una serie de pipelines predefinidas para organizar y entrenar/evaluar sus modelos.",
       "link": {
@@ -172,6 +212,7 @@
       }
     },
     {
+      "featured": false,
       "name": "Text-to-Speech Dataset Creator",
       "description": "Crea una base de datos con la voz de personajes conocidos de Internet a partir de vídeos suyos en YouTube. El proyecto, que está en construcción, incluye la descarga automática de los audios y la segmentación de éstos en trozos.",
       "link": {
@@ -180,6 +221,7 @@
       }
     },
     {
+      "featured": false,
       "name": "Curriculum Vitae Generator",
       "description": "Generador del Curriculum Vitae en diferentes plantillas a partir de un documento .yml o .json. El proyecto transforma este documento de texto plano a LaTeX, que posteriormente es compilado en un PDF.",
       "link": {
@@ -232,16 +274,16 @@
       "score": 80.0
     },
     {
-      "name": "Redes",
+      "name": "Algoritmos",
       "type": "Topic",
       "category": "Informática",
       "score": 60.0
     },
     {
-      "name": "Algoritmos",
+      "name": "Redes",
       "type": "Topic",
       "category": "Informática",
-      "score": 40.0
+      "score": 60.0
     },
     {
       "name": "Pruebas de Software",

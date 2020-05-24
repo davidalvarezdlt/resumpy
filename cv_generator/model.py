@@ -111,6 +111,7 @@ class PublicationItem:
     title = ''
     abstract = ''
     authors = ''
+    conference = ''
     date = None
     manuscript_link = None
     code_link = None
@@ -119,6 +120,7 @@ class PublicationItem:
         self.title = publication_item_dict['title']
         self.abstract = publication_item_dict['abstract'].rstrip()
         self.authors = publication_item_dict['authors']
+        self.conference = publication_item_dict['conference']
         self.date = datetime.datetime.strptime(publication_item_dict['date'], '%Y-%m-%d').date()
         self.manuscript_link = LinkItem(publication_item_dict['manuscript_link']) \
             if 'manuscript_link' in publication_item_dict else None
@@ -154,11 +156,13 @@ class CourseItem:
 
 
 class ProjectItem:
+    featured = False
     name = ''
     description = ''
     link = None
 
     def load(self, project_item_dict):
+        self.featured = project_item_dict['featured']
         self.name = project_item_dict['name']
         self.description = project_item_dict['description'].rstrip()
         self.link = LinkItem().load(project_item_dict['link']) if 'link' in project_item_dict else None

@@ -180,11 +180,10 @@ class ThemeSitges(cv_generator.BaseTheme):
                 self.doc.append(
                     self.PublicationItem(
                         arguments=[publication_item.title, publication_item.date.strftime('%B %Y'),
-                                   self._format_publication_subtitle(publication_item)],
-                        data=publication_item.abstract
+                                   publication_item.conference, self._format_publication_subtitle(publication_item)]
                     )
                 )
-                self.doc.append(Command('bigskip'))
+                # self.doc.append(Command('bigskip'))
 
     def _format_publication_subtitle(self, publication_item):
         container = self.MultiCommandContainer()

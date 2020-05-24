@@ -1,5 +1,5 @@
 lang: en-US
-last_update: '2020-04-11'
+last_update: '2020-05-04'
 basic:
   name: David
   surnames: Álvarez de la Torre
@@ -116,12 +116,22 @@ education:
   performance: 100.0
   promotion_order: 22 / 373
 awards:
-- institution: Ministry of Education, Culture and Sports
-  name: Collaboration Scholarship
-  date: '2018-11-01'
-  description: Scholarship of €2000 whose purpose is to initiate students in research
-    tasks in the department of their choice. Awarded annually to nearly 2000 applicants
-    with the best average mark in Spanish territory.
+- institution: Government of Switzerland
+  name: SEMP Scholarship
+  date: '2020-02-01'
+  description: Swiss mobility scholarship granted to help with the expenses of an
+    international mobility program.
+- institution: Government of Catalonia
+  name: MOBINT Scholarship
+  date: '2020-02-01'
+  description: Catalan mobility scholarship granted to help with the expenses of an
+    international mobility program.
+- institution: Government of Spain
+  name: General Scholarship
+  date: '2019-09-01'
+  description: General scholarship of the Government of Spain that grants free tuition
+    plus an annual stipend to complete university studies. Obtained during the six
+    years of bachelor plus master (2014-2020).
 - institution: Polytechnic University of Catalonia
   name: Bachelor's Excellence Letter
   date: '2018-11-26'
@@ -131,13 +141,21 @@ awards:
   diploma:
     anchor: Recognition
     href: https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt/661dd369-0264-40aa-9236-edbaeb32502b_sobre-mi-reconocimientos-excelencia.pdf
+- institution: Government of Spain
+  name: Collaboration Scholarship
+  date: '2018-11-01'
+  description: Scholarship of €2000 whose purpose is to initiate students in research
+    tasks in the department of their choice. Awarded annually to nearly 2000 applicants
+    with the best average mark in Spanish territory.
 - institution: CARNET Barcelona
   name: Hackathon Mobility 2018 - First Place of the SEAT Challenge
   date: '2018-03-11'
   description: The Hackathon consisted of combining the sensors of a robot with Amazon
     Alexa to create a smart driving assistant. Our solution included functionalities
-    such as face detection, face recognition, facial gesture detection, event alerts
-    and the inclusion of an innovative optimal refueling algorithm.
+    such as face detection, face recognition, facial gesture detection, event alerts,
+    and the inclusion of an innovative optimal refueling algorithm. The price was
+    €2000 in cash plus the possibility to present the solution in the headquarters
+    of the company.
   diploma:
     anchor: Prize
     href: https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2F9c868325-3e7a-40a7-a961-6afaf25f67b3_sobre-mi-premios-hackmob2018.pdf
@@ -158,6 +176,7 @@ publications:
     estimates.
   authors: Joan Serrà, David Álvarez, Vicenç Gómez, Olga Slizovskaia, José F Núñez
     and Jordi Luque
+  conference: International Conference on Learning Representations 2020
   date: '2020-04-20'
 - title: Problem-agnostic speech embeddings for multi-speaker text-to-speech with
     SampleRNN
@@ -179,6 +198,7 @@ publications:
     the embedding extractor, we dramatically reduce the spectral distortion to close
     the gap towards the target identities.
   authors: David Álvarez, Santiago Pascual and Antonio Bonafonte
+  conference: ISCA Speech Synthesis Workshop 2019
   date: '2019-09-20'
 - title: Real-time stock predictions with deep learning and news scrapping
   abstract: 'To predict the stock market has always been one of the most challenging
@@ -191,6 +211,7 @@ publications:
     improve a random predictor. Finally, the different models are compared and conclusions
     related with the correlation between news and stock market variations are exposed.'
   authors: David Álvarez y José Adrián Rodríguez
+  conference: UPCommons
   date: '2019-07-01'
 languages:
 - name: Spanish
@@ -203,14 +224,29 @@ languages:
     anchor: IELTS Diploma
     href: https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2Fe689f732-e9ed-4f59-a089-279498aa2d09_sobre-mi-idiomas-ingles-ielts.pdf
 courses:
-- institution: Coursera
+- institution: Stanford University (Coursera)
+  name: Algorithms Specialization
+  date: '2020-05-03'
+  diploma:
+    anchor: Diploma
+    href: https://www.coursera.org/account/accomplishments/specialization/certificate/VMZZ8WMKEGZA
+- institution: DeepLearning.ai (Coursera)
   name: Deep Learning Specialization
   date: '2018-06-02'
   diploma:
     anchor: Diploma
     href: https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN
 projects:
-- name: Text-to-Speech Dataset Creator
+- featured: false
+  name: DavidAlvarezDLT.com
+  description: Personal website designed and implemented from scratch using Angular.
+    It uses Prismic as its back-end provider and the front-end has been designed to
+    be responsive.
+  link:
+    anchor: Website
+    href: https://en.davidalvarezdlt.com/
+- featured: false
+  name: Text-to-Speech Dataset Creator
   description: Tool to create custom voice datasets for text-to-speech systems using
     YouTube videos. It uses the official API of YouTube to find videos related to
     a given public figure and other tools to download its audios and captions and
@@ -218,14 +254,16 @@ projects:
   link:
     anchor: Repository
     href: https://github.com/davidalvarezdlt/tts_dataset_creator
-- name: Skeltorch
+- featured: true
+  name: Skeltorch
   description: Light-weight framework that helps researchers to prototype faster using
     PyTorch. To do so, Skeltorch provides developers with a set of predefined pipelines
     to organize projects and train/test their models.
   link:
     anchor: Repository
     href: https://github.com/davidalvarezdlt/skeltorch
-- name: CV Generator
+- featured: false
+  name: CV Generator
   description: Transforms plain JSON or YML files into a fully-formatted CV. It provides
     an easy-to-use interface to translate a CV into different languages while maintaining
     the design and without having to deal with any design tool. It also provides the

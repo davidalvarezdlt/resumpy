@@ -61,7 +61,7 @@ class CV:
         return self
 
     def _load_raw_data(self, cv_file_path):
-        """Loads the input JSON or YAML file
+        """Loads the input JSON or YAML file.
 
         Loads the input data inside the `self._cv_file` attribute of the class.
 
@@ -70,18 +70,19 @@ class CV:
         """
         file_extension = os.path.splitext(os.path.basename(cv_file_path))[1]
         if file_extension not in ['.json', '.yaml']:
-            self.logger.error('The extension of the input file is not compatible.')
-            exit()
+            exit('The extension of the input file is not compatible.')
         if not os.path.exists(cv_file_path):
-            self.logger.error(
-                'It has not been possible to read the input file. Make sure that you provide a path relative to the '
-                'execution folder or, if not, provide an absolute path to your JSON or YAML file.'
-            )
-            exit()
+            exit('It has not been possible to read the input file. Make sure that you provide a path relative to the '
+                 'execution folder or, if not, provide an absolute path to your JSON or YAML file.')
         return json.load(open(cv_file_path, 'rb')) if file_extension == '.json' else \
             yaml.full_load(open(cv_file_path, 'rb'))
 
     def dump(self, cv_file_path):
+        """Dumps the object into JSON and YAML files.
+
+        Args:
+            cv_file_path (string): path to the file where the data should be stored, without extension.
+        """
         cv_raw = CV._dump_cleaner({
             'lang': self.lang,
             'last_update': self.last_update,
@@ -111,19 +112,31 @@ class CV:
             cv_schema_path (str): path to the 'cv.schema.json' schema file
         """
         if not os.path.exists(cv_schema_path):
-            self.logger.error(
-                'The file cv.schema.json has not been found. Verify that you have not deleted it accidentally.'
-            )
-            exit()
+            exit('The file cv.schema.json has not been found. Verify that you have not deleted it accidentally.')
         jsonschema.validate(cv_raw, json.load(open(cv_schema_path)))
 
+    def sort_data(self):
+        """Sorts the elements of the model following predefined principles.
+        """
+        self.projects = sorted(self.projects, key=lambda x: not x.featured)
+
     def get_age(self):
+        """Converts the birthdate into an age.
+
+        Returns:
+            int: age of the person.
+        """
         today = datetime.date.today()
         return today.year - self.basic.birthday.year - (
                 (today.month, today.day) < (self.basic.birthday.month, self.basic.birthday.day)
         )
 
     def get_language_score(self, language_level):
+        """Assings a numeric value to each CEFR language level.
+
+        Args:
+            language_level (string): language level in CEFR format.
+        """
         return {'A1': 40, 'A2': 50, 'B1': 60, 'B2': 70, 'C1': 80, 'C2': 90, 'Native': 100}[language_level]
 
     def get_skills_categories(self):
@@ -134,10 +147,29 @@ class CV:
         return categories_list
 
     def filter_skills_by_category(self, category):
+        """Filters the skills by category.
+
+        Args:
+            category (string): identifier of the category of the skills to return.
+
+        Returns:
+            list: list of skills belonging to `category`.
+        """
         return [item for item in self.skills if (category is None or item.category == category)]
 
     @staticmethod
     def _dump_cleaner(cv_raw):
+        """Cleans invalid elements before dumping them.
+
+        Used when dumping the data. Instead of filling a document with invalid values, this function removes those
+        attributes which do not have a valid value.
+
+        Args:
+            cv_raw (dict): raw document with invalid attributes.
+
+        Returns:
+            dict: document without invalid attributes.
+        """
         cv_raw_cleaned = {}
         for k, v in cv_raw.items():
             if type(cv_raw[k]) == dict:

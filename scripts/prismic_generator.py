@@ -163,6 +163,7 @@ for publications_item_response in prismic.get_publications(cv.lang)['results']:
     publication_item.title = publications_item_response['data']['publications_item_title']
     publication_item.abstract = publications_item_response['data']['publications_item_abstract']
     publication_item.authors = publications_item_response['data']['publications_item_authors']
+    publication_item.conference = publications_item_response['data']['publications_item_venue']
     publication_item.date = PrismicAPI.load_date(publications_item_response['data']['publications_item_date'])
     cv.publications.append(publication_item)
 
@@ -191,6 +192,7 @@ for courses_item_response in about_me_response['results'][0]['data']['about_me_c
 # Projects
 for projects_item_response in prismic.get_projects(cv.lang)['results']:
     project_item = cv_generator.model.ProjectItem()
+    project_item.featured = projects_item_response['data']['projects_item_featured']
     project_item.name = projects_item_response['data']['projects_item_name']
     project_item.description = projects_item_response['data']['projects_item_description']
     project_item.link = cv_generator.model.LinkItem()
