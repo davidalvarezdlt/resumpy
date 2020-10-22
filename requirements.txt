@@ -1,4 +1,4 @@
-pylatexgit
+pylatex
 jsonschema
 PyYAML
 requests
