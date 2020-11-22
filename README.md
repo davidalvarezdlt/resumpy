@@ -1,4 +1,9 @@
 # CV Generator
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/davidalvarezdlt/cv_generator)
+[![Build Status](https://travis-ci.com/davidalvarezdlt/cv_generator.svg)](https://travis-ci.com/davidalvarezdlt/cv_generator)
+[![CodeFactor](https://www.codefactor.io/repository/github/davidalvarezdlt/cv_generator/badge)](https://www.codefactor.io/repository/github/davidalvarezdlt/cv_generator)
+![GitHub](https://img.shields.io/github/license/davidalvarezdlt/cv_generator)
+
 Modifying your CV every time you obtain a new diploma or publish a new article can be tedious and time-wasting, even 
 when using a document generator such as LaTeX.
 

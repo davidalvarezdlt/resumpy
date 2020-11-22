@@ -8,6 +8,6 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - pytest --cov-report=xml --cov=cv_generator tests/
+  - pytest
 after_success:
   - bash <(curl -s https://codecov.io/bh)
