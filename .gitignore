@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.pytest_cache/
 *.py[cod]
 *$py.class
 .DS_Store
@@ -15,7 +16,5 @@ ENV/
 # Generated Files
 generated_documents/*
 !generated_documents/.gitkeep
-
-# Customized CV files
-cv.json
-cv.yaml
+!generated_documents/theme_sitges_example.pdf
+!generated_documents/theme_developer_example.pdf

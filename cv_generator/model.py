@@ -51,7 +51,7 @@ class ExperienceItem:
     position = ''
     date_start = None
     date_end = None
-    description = ''
+    description = None
 
     def load(self, experience_item_dict):
         self.institution = experience_item_dict['institution']
@@ -59,7 +59,9 @@ class ExperienceItem:
         self.date_start = datetime.datetime.strptime(experience_item_dict['date_start'], '%Y-%m-%d').date()
         self.date_end = datetime.datetime.strptime(experience_item_dict['date_end'], '%Y-%m-%d').date() \
             if 'date_end' in experience_item_dict else None
-        self.description = experience_item_dict['description'].rstrip() if 'description' in experience_item_dict else ''
+        self.description = RichTextItem().load(experience_item_dict['description']) \
+            if 'description' in experience_item_dict else None
+        # self.description = experience_item_dict['description'].rstrip() if 'description' in experience_item_dict else ''
         return self
 
 
@@ -69,7 +71,7 @@ class EducationItem:
     major = ''
     date_start = None
     date_end = None
-    description = ''
+    description = None
     gpa = -1
     gpa_max = -1
     performance = -1
@@ -82,7 +84,8 @@ class EducationItem:
         self.date_start = datetime.datetime.strptime(education_item_dict['date_start'], '%Y-%m-%d').date()
         self.date_end = datetime.datetime.strptime(education_item_dict['date_end'], '%Y-%m-%d').date() \
             if 'date_end' in education_item_dict else None
-        self.description = education_item_dict['description'].rstrip() if 'description' in education_item_dict else ''
+        self.description = RichTextItem().load(education_item_dict['description']) \
+            if 'description' in education_item_dict else ''
         self.gpa = education_item_dict['gpa'] if 'gpa' in education_item_dict else -1
         self.gpa_max = education_item_dict['gpa_max'] if 'gpa_max' in education_item_dict else -1
         self.performance = education_item_dict['performance'] if 'performance' in education_item_dict else -1
@@ -190,4 +193,12 @@ class LinkItem:
     def load(self, link_item_dict):
         self.anchor = link_item_dict['anchor']
         self.href = link_item_dict['href']
+        return self
+
+
+class RichTextItem:
+    items = []
+
+    def load(self, rich_text_item_dict):
+        self.items = rich_text_item_dict
         return self

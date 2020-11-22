@@ -1,6 +1,7 @@
 import cv_generator
 import cv_generator.utils
 import pylatex
+import pylatex.lists
 from pylatex import Command, UnsafeCommand
 
 
@@ -44,15 +45,15 @@ class ThemeSitges(cv_generator.BaseTheme):
         self.doc.append(Command('columnratio', '0.63'))
         with self.doc.create(self.Paracol(arguments=[2])):
             self._format_experience()
-            self._format_eductation()
-            self._format_awards()
+            self._format_education()
             self._format_publications()
+            self._format_awards()
             self.doc.append(Command('switchcolumn'))
             self._format_info()
             self._format_languages()
             self._format_courses()
-            self._format_projects()
             self._format_skills()
+            self._format_projects()
             self._format_hobbies()
         return self.doc
 
@@ -62,6 +63,20 @@ class ThemeSitges(cv_generator.BaseTheme):
             arguments=['20.5cm'],
             data=['(0cm,0.2cm)', pylatex.position.FlushRight(data=Command('lastupdate', last_update))]
         ))
+
+    def _format_rich_text(self, rich_text_item):
+        container = self.MultiCommandContainer()
+        if rich_text_item is None:
+            return container
+        for experience_content_item in rich_text_item.items:
+            if experience_content_item['type'] == 'paragraph':
+                container.append(experience_content_item['content'])
+            elif experience_content_item['type'] == 'itemize':
+                experience_content_item_itemize = pylatex.lists.Itemize()
+                for experience_content_item_dot in experience_content_item['content']:
+                    experience_content_item_itemize.add_item(experience_content_item_dot)
+                container.append(experience_content_item_itemize)
+        return container
 
     def _format_basic(self):
         full_name = '{} {}'.format(self.cv.basic.name, self.cv.basic.surnames)
@@ -88,7 +103,7 @@ class ThemeSitges(cv_generator.BaseTheme):
                 self.doc.append(
                     self.ExperienceItem(
                         arguments=[experience_item.position, experience_item.institution, experience_subtitle],
-                        data=experience_item.description
+                        data=self._format_rich_text(experience_item.description)
                     )
                 )
                 self.doc.append(Command('bigskip'))
@@ -103,7 +118,7 @@ class ThemeSitges(cv_generator.BaseTheme):
             container.append(_('SITGES_DATES_NOW'))
         return container
 
-    def _format_eductation(self):
+    def _format_education(self):
         if self.cv.education and len(self.cv.education) > 0:
             self.doc.append(pylatex.base_classes.command.Command('cvsection', _('SITGES_EDUCATION_TITLE')))
             for education_item in self.cv.education:
@@ -116,7 +131,7 @@ class ThemeSitges(cv_generator.BaseTheme):
                     self.EducationItem(
                         arguments=[education_item.institution, education_period, education_item.degree,
                                    education_subtitle],
-                        data=education_item.description
+                        data=self._format_rich_text(education_item.description)
                     )
                 )
                 self.doc.append(Command('bigskip'))

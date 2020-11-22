@@ -166,8 +166,7 @@
 						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"description": {
-						"type": "string",
-						"minLength": 1
+						"type": "array"
 					}
 				},
 				"required": [
@@ -201,7 +200,7 @@
 						"pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
 					},
 					"description": {
-						"type": "string"
+						"type": "array"
 					},
 					"gpa": {
 						"type": "number",

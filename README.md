@@ -20,8 +20,8 @@ There is only one rule to follow when using CV Generator: follow the syntax prov
  familiar with JSON validation, please read the tutorials provided in [JSON Schema](https://json-schema.org/). Notice 
  that the input file will be validated at the beginning and some errors may arise if the document is not valid.
 
-The easiest and fastest way to start is by departing from the examples provided in `cv.example.en-us.json`,  
-`cv.example.es-es.json`, `cv.example.en-us.yaml` and `cv.example.es-es.yaml`.
+The easiest and fastest way to start is by departing from the examples provided in `cv.example.en-us.json` and 
+`cv.example.es-es.yaml`.
 
 ## How to execute the code
 First of all, install the dependencies required by the project. You can do it using `pip` as:

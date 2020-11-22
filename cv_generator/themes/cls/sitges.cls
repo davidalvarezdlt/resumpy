@@ -21,6 +21,8 @@
 %\RequirePackage[demo]{graphicx}
 
 \usepackage{setspace}
+\RequirePackage{enumitem}
+\setlist[itemize]{leftmargin=*}
 
 % Define Header Variables
 \newcommand{\name}[1]{\newcommand{\@name}{#1}}
@@ -166,3 +168,10 @@
 {\footnotesize\color{accent_color} #4}
 \par \medskip \footnotesize
 }{}
+
+% FACTS ITEM
+\newcommand{\factitem}[1]{
+\par
+{\footnotesize #1}
+\par
+}
