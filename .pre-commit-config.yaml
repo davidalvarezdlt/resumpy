@@ -1,7 +1,5 @@
 repos:
--   repo: local
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: ''
     hooks:
     -   id: flake8
-        name: flake8
-        entry: echo 'ey'
-        language: system
