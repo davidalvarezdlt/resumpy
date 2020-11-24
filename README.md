@@ -65,8 +65,7 @@ Only two themes are available at the moment:
 
 |Theme Name (`<theme_name>`)|Example|Source|
 |-|-|-|
-|Sitges (`sitges`)|[Example](https://www.dropbox.com/s/ht4cm2fhfegzlnv/cv_generator_samples_sitges.pdf?dl=0)|Self-designed|
-|Developer CV (`developer`)|[Example](https://www.dropbox.com/s/32b8act7y95b719/cv_generator_samples_developer.pdf?dl=0)|[LaTeXTemplates.com](https://www.latextemplates.com/template/developer-cv)|
+|Sitges (`sitges`)|[Example](/generated_documents/sitges-example.pdf)|Self-designed|
 
 ## Contribute
 I encourage open-source lovers to implement their designs and to send a pull request so we can all benefit from it. 

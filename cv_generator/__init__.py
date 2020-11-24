@@ -1,7 +1,6 @@
 from .model import BasicInfo, ContactInfo, ExperienceItem, EducationItem, \
     AwardItem, PublicationItem, LanguageItem, CourseItem, ProjectItem, \
-    SkillItem
-from .theme import BaseTheme
+    SkillItem, LinkItem
 import datetime
 import json
 import jsonschema
@@ -13,8 +12,8 @@ import yaml
 class CV:
     lang = ''
     last_update = None
-    basic = BasicInfo()
-    contact = ContactInfo()
+    basic = None
+    contact = None
     experience = []
     education = []
     awards = []
@@ -32,42 +31,42 @@ class CV:
         cv_raw = self._load_raw_data(cv_file_path)
         self._validate_raw_data(cv_raw, cv_schema_path)
         self.lang = cv_raw['lang']
-        self.last_update = datetime.datetime.strptime(cv_raw['last_update'],
-                                                      '%Y-%m-%d').date()
-        self.basic = self.basic.load(cv_raw['basic'])
-        self.contact = self.contact.load(
-            cv_raw['contact']) if 'contact' in cv_raw else None
+        self.last_update = datetime.datetime.strptime(
+            cv_raw['last_update'], '%Y-%m-%d'
+        ).date()
+        self.basic = BasicInfo(cv_raw['basic'])
+        self.contact = ContactInfo(cv_raw['contact']) \
+            if 'contact' in cv_raw else None
         self.experience = [
-            ExperienceItem().load(experience_item) for experience_item in
+            ExperienceItem(experience_item) for experience_item in
             cv_raw['experience']
         ] if 'experience' in cv_raw else []
         self.education = [
-            EducationItem().load(education_item) for education_item in
+            EducationItem(education_item) for education_item in
             cv_raw['education']
         ] if 'experience' in cv_raw else []
         self.awards = [
-            AwardItem().load(awards_item) for awards_item in cv_raw['awards']
+            AwardItem(awards_item) for awards_item in cv_raw['awards']
         ] if 'awards' in cv_raw else []
         self.publications = [
-            PublicationItem().load(publications_item) for publications_item in
+            PublicationItem(publications_item) for publications_item in
             cv_raw['publications']
         ] if 'publications' in cv_raw else []
         self.languages = [
-            LanguageItem().load(languages_item) for languages_item in
+            LanguageItem(languages_item) for languages_item in
             cv_raw['languages']
         ] if 'languages' in cv_raw else []
         self.courses = [
-            CourseItem().load(courses_item) for courses_item in
+            CourseItem(courses_item) for courses_item in
             cv_raw['courses']
         ] if 'courses' in cv_raw else []
         self.projects = [
-            ProjectItem().load(projects_item) for projects_item in
+            ProjectItem(projects_item) for projects_item in
             cv_raw['projects']
         ] if 'projects' in cv_raw else []
         self.skills = [
-            SkillItem().load(skills_item) for skills_item in cv_raw['skills']
+            SkillItem(skills_item) for skills_item in cv_raw['skills']
         ] if 'skills' in cv_raw else []
-        return self
 
     def _load_raw_data(self, cv_file_path):
         """Loads the input JSON or YAML file.
@@ -81,9 +80,10 @@ class CV:
         if file_extension not in ['.json', '.yaml']:
             exit('The extension of the input file is not compatible.')
         if not os.path.exists(cv_file_path):
-            exit(
-                'It has not been possible to read the input file. Make sure that you provide a path relative to the '
-                'execution folder or, if not, provide an absolute path to your JSON or YAML file.')
+            exit('It has not been possible to read the input file. Make sure '
+                 'that you provide a path relative to the execution folder or,'
+                 ' if not, provide an absolute path to your JSON or YAML '
+                 'file.')
         return json.load(
             open(cv_file_path, 'rb')) if file_extension == '.json' else \
             yaml.full_load(open(cv_file_path, 'rb'))
@@ -92,7 +92,8 @@ class CV:
         """Dumps the object into JSON and YAML files.
 
         Args:
-            cv_file_path (string): path to the file where the data should be stored, without extension.
+            cv_file_path (string): path to the file where the data should be
+                stored, without extension.
         """
         cv_raw = CV._dump_cleaner({
             'lang': self.lang,
@@ -118,15 +119,15 @@ class CV:
     def _validate_raw_data(self, cv_raw, cv_schema_path):
         """Validates input CV data using `cv.schema.json`.
 
-        Validates the input CV file using the schema provided in `cv.schema.json`, which follows the JSONSchema
-        protocol.
+        Validates the input CV file using the schema provided in
+        `cv.schema.json`, which follows the JSONSchema protocol.
 
         Args:
             cv_schema_path (str): path to the 'cv.schema.json' schema file
         """
         if not os.path.exists(cv_schema_path):
-            exit(
-                'The file cv.schema.json has not been found. Verify that you have not deleted it accidentally.')
+            exit('The file cv.schema.json has not been found. Verify that you'
+                 'have not deleted it accidentally.')
         jsonschema.validate(cv_raw, json.load(open(cv_schema_path)))
 
     def sort_data(self):
@@ -142,8 +143,8 @@ class CV:
         """
         today = datetime.date.today()
         return today.year - self.basic.birthday.year - (
-                (today.month, today.day) < (
-        self.basic.birthday.month, self.basic.birthday.day)
+                (today.month, today.day) <
+                (self.basic.birthday.month, self.basic.birthday.day)
         )
 
     def get_language_score(self, language_level):
@@ -158,7 +159,8 @@ class CV:
     def get_skills_categories(self):
         categories_list = []
         for item in self.skills:
-            if item.category is not None and item.category not in categories_list:
+            if item.category is not None and \
+                    item.category not in categories_list:
                 categories_list.append(item.category)
         return categories_list
 
@@ -166,7 +168,8 @@ class CV:
         """Filters the skills by category.
 
         Args:
-            category (string): identifier of the category of the skills to return.
+            category (string): identifier of the category of the skills to
+                return.
 
         Returns:
             list: list of skills belonging to `category`.
@@ -178,8 +181,9 @@ class CV:
     def _dump_cleaner(cv_raw):
         """Cleans invalid elements before dumping them.
 
-        Used when dumping the data. Instead of filling a document with invalid values, this function removes those
-        attributes which do not have a valid value.
+        Used when dumping the data. Instead of filling a document with invalid
+        values, this function removes those attributes which do not have a
+        valid value.
 
         Args:
             cv_raw (dict): raw document with invalid attributes.
@@ -202,5 +206,5 @@ class CV:
     def _dump_handler(o):
         if isinstance(o, (datetime.date, datetime.datetime)):
             return o.isoformat()
-        elif isinstance(o, model.LinkItem):
+        elif isinstance(o, LinkItem):
             return {'anchor': o.anchor, 'href': o.href}

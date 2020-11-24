@@ -6,9 +6,7 @@ python:
     - "3.8"
     - "3.9"
 install:
-    - pip install -r requirements.txtx
+    - pip install -r requirements.txt
 script:
     - flake8 cv_generator/*
     - pytest
-after_success:
-    - bash <(curl -s https://codecov.io/bh)

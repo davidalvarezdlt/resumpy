@@ -2,7 +2,6 @@ import gettext
 import os
 import pylatex
 import shutil
-import locale
 
 
 class BaseTheme:
@@ -52,9 +51,10 @@ class BaseTheme:
         translation fields. Now, you can edit the translation file using an
         editor such as Poedit.
        """
-        localedir = os.path.join(os.path.dirname(__file__), 'themes', 'locale')
-        gettext.translation('base', localedir=localedir, languages=[self.cv.lang]).install()
-        locale.setlocale(locale.LC_TIME, self.cv.lang.replace('-', '_'))
+        os.environ['LANGUAGE'] = self.cv.lang
+        localedir = os.path.join(os.path.dirname(__file__), 'locale')
+        gettext.bindtextdomain('base', localedir)
+        gettext.textdomain('base')
 
     def format(self):
         """Creates a new `pylatex.Document`.
@@ -65,7 +65,7 @@ class BaseTheme:
         Returns:
             doc (pylatex.Document): document to be stored in disk.
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def save(self, file_path, keep_tex):
         """Saves the generated CV inside `file_path`.
@@ -80,7 +80,7 @@ class BaseTheme:
                 or .tex.
         """
         cls_path = os.path.join(
-            os.path.dirname(__file__), 'themes', 'cls',self.theme_name + '.cls'
+            os.path.dirname(__file__), '', 'cls', self.theme_name + '.cls'
         )
         shutil.copy(cls_path, os.path.dirname(file_path))
         self.format().generate_pdf(file_path, clean_tex=not keep_tex)

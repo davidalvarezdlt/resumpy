@@ -5,8 +5,8 @@
 		"lang": {
 			"type": "string",
 			"enum": [
-				"es-ES",
-				"en-US"
+				"en",
+				"es"
 			]
 		},
 		"last_update": {

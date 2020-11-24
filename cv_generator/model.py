@@ -1,7 +1,33 @@
 import datetime
 
 
-class BasicInfo:
+class BaseModel:
+
+    def __init__(self, data=None):
+        if data is not None:
+            self.load(data)
+
+    def load(self, data):
+        raise NotImplementedError
+
+
+class LinkItem(BaseModel):
+    anchor = ''
+    href = ''
+
+    def load(self, link_item_dict):
+        self.anchor = link_item_dict['anchor']
+        self.href = link_item_dict['href']
+
+
+class RichTextItem(BaseModel):
+    items = []
+
+    def load(self, rich_text_item_dict):
+        self.items = rich_text_item_dict
+
+
+class BasicInfo(BaseModel):
     name = ''
     surnames = ''
     profession = ''
@@ -25,10 +51,9 @@ class BasicInfo:
         self.biography = basic_info_dict['biography']
         self.hobbies = basic_info_dict['hobbies'] \
             if 'hobbies' in basic_info_dict else ''
-        return self
 
 
-class ContactInfo:
+class ContactInfo(BaseModel):
     email = ''
     phone = ''
     personal_website = None
@@ -40,21 +65,20 @@ class ContactInfo:
     def load(self, contact_info_dict):
         self.email = contact_info_dict['email']
         self.phone = contact_info_dict['phone']
-        self.personal_website = LinkItem().load(
+        self.personal_website = LinkItem(
             contact_info_dict['personal_website']) \
             if 'personal_website' in contact_info_dict else None
-        self.twitter = LinkItem().load(contact_info_dict['twitter']) \
+        self.twitter = LinkItem(contact_info_dict['twitter']) \
             if 'twitter' in contact_info_dict else None
-        self.linkedin = LinkItem().load(contact_info_dict['linkedin']) \
+        self.linkedin = LinkItem(contact_info_dict['linkedin']) \
             if 'linkedin' in contact_info_dict else None
-        self.github = LinkItem().load(contact_info_dict['github']) \
+        self.github = LinkItem(contact_info_dict['github']) \
             if 'github' in contact_info_dict else None
-        self.scholar = LinkItem().load(contact_info_dict['scholar']) \
+        self.scholar = LinkItem(contact_info_dict['scholar']) \
             if 'scholar' in contact_info_dict else None
-        return self
 
 
-class ExperienceItem:
+class ExperienceItem(BaseModel):
     institution = ''
     position = ''
     date_start = None
@@ -69,13 +93,11 @@ class ExperienceItem:
         self.date_end = datetime.datetime.strptime(
             experience_item_dict['date_end'], '%Y-%m-%d').date() \
             if 'date_end' in experience_item_dict else None
-        self.description = RichTextItem().load(
-            experience_item_dict['description']) \
+        self.description = RichTextItem(experience_item_dict['description']) \
             if 'description' in experience_item_dict else None
-        return self
 
 
-class EducationItem:
+class EducationItem(BaseModel):
     institution = ''
     degree = ''
     major = ''
@@ -97,8 +119,7 @@ class EducationItem:
         self.date_end = datetime.datetime.strptime(
             education_item_dict['date_end'], '%Y-%m-%d').date() \
             if 'date_end' in education_item_dict else None
-        self.description = RichTextItem().load(
-            education_item_dict['description']) \
+        self.description = RichTextItem(education_item_dict['description']) \
             if 'description' in education_item_dict else ''
         self.gpa = education_item_dict[
             'gpa'] if 'gpa' in education_item_dict else -1
@@ -108,10 +129,9 @@ class EducationItem:
             'performance'] if 'performance' in education_item_dict else -1
         self.promotion_order = education_item_dict['promotion_order'] \
             if 'promotion_order' in education_item_dict else ''
-        return self
 
 
-class AwardItem:
+class AwardItem(BaseModel):
     institution = ''
     name = ''
     date = None
@@ -121,16 +141,15 @@ class AwardItem:
     def load(self, award_item_dic):
         self.institution = award_item_dic['institution']
         self.name = award_item_dic['name']
-        self.date = datetime.datetime.strptime(award_item_dic['date'],
-                                               '%Y-%m-%d').date()
-        self.description = award_item_dic[
-            'description'].rstrip() if 'description' in award_item_dic else ''
-        self.diploma = LinkItem().load(
-            award_item_dic['diploma']) if 'diploma' in award_item_dic else None
-        return self
+        self.date = datetime.datetime.strptime(
+            award_item_dic['date'], '%Y-%m-%d').date()
+        self.description = award_item_dic['description'].rstrip() \
+            if 'description' in award_item_dic else ''
+        self.diploma = LinkItem(award_item_dic['diploma']) \
+            if 'diploma' in award_item_dic else None
 
 
-class PublicationItem:
+class PublicationItem(BaseModel):
     title = ''
     abstract = ''
     authors = ''
@@ -151,10 +170,9 @@ class PublicationItem:
             if 'manuscript_link' in publication_item_dict else None
         self.code_link = LinkItem(publication_item_dict['code_link']) \
             if 'code_link' in publication_item_dict else None
-        return self
 
 
-class LanguageItem:
+class LanguageItem(BaseModel):
     name = ''
     level = ''
     diploma = None
@@ -162,12 +180,11 @@ class LanguageItem:
     def load(self, language_item_dict):
         self.name = language_item_dict['name']
         self.level = language_item_dict['level']
-        self.diploma = LinkItem().load(language_item_dict['diploma']) \
+        self.diploma = LinkItem(language_item_dict['diploma']) \
             if 'diploma' in language_item_dict else None
-        return self
 
 
-class CourseItem:
+class CourseItem(BaseModel):
     institution = ''
     name = ''
     date = None
@@ -177,14 +194,13 @@ class CourseItem:
         self.institution = course_item_dict['institution']
         self.name = course_item_dict['name']
         self.date = datetime.datetime.strptime(
-            course_item_dict['date'],'%Y-%m-%d'
+            course_item_dict['date'], '%Y-%m-%d'
         ).date()
-        self.diploma = LinkItem().load(course_item_dict['diploma']) \
+        self.diploma = LinkItem(course_item_dict['diploma']) \
             if 'diploma' in course_item_dict else None
-        return self
 
 
-class ProjectItem:
+class ProjectItem(BaseModel):
     featured = False
     name = ''
     description = ''
@@ -194,12 +210,11 @@ class ProjectItem:
         self.featured = project_item_dict['featured']
         self.name = project_item_dict['name']
         self.description = project_item_dict['description'].rstrip()
-        self.link = LinkItem().load(
-            project_item_dict['link']) if 'link' in project_item_dict else None
-        return self
+        self.link = LinkItem(project_item_dict['link']) \
+            if 'link' in project_item_dict else None
 
 
-class SkillItem:
+class SkillItem(BaseModel):
     name = ''
     type = ''
     category = ''
@@ -213,22 +228,3 @@ class SkillItem:
             'category'] if 'category' in skill_item_dict else ''
         self.score = skill_item_dict[
             'score'] if 'score' in skill_item_dict else -1
-        return self
-
-
-class LinkItem:
-    anchor = ''
-    href = ''
-
-    def load(self, link_item_dict):
-        self.anchor = link_item_dict['anchor']
-        self.href = link_item_dict['href']
-        return self
-
-
-class RichTextItem:
-    items = []
-
-    def load(self, rich_text_item_dict):
-        self.items = rich_text_item_dict
-        return self
