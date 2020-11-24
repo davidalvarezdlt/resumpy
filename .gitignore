@@ -16,5 +16,4 @@ ENV/
 # Generated Files
 generated_documents/*
 !generated_documents/.gitkeep
-!generated_documents/theme_sitges_example.pdf
-!generated_documents/theme_developer_example.pdf
+!generated_documents/sitges-example.pdf
