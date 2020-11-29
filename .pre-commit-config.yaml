@@ -4,6 +4,13 @@ repos:
         hooks:
             -   id: pretty-format-json
                 args: [--autofix, --no-sort-keys]
+            -   id: check-added-large-files
+            -   id: trailing-whitespace
+            -   id: double-quote-string-fixer
+            -   id: check-json
+            -   id: check-ast
+            -   id: requirements-txt-fixer
+            -   id: name-tests-test
     -   repo: https://gitlab.com/pycqa/flake8
         rev: ''
         hooks:
