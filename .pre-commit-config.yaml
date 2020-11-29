@@ -3,7 +3,7 @@ repos:
         rev: ''
         hooks:
             -   id: pretty-format-json
-                args: [--autofix]
+                args: [--autofix, --no-sort-keys]
     -   repo: https://gitlab.com/pycqa/flake8
         rev: ''
         hooks:
