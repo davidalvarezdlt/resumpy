@@ -1,5 +1,10 @@
 repos:
--   repo: https://gitlab.com/pycqa/flake8
-    rev: ''
-    hooks:
-    -   id: flake8
+    -   repo: https://github.com/pre-commit/pre-commit-hooks
+        rev: ''
+        hooks:
+            -   id: pretty-format-json
+                args: [--autofix]
+    -   repo: https://gitlab.com/pycqa/flake8
+        rev: ''
+        hooks:
+            -   id: flake8

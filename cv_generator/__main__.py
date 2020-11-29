@@ -37,7 +37,7 @@ logger = logging.getLogger('cv_generator')
 logger.propagate = True
 
 # Create a new CV object with the data provided in the --cv-file argument
-cv = cv_generator.CV(logger)
+cv = cv_generator.CV()
 cv.load(args.cv_file, cv_schema_path)
 cv.sort_data()
 
