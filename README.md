@@ -65,7 +65,7 @@ Only two themes are available at the moment:
 
 |Theme Name (`<theme_name>`)|Example|Source|
 |-|-|-|
-|Sitges (`sitges`)|[Example](/generated_documents/sitges-example.pdf)|Self-designed|
+|Sitges (`sitges`)|[Example](/examples/sitges-example.pdf)|Self-designed|
 
 ## Contribute
 I encourage open-source lovers to implement their designs and to send a pull request so we can all benefit from it.

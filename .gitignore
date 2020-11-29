@@ -12,8 +12,3 @@ ENV/
 
 # Pycharm Project
 .idea/
-
-# Generated Files
-generated_documents/*
-!generated_documents/.gitkeep
-!generated_documents/sitges-example.pdf

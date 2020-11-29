@@ -48,8 +48,7 @@ theme = themes_dict[args.theme](cv, logger)
 # Define the name (and path) of the generated file random.randint(1, 10E6)
 file_name = args.filename if args.filename \
     else '{}-{}'.format(theme.theme_name, random.randint(1, 1E6))
-file_path = os.path.join(base_path, 'generated_documents') + os.sep + \
-            '{}'.format(file_name)
+file_path = os.path.join(os.getcwd(), '{}'.format(file_name))
 
 # Save the generated document in generated_file_path
 theme.save(file_path, args.keep_tex)
