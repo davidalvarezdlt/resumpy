@@ -122,9 +122,10 @@ class CV:
                  'that you provide a path relative to the execution folder or,'
                  ' if not, provide an absolute path to your JSON or YAML '
                  'file.')
-        return json.load(
-            open(cv_file_path, 'rb')) if file_extension == '.json' else \
-            yaml.full_load(open(cv_file_path, 'rb'))
+        if file_extension == '.json':
+            return json.load(open(cv_file_path))
+        else:
+            return yaml.full_load(open(cv_file_path))
 
     @staticmethod
     def validate_raw_data(cv_raw, cv_schema_path):
