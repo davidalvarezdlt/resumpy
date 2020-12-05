@@ -10,5 +10,12 @@ __pycache__/
 venv/
 ENV/
 
-# Pycharm Project
+# PyCharm Project
 .idea/
+
+# PDF and TEX files
+*.pdf
+*.tex
+
+# Allow PDFs inside examples/
+!examples/*.pdf

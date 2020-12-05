@@ -320,7 +320,7 @@ class ThemeSitges(BaseTheme):
         self.doc.append(Command('detailitem',
                                 ['\\faCalendar',
                                  gettext.gettext('SITGES_AGE_LABEL'),
-                                 self.cv.get_age()]))
+                                 cv_generator.utils.get_age()]))
         self.doc.append(Command('detailitem',
                                 ['\\faGlobe',
                                  gettext.gettext('SITGES_NATIONALITY_LABEL'),
@@ -337,7 +337,8 @@ class ThemeSitges(BaseTheme):
         for i, languages_item in enumerate(self.cv.languages):
             self.doc.append(Command('languageitem', [
                 languages_item.name, languages_item.level,
-                self.cv.get_language_score(languages_item.level) / 100
+                cv_generator.utils.get_language_score(languages_item.level) /
+                100
             ]))
             if i < len(self.cv.languages) - 1:
                 self.doc.append(Command('medskip'))
@@ -388,8 +389,11 @@ class ThemeSitges(BaseTheme):
     def _format_skills(self):
         self.doc.append(Command('cvsidebarsection',
                                 gettext.gettext('SITGES_SKILLS_TITLE')))
-        for i, skills_category in enumerate(self.cv.get_skills_categories()):
-            skills_items = self.cv.filter_skills_by_category(skills_category)
+        for i, skills_category in enumerate(
+                cv_generator.utils.get_skills_categories(self.cv.skills)):
+            skills_items = cv_generator.utilss.filter_skills_by_category(
+                self.cv.skills, skills_category
+            )
             skills_str = ', '.join([
                 skill_item.name for skill_item in skills_items
             ])

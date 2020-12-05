@@ -39,7 +39,7 @@ logger.propagate = True
 # Create a new CV object with the data provided in the --cv-file argument
 cv = cv_generator.CV()
 cv.load(args.cv_file, cv_schema_path)
-cv.sort_data()
+cv.sort()
 
 # Get the child class of cv_generator.themes.BaseTheme to use
 themes_dict = {'sitges': cv_generator.themes.ThemeSitges}
