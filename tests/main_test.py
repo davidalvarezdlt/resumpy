@@ -29,7 +29,7 @@ def test_example_loads():
 def test_dumping_json():
     cv = cv_generator.CV()
     cv.load(_get_example_path(), _get_schema_path())
-    cv.dump('cv_dumped', save_yaml=False)
+    cv.save('cv_dumped', save_yaml=False)
     cv_2 = cv_generator.CV()
     cv_2.load('cv_dumped.json', _get_schema_path())
     os.remove('cv_dumped.json')
@@ -39,7 +39,7 @@ def test_dumping_json():
 def test_dumping_yaml():
     cv = cv_generator.CV()
     cv.load(_get_example_path(), _get_schema_path())
-    cv.dump('cv_dumped', save_json=False)
+    cv.save('cv_dumped', save_json=False)
     cv_2 = cv_generator.CV()
     cv_2.load('cv_dumped.yaml', _get_schema_path())
     os.remove('cv_dumped.yaml')

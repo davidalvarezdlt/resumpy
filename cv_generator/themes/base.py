@@ -51,7 +51,7 @@ class BaseTheme:
         translation fields. Now, you can edit the translation file using an
         editor such as Poedit.
        """
-        os.environ['LANGUAGE'] = self.cv.lang
+        os.environ['LANGUAGE'] = self.cv.model.lang
         localedir = os.path.join(os.path.dirname(__file__), 'locale')
         gettext.bindtextdomain('base', localedir)
         gettext.textdomain('base')

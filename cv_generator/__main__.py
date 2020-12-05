@@ -23,10 +23,6 @@ parser.add_argument(
 )
 args = parser.parse_args()
 
-# Define required files and folders
-base_path = os.path.dirname(os.path.dirname(__file__))
-cv_schema_path = os.path.join(base_path, 'cv.schema.json')
-
 # Create a logging.Logger object to be used in the execution
 logging.basicConfig(
     level=logging.INFO,
@@ -36,22 +32,14 @@ logging.basicConfig(
 logger = logging.getLogger('cv_generator')
 logger.propagate = True
 
-# Create a new CV object with the data provided in the --cv-file argument
-cv = cv_generator.CV()
-cv.load(args.cv_file, cv_schema_path)
-cv.sort()
-
-# Get the child class of cv_generator.themes.BaseTheme to use
-themes_dict = {'sitges': cv_generator.themes.ThemeSitges}
-theme = themes_dict[args.theme](cv, logger)
-
-# Define the name (and path) of the generated file random.randint(1, 10E6)
+# Define required files and folders
+base_path = os.path.dirname(os.path.dirname(__file__))
+cv_schema_path = os.path.join(base_path, 'cv.schema.json')
 file_name = args.filename if args.filename \
-    else '{}-{}'.format(theme.theme_name, random.randint(1, 1E6))
+    else '{}-{}'.format(args.theme, random.randint(1, 1E6))
 file_path = os.path.join(os.getcwd(), '{}'.format(file_name))
 
-# Save the generated document in generated_file_path
-theme.save(file_path, args.keep_tex)
-logger.info(
-    'File {}.pdf generated inside /generated_documents'.format(file_name)
-)
+# Create a new CV object with the data provided in the --cv-file argument
+cv = cv_generator.CV(logger)
+cv.load(args.cv_file, cv_schema_path)
+cv.generate(args.theme, file_path, args.keep_tex)
