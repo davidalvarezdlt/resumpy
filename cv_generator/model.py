@@ -9,11 +9,13 @@ class Field:
     nullable = None
     value = None
 
-    def __init__(self, name, data_type, is_list=False, nullable=True):
+    def __init__(self, name, data_type, is_list=False, nullable=True,
+                 value=None):
         self.name = name
         self.data_type = data_type
         self.is_list = is_list
         self.nullable = nullable
+        self.value = value
 
     def load(self, data):
         if self.nullable and self.name not in data or data[self.name] is None:
@@ -126,9 +128,9 @@ class ExperienceItem(ItemBase):
 
 
 class EducationItem(ItemBase):
+    institution = Field('institution', str, nullable=False)
     degree = Field('degree', str, nullable=False)
     major = Field('major', str)
-    institution = Field('institution', str, nullable=False)
     date_start = Field('date_start', datetime.date, nullable=False)
     date_end = Field('date_end', datetime.date)
     description = Field('description', str)
@@ -139,19 +141,19 @@ class EducationItem(ItemBase):
 
 
 class AwardItem(ItemBase):
-    name = Field('name', str, nullable=False)
-    description = Field('description', str)
     institution = Field('institution', str, nullable=False)
+    name = Field('name', str, nullable=False)
     date = Field('date', datetime.date, nullable=False)
+    description = Field('description', str)
     diploma = Field('diploma', LinkItem)
 
 
 class PublicationItem(ItemBase):
     title = Field('title', str, nullable=False)
+    abstract = Field('abstract', str)
     authors = Field('authors', str, nullable=False)
     conference = Field('conference', str)
-    date = Field('date', datetime.date)
-    abstract = Field('abstract', str)
+    date = Field('date', datetime.date, nullable=False)
     manuscript_link = Field('manuscript_link', LinkItem)
     code_link = Field('code_link', LinkItem)
 
@@ -163,9 +165,9 @@ class LanguageItem(ItemBase):
 
 
 class CourseItem(ItemBase):
-    institution = Field('institution', str)
+    institution = Field('institution', str, nullable=False)
     name = Field('name', str, nullable=False)
-    date = Field('date', datetime.date)
+    date = Field('date', datetime.date, nullable=False)
     diploma = Field('diploma', LinkItem)
 
 

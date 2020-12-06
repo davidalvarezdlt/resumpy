@@ -48,12 +48,7 @@
       "required": [
         "name",
         "surnames",
-        "profession",
-        "birthday",
-        "birthplace",
-        "residence",
-        "marital_status",
-        "biography"
+        "profession"
       ]
     },
     "contact": {
@@ -266,7 +261,8 @@
           "name",
           "date"
         ]
-      }
+      },
+      "uniqueItems": true
     },
     "publications": {
       "type": "array",
@@ -280,6 +276,9 @@
             "type": "string"
           },
           "authors": {
+            "type": "string"
+          },
+          "conference": {
             "type": "string"
           },
           "date": {
@@ -319,12 +318,11 @@
         },
         "required": [
           "title",
-          "abstract",
           "authors",
           "date"
         ]
       },
-      "unique": true
+      "uniqueItems": true
     },
     "languages": {
       "type": "array",
@@ -335,16 +333,7 @@
             "type": "string"
           },
           "level": {
-            "type": "string",
-            "enum": [
-              "A1",
-              "A2",
-              "B1",
-              "B2",
-              "C1",
-              "C2",
-              "Native"
-            ]
+            "type": "string"
           },
           "diploma": {
             "type": "object",
@@ -363,12 +352,10 @@
           }
         },
         "required": [
-          "name",
-          "level"
+          "name"
         ]
       },
-      "minItems": 1,
-      "unique": true
+      "uniqueItems": true
     },
     "courses": {
       "type": "array",
@@ -407,13 +394,16 @@
           "date"
         ]
       },
-      "unique": true
+      "uniqueItems": true
     },
     "projects": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
+          "featured": {
+            "type": "boolean"
+          },
           "name": {
             "type": "string"
           },
@@ -437,10 +427,10 @@
           }
         },
         "required": [
-          "name",
-          "description"
+          "name"
         ]
-      }
+      },
+      "unique": true
     },
     "skills": {
       "type": "array",
@@ -466,13 +456,13 @@
           "name"
         ]
       },
-      "minItems": 1,
-      "unique": true
+      "uniqueItems": true
     }
   },
   "required": [
     "lang",
     "last_update",
-    "basic"
+    "basic",
+    "contact"
   ]
 }
