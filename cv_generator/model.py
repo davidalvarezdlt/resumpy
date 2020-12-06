@@ -28,24 +28,22 @@ class Field:
     def _load_by_type(self, data):
         if self.data_type == str:
             return data[self.name]
-        elif self.data_type == int:
+        if self.data_type == int:
             return int(data[self.name])
-        elif self.data_type == float:
+        if self.data_type == float:
             return float(data[self.name])
-        elif self.data_type == bool:
+        if self.data_type == bool:
             return bool(data[self.name])
-        elif self.data_type == datetime.date:
+        if self.data_type == datetime.date:
             return datetime.date.fromisoformat(data[self.name])
-        else:
-            return self.data_type(data if self.is_list else data[self.name])
+        return self.data_type(data if self.is_list else data[self.name])
 
     def dump(self):
         if self.value is None:
             return None
-        elif self.is_list:
+        if self.is_list:
             return [self._dump_by_type(item) for item in self.value]
-        else:
-            return self._dump_by_type()
+        return self._dump_by_type()
 
     def _dump_by_type(self, item=None):
         if self.data_type in [str, int, float, bool]:
