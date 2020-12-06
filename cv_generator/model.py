@@ -48,10 +48,9 @@ class Field:
     def _dump_by_type(self, item=None):
         if self.data_type in [str, int, float, bool]:
             return self.value
-        elif self.data_type == datetime.date:
+        if self.data_type == datetime.date:
             return self.value.isoformat()
-        else:
-            return item.dump() if item is not None else self.value.dump()
+        return item.dump() if item is not None else self.value.dump()
 
 
 class ItemBase:
