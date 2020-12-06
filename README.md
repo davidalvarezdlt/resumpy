@@ -1,7 +1,7 @@
 # CV Generator
 ![](https://img.shields.io/github/v/release/davidalvarezdlt/cv_generator)
 ![](https://img.shields.io/badge/python-%3E3.7-blue)
-![](https://img.shields.io/github/workflow/status/davidalvarezdlt/cv_generator/unit-testing)
+![](https://github.com/davidalvarezdlt/cv_generator/workflows/Unit%20Testing/badge.svg)
 [![](https://www.codefactor.io/repository/github/davidalvarezdlt/cv_generator/badge)](https://www.codefactor.io/repository/github/davidalvarezdlt/cv_generator)
 ![](https://img.shields.io/github/license/davidalvarezdlt/cv_generator)
 
