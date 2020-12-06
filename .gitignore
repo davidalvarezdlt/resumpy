@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+.pytest_cache/
 *.py[cod]
 *$py.class
 .DS_Store
@@ -9,13 +10,12 @@ __pycache__/
 venv/
 ENV/
 
-# Pycharm Project
+# PyCharm Project
 .idea/
 
-# Generated Files
-generated_documents/*
-!generated_documents/.gitkeep
+# PDF and TEX files
+*.pdf
+*.tex
 
-# Customized CV files
-cv.json
-cv.yaml
+# Allow PDFs inside examples/
+!examples/*.pdf

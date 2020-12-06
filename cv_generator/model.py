@@ -1,193 +1,197 @@
 import datetime
+import copy
 
 
-class BasicInfo:
-    name = ''
-    surnames = ''
-    profession = ''
-    birthday = None
-    birthplace = ''
-    residence = ''
-    marital_status = ''
-    biography = ''
-    hobbies = ''
+class Field:
+    name = None
+    data_type = None
+    is_list = None
+    nullable = None
+    value = None
 
-    def load(self, basic_info_dict):
-        self.name = basic_info_dict['name']
-        self.surnames = basic_info_dict['surnames']
-        self.profession = basic_info_dict['profession']
-        self.birthday = datetime.datetime.strptime(basic_info_dict['birthday'], '%Y-%m-%d').date()
-        self.birthplace = basic_info_dict['birthplace']
-        self.residence = basic_info_dict['residence']
-        self.marital_status = basic_info_dict['marital_status']
-        self.biography = basic_info_dict['biography']
-        self.hobbies = basic_info_dict['hobbies'] if 'hobbies' in basic_info_dict else ''
-        return self
+    def __init__(self, name, data_type, is_list=False, nullable=True,
+                 value=None):
+        self.name = name
+        self.data_type = data_type
+        self.is_list = is_list
+        self.nullable = nullable
+        self.value = value
 
+    def load(self, data):
+        if self.nullable and self.name not in data or data[self.name] is None:
+            self.value = None
+        elif self.is_list:
+            self.value = [self._load_by_type(item) for item in data[self.name]]
+        else:
+            self.value = self._load_by_type(data)
 
-class ContactInfo:
-    email = ''
-    phone = ''
-    personal_website = None
-    twitter = None
-    linkedin = None
-    github = None
-    scholar = None
+    def _load_by_type(self, data):
+        if self.data_type == str:
+            return data[self.name]
+        if self.data_type == int:
+            return int(data[self.name])
+        if self.data_type == float:
+            return float(data[self.name])
+        if self.data_type == bool:
+            return bool(data[self.name])
+        if self.data_type == datetime.date:
+            return datetime.date.fromisoformat(data[self.name])
+        return self.data_type(data if self.is_list else data[self.name])
 
-    def load(self, contact_info_dict):
-        self.email = contact_info_dict['email']
-        self.phone = contact_info_dict['phone']
-        self.personal_website = LinkItem().load(contact_info_dict['personal_website']) \
-            if 'personal_website' in contact_info_dict else None
-        self.twitter = LinkItem().load(contact_info_dict['twitter']) if 'twitter' in contact_info_dict else None
-        self.linkedin = LinkItem().load(contact_info_dict['linkedin']) if 'linkedin' in contact_info_dict else None
-        self.github = LinkItem().load(contact_info_dict['github']) if 'github' in contact_info_dict else None
-        self.scholar = LinkItem().load(contact_info_dict['scholar']) if 'scholar' in contact_info_dict else None
-        return self
+    def dump(self):
+        if self.value is None:
+            return None
+        if self.is_list:
+            return [self._dump_by_type(item) for item in self.value]
+        return self._dump_by_type()
 
-
-class ExperienceItem:
-    institution = ''
-    position = ''
-    date_start = None
-    date_end = None
-    description = ''
-
-    def load(self, experience_item_dict):
-        self.institution = experience_item_dict['institution']
-        self.position = experience_item_dict['position']
-        self.date_start = datetime.datetime.strptime(experience_item_dict['date_start'], '%Y-%m-%d').date()
-        self.date_end = datetime.datetime.strptime(experience_item_dict['date_end'], '%Y-%m-%d').date() \
-            if 'date_end' in experience_item_dict else None
-        self.description = experience_item_dict['description'].rstrip() if 'description' in experience_item_dict else ''
-        return self
+    def _dump_by_type(self, item=None):
+        if self.data_type in [str, int, float, bool]:
+            return self.value
+        if self.data_type == datetime.date:
+            return self.value.isoformat()
+        return item.dump() if item is not None else self.value.dump()
 
 
-class EducationItem:
-    institution = ''
-    degree = ''
-    major = ''
-    date_start = None
-    date_end = None
-    description = ''
-    gpa = -1
-    gpa_max = -1
-    performance = -1
-    promotion_order = ''
+class ItemBase:
 
-    def load(self, education_item_dict):
-        self.institution = education_item_dict['institution']
-        self.degree = education_item_dict['degree']
-        self.major = education_item_dict['major'] if 'major' in education_item_dict else ''
-        self.date_start = datetime.datetime.strptime(education_item_dict['date_start'], '%Y-%m-%d').date()
-        self.date_end = datetime.datetime.strptime(education_item_dict['date_end'], '%Y-%m-%d').date() \
-            if 'date_end' in education_item_dict else None
-        self.description = education_item_dict['description'].rstrip() if 'description' in education_item_dict else ''
-        self.gpa = education_item_dict['gpa'] if 'gpa' in education_item_dict else -1
-        self.gpa_max = education_item_dict['gpa_max'] if 'gpa_max' in education_item_dict else -1
-        self.performance = education_item_dict['performance'] if 'performance' in education_item_dict else -1
-        self.promotion_order = education_item_dict['promotion_order'] \
-            if 'promotion_order' in education_item_dict else ''
-        return self
+    def __init__(self, data=None):
+        if data is not None:
+            self.load(data)
 
+    def load(self, data):
+        for attr in dir(self):
+            if isinstance(getattr(self, attr), Field):
+                setattr(self, attr, copy.deepcopy(getattr(self, attr)))
+                getattr(self, attr).load(data)
 
-class AwardItem:
-    institution = ''
-    name = ''
-    date = None
-    description = ''
-    diploma = None
+    def get(self, *args):
+        obj = self
+        for arg in list(args):
+            obj = getattr(obj, arg).value
+        return obj
 
-    def load(self, award_item_dic):
-        self.institution = award_item_dic['institution']
-        self.name = award_item_dic['name']
-        self.date = datetime.datetime.strptime(award_item_dic['date'], '%Y-%m-%d').date()
-        self.description = award_item_dic['description'].rstrip() if 'description' in award_item_dic else ''
-        self.diploma = LinkItem().load(award_item_dic['diploma']) if 'diploma' in award_item_dic else None
-        return self
+    def dump(self):
+        data = {}
+        for attr in dir(self):
+            if isinstance(getattr(self, attr), Field):
+                attr_data = getattr(self, attr).dump()
+                if attr_data:
+                    data[attr] = attr_data
+        return data
+
+    def __eq__(self, other):
+        return self.dump() == other.dump()
 
 
-class PublicationItem:
-    title = ''
-    abstract = ''
-    authors = ''
-    conference = ''
-    date = None
-    manuscript_link = None
-    code_link = None
-
-    def load(self, publication_item_dict):
-        self.title = publication_item_dict['title']
-        self.abstract = publication_item_dict['abstract'].rstrip()
-        self.authors = publication_item_dict['authors']
-        self.conference = publication_item_dict['conference']
-        self.date = datetime.datetime.strptime(publication_item_dict['date'], '%Y-%m-%d').date()
-        self.manuscript_link = LinkItem(publication_item_dict['manuscript_link']) \
-            if 'manuscript_link' in publication_item_dict else None
-        self.code_link = LinkItem(publication_item_dict['code_link']) \
-            if 'code_link' in publication_item_dict else None
-        return self
+class LinkItem(ItemBase):
+    anchor = Field('anchor', str, nullable=False)
+    href = Field('href', str, nullable=False)
 
 
-class LanguageItem:
-    name = ''
-    level = ''
-    diploma = None
-
-    def load(self, language_item_dict):
-        self.name = language_item_dict['name']
-        self.level = language_item_dict['level']
-        self.diploma = LinkItem().load(language_item_dict['diploma']) if 'diploma' in language_item_dict else None
-        return self
+class RichTextItem(ItemBase):
+    type = Field('type', str, nullable=False)
+    content = Field('content', str, nullable=False)
 
 
-class CourseItem:
-    institution = ''
-    name = ''
-    date = None
-    diploma = None
-
-    def load(self, course_item_dict):
-        self.institution = course_item_dict['institution']
-        self.name = course_item_dict['name']
-        self.date = datetime.datetime.strptime(course_item_dict['date'], '%Y-%m-%d').date()
-        self.diploma = LinkItem().load(course_item_dict['diploma']) if 'diploma' in course_item_dict else None
-        return self
+class BasicInfo(ItemBase):
+    name = Field('name', str, nullable=False)
+    surnames = Field('surnames', str, nullable=False)
+    profession = Field('profession', str, nullable=False)
+    birthday = Field('birthday', datetime.date)
+    birthplace = Field('birthplace', str)
+    residence = Field('residence', str)
+    marital_status = Field('marital_status', str)
+    biography = Field('biography', str)
+    hobbies = Field('hobbies', str)
 
 
-class ProjectItem:
-    featured = False
-    name = ''
-    description = ''
-    link = None
-
-    def load(self, project_item_dict):
-        self.featured = project_item_dict['featured']
-        self.name = project_item_dict['name']
-        self.description = project_item_dict['description'].rstrip()
-        self.link = LinkItem().load(project_item_dict['link']) if 'link' in project_item_dict else None
-        return self
+class ContactInfo(ItemBase):
+    email = Field('email', str, nullable=False)
+    phone = Field('phone', str, nullable=False)
+    website = Field('website', LinkItem)
+    twitter = Field('twitter', LinkItem)
+    linkedin = Field('linkedin', LinkItem)
+    github = Field('github', LinkItem)
+    scholar = Field('scholar', LinkItem)
 
 
-class SkillItem:
-    name = ''
-    type = ''
-    category = ''
-    score = -1
-
-    def load(self, skill_item_dict):
-        self.name = skill_item_dict['name']
-        self.type = skill_item_dict['type'] if 'type' in skill_item_dict else ''
-        self.category = skill_item_dict['category'] if 'category' in skill_item_dict else ''
-        self.score = skill_item_dict['score'] if 'score' in skill_item_dict else -1
-        return self
+class ExperienceItem(ItemBase):
+    institution = Field('institution', str, nullable=False)
+    position = Field('position', str, nullable=False)
+    date_start = Field('date_start', datetime.date, nullable=False)
+    date_end = Field('date_end', datetime.date)
+    description = Field('description', RichTextItem, is_list=True)
 
 
-class LinkItem:
-    anchor = ''
-    href = ''
+class EducationItem(ItemBase):
+    institution = Field('institution', str, nullable=False)
+    degree = Field('degree', str, nullable=False)
+    major = Field('major', str)
+    date_start = Field('date_start', datetime.date, nullable=False)
+    date_end = Field('date_end', datetime.date)
+    description = Field('description', str)
+    gpa = Field('gpa', float)
+    gpa_max = Field('gpa_max', float)
+    performance = Field('performance', float)
+    promotion_order = Field('promotion_order', str)
 
-    def load(self, link_item_dict):
-        self.anchor = link_item_dict['anchor']
-        self.href = link_item_dict['href']
-        return self
+
+class AwardItem(ItemBase):
+    institution = Field('institution', str, nullable=False)
+    name = Field('name', str, nullable=False)
+    date = Field('date', datetime.date, nullable=False)
+    description = Field('description', str)
+    diploma = Field('diploma', LinkItem)
+
+
+class PublicationItem(ItemBase):
+    title = Field('title', str, nullable=False)
+    abstract = Field('abstract', str)
+    authors = Field('authors', str, nullable=False)
+    conference = Field('conference', str)
+    date = Field('date', datetime.date, nullable=False)
+    manuscript_link = Field('manuscript_link', LinkItem)
+    code_link = Field('code_link', LinkItem)
+
+
+class LanguageItem(ItemBase):
+    name = Field('name', str, nullable=False)
+    level = Field('level', str)
+    diploma = Field('diploma', LinkItem)
+
+
+class CourseItem(ItemBase):
+    institution = Field('institution', str, nullable=False)
+    name = Field('name', str, nullable=False)
+    date = Field('date', datetime.date, nullable=False)
+    diploma = Field('diploma', LinkItem)
+
+
+class ProjectItem(ItemBase):
+    featured = Field('featured', bool)
+    name = Field('name', str, nullable=False)
+    description = Field('description', str)
+    link = Field('link', LinkItem)
+
+
+class SkillItem(ItemBase):
+    name = Field('name', str, nullable=False)
+    type = Field('type', str)
+    category = Field('category', str)
+    score = Field('score', int)
+
+
+class Model(ItemBase):
+    lang = Field('lang', str, nullable=False)
+    last_update = Field('last_update', datetime.date, nullable=False)
+    basic = Field('basic', BasicInfo, nullable=False)
+    contact = Field('contact', ContactInfo, nullable=False)
+    experience = Field('experience', ExperienceItem, is_list=True)
+    education = Field('education', EducationItem, is_list=True)
+    awards = Field('awards', AwardItem, is_list=True)
+    publications = Field('publications', PublicationItem, is_list=True)
+    languages = Field('languages', LanguageItem, is_list=True)
+    courses = Field('courses', CourseItem, is_list=True)
+    projects = Field('projects', ProjectItem, is_list=True)
+    skills = Field('skills', SkillItem, is_list=True)

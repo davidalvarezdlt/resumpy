@@ -21,6 +21,8 @@
 %\RequirePackage[demo]{graphicx}
 
 \usepackage{setspace}
+\RequirePackage{enumitem}
+\setlist[itemize]{leftmargin=*}
 
 % Define Header Variables
 \newcommand{\name}[1]{\newcommand{\@name}{#1}}
@@ -30,7 +32,8 @@
 \newcommand{\github}[2]{\newcommand{\@githuburl}{#1}\newcommand{\@githublabel}{#2}}
 \newcommand{\linkedin}[2]{\newcommand{\@linkedinurl}{#1}\newcommand{\@linkedinlabel}{#2}}
 \newcommand{\twitter}[2]{\newcommand{\@twitterurl}{#1}\newcommand{\@twitterlabel}{#2}}
-\newcommand{\website}[2]{\newcommand{\@websiteurl}{#1}\newcommand{\@websitelabel}{#2}}
+\newcommand{\website}[2]{\newcommand{\@websiteurl}{#1}\newcommand
+{\@websitelabel}{#2}}
 \newcommand{\location}[1]{\newcommand{\@location}{#1}}
 
 % Define theme colors
@@ -166,3 +169,10 @@
 {\footnotesize\color{accent_color} #4}
 \par \medskip \footnotesize
 }{}
+
+% FACTS ITEM
+\newcommand{\factitem}[1]{
+\par
+{\footnotesize #1}
+\par
+}

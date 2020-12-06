@@ -1,76 +1,63 @@
 import gettext
 import os
-import pylatex
-import shutil
-import locale
 
 
-class BaseTheme:
+class Theme:
     theme_name = None
-    cv = None
-    doc = None
     logger = None
+    doc = None
 
-    def __init__(self, theme_name, cv, logger):
+    def __init__(self, theme_name, logger):
         self.theme_name = theme_name
-        self.cv = cv
         self.logger = logger
-        self.doc = pylatex.Document(documentclass=self.theme_name)
 
-    def set_lang(self):
+    def set_lang(self, model):
         """Sets the language of the CV.
 
-        Uses the `self.cv.lang` attribute to set the language of the generated file. This parameter only affects static
-        labels of the theme, such as category titles. In order to translate the template to another language,
-        let's say Russian, create a new .po (and its compiled .mo file) inside:
+        Uses the `self.cv.lang` attribute to set the language of the generated
+        file. This parameter only affects static labels of the theme, such as
+        category titles. In order to translate a theme into another language,
+        use Poedit to create its .po and .mo files inside:
 
-        ./locale/ru/LC_MESSAGES/base.po
+        ./locale/<lang_code>/LC_MESSAGES/<theme_name>.po
 
-        Notice that this file already contains translation items. In order not to break previous translations,
-        use the commands `xgettext` (to generate a new base.pot file) and `msgmerge` to merge with the current ones.
-
-        For example, being inside the folder 'cv_generator/themes`, run the following command on the terminal:
-
+        You can generate the translation base file <theme_name>.pot by calling:
         ```
-            xgettext -d base -o locale/base.pot sitges.py developer.py
+            xgettext -o cv_generator/themes/locale/<theme_name>.pot
+            cv_generator/themes/<theme_name>.py
         ```
-
-        This will generate a new `base.pot` file inside `./locale` with all the strings contained inside the _(
-        'MY_TRANSLATION_TEXT_ID') funciton. Then, mix with the current one using:
-
-        ```
-            msgmerge --update locales/en/LC_MESSAGES/base.po locales/base.pot
-        ```
-
-        This will update the `locales/en/LC_MESSAGES/base.po` with the new translation fields. Now, you can edit the
-        translation file using an editor such as Poedit.
        """
-        localedir = os.path.join(os.path.dirname(__file__), 'themes', 'locale')
-        gettext.translation('base', localedir=localedir, languages=[self.cv.lang]).install()
-        locale.setlocale(locale.LC_TIME, self.cv.lang.replace('-', '_'))
+        os.environ['LANGUAGE'] = model.get('lang')
+        localedir = os.path.join(os.path.dirname(__file__), 'themes/locale')
+        gettext.bindtextdomain(self.theme_name, localedir)
+        gettext.textdomain(self.theme_name)
 
-    def format(self):
+    def format(self, model):
         """Creates a new `pylatex.Document`.
 
-        Uses the data stored inside `self.cv` to generate a new document. This method must be implemented by any
-        individual theme.
+        Uses the data stored inside `model` to generate a new document using
+        the current theme. This method must be implemented by the different
+        individual themes
 
         Returns:
-            doc (pylatex.Document): document to be stored in disk.
+            pylatex.Document: document object that can be converted into a PDF.
         """
-        raise NotImplemented
+        raise NotImplementedError
 
-    def save(self, file_path, keep_tex):
-        """Saves the generated CV inside `file_path`.
-
-        Stores the generated file in the path given by `file_path`. It also handles the copy of required files.
+    @staticmethod
+    def create_theme_by_name(theme_name, logger):
+        """Returns a theme object given its name.
 
         Args:
-            file_path (str): path where the generated file should be stored, without extension.
-            keep_tex (bool): whether to delete or keep LaTeX files such as .cls or .tex.
+            theme_name (str): name of the theme.
+            logger (logging.Logger): logger used inside the theme.
+
+        Returns:
+            cv_generator.theme.Theme: instance of the theme with name
+            `--theme-name`.
         """
-        cls_path = os.path.join(os.path.dirname(__file__), 'themes', 'cls', self.theme_name + '.cls')
-        shutil.copy(cls_path, os.path.dirname(file_path))
-        self.format().generate_pdf(file_path, clean_tex=not keep_tex)
-        if not keep_tex:
-            os.remove(os.path.join(os.path.dirname(file_path), os.path.basename(cls_path)))
+        import cv_generator.themes
+        themes_dict = {
+            'sitges': cv_generator.themes.ThemeSitges
+        }
+        return themes_dict[theme_name](logger)
