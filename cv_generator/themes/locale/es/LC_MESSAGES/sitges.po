@@ -7,121 +7,85 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-11 23:17+0200\n"
-"PO-Revision-Date: 2020-04-11 23:18+0200\n"
+"POT-Creation-Date: 2020-12-06 18:24+0100\n"
+"PO-Revision-Date: 2020-12-06 18:27+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: sitges.py:60
+#: cv_generator/themes/sitges.py:75
 msgid "SITGES_LAST_UPDATE_LABEL"
 msgstr "Última Actualización:"
 
-#: sitges.py:85
+#: cv_generator/themes/sitges.py:107
 msgid "SITGES_EXPERIENCE_TITLE"
 msgstr "Experiencia"
 
-#: sitges.py:106
+#: cv_generator/themes/sitges.py:120 cv_generator/themes/sitges.py:146
 msgid "SITGES_DATES_NOW"
 msgstr "Actualidad"
 
-#: sitges.py:111
+#: cv_generator/themes/sitges.py:139
 msgid "SITGES_EDUCATION_TITLE"
 msgstr "Educación"
 
-#: sitges.py:115 developer.py:88 developer.py:102
-msgid "DEVELOPER_DATES_NOW"
-msgstr "Actualidad"
-
-#: sitges.py:136
+#: cv_generator/themes/sitges.py:159
 msgid "SITGES_GPA_LABEL"
 msgstr "Nota Media"
 
-#: sitges.py:147
+#: cv_generator/themes/sitges.py:172
 msgid "SITGES_PERFORMANCE_LABEL"
 msgstr "Rendimiento"
 
-#: sitges.py:153
-msgid "SITGES_AWARDS_TITLE"
-msgstr "Premios"
-
-#: sitges.py:181
+#: cv_generator/themes/sitges.py:192
 msgid "SITGES_PUBLICATIONS_TITLE"
 msgstr "Publicaciones"
 
-#: sitges.py:216
+#: cv_generator/themes/sitges.py:232
+msgid "SITGES_AWARDS_TITLE"
+msgstr "Premios"
+
+#: cv_generator/themes/sitges.py:268
 msgid "SITGES_EMAIL_LABEL"
 msgstr "Email"
 
-#: sitges.py:217
+#: cv_generator/themes/sitges.py:273
 msgid "SITGES_PHONE_LABEL"
 msgstr "Teléfono Móvil"
 
-#: sitges.py:218
+#: cv_generator/themes/sitges.py:278
 msgid "SITGES_AGE_LABEL"
 msgstr "Edad"
 
-#: sitges.py:219
+#: cv_generator/themes/sitges.py:283
 msgid "SITGES_NATIONALITY_LABEL"
 msgstr "Lugar de Nacimiento"
 
-#: sitges.py:220
+#: cv_generator/themes/sitges.py:288
 msgid "SITGES_LOCATION_LABEL"
 msgstr "Ciudad"
 
-#: sitges.py:223
+#: cv_generator/themes/sitges.py:296
 msgid "SITGES_LANGUAGES_TITLE"
 msgstr "Idiomas"
 
-#: sitges.py:233
+#: cv_generator/themes/sitges.py:315
 msgid "SITGES_COURSES_TITLE"
 msgstr "Cursos"
 
-#: sitges.py:246
-msgid "SITGES_PROJECTS_TITLE"
-msgstr "Proyectos"
-
-#: sitges.py:261
+#: cv_generator/themes/sitges.py:336
 msgid "SITGES_SKILLS_TITLE"
 msgstr "Habilidades"
 
-#: sitges.py:271
+#: cv_generator/themes/sitges.py:355
+msgid "SITGES_PROJECTS_TITLE"
+msgstr "Proyectos"
+
+#: cv_generator/themes/sitges.py:377
 msgid "SITGES_HOBBIES_TITLE"
-msgstr "Hobbies"
-
-#: developer.py:36
-msgid "DEVELOPER_BIOGRAPHY_TITLE"
-msgstr "¿Quién soy?"
-
-#: developer.py:83
-msgid "DEVELOPER_EXPERIENCE_TITLE"
-msgstr "Experiencia"
-
-#: developer.py:97
-msgid "DEVELOPER_EDUCATION_TITLE"
-msgstr "Educación"
-
-#: developer.py:113
-msgid "DEVELOPER_AWARDS_TITLE"
-msgstr "Premios"
-
-#: developer.py:123
-msgid "DEVELOPER_PUBLICATIONS_TITLE"
-msgstr "Publicaciones"
-
-#: developer.py:133
-msgid "DEVELOPER_COURSES_TITLE"
-msgstr "Cursos"
-
-#: developer.py:143
-msgid "DEVELOPER_LANGUAGES_TITLE"
-msgstr "Idiomas"
-
-#: developer.py:152
-msgid "DEVELOPER_HOBBIES_TITLE"
 msgstr "Hobbies"

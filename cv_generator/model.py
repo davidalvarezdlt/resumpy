@@ -1,4 +1,5 @@
 import datetime
+import copy
 
 
 class Field:
@@ -14,11 +15,8 @@ class Field:
         self.is_list = is_list
         self.nullable = nullable
 
-    def get(self):
-        return self.value
-
     def load(self, data):
-        if self.nullable and self.name not in data:
+        if self.nullable and self.name not in data or data[self.name] is None:
             self.value = None
         elif self.is_list:
             self.value = [self._load_by_type(item) for item in data[self.name]]
@@ -61,21 +59,26 @@ class ItemBase:
     def __init__(self, data=None):
         if data is not None:
             self.load(data)
-            self.validate()
 
     def load(self, data):
         for attr in dir(self):
             if isinstance(getattr(self, attr), Field):
+                setattr(self, attr, copy.deepcopy(getattr(self, attr)))
                 getattr(self, attr).load(data)
 
-    def validate(self):
-        pass
+    def get(self, *args):
+        obj = self
+        for arg in list(args):
+            obj = getattr(obj, arg).value
+        return obj
 
     def dump(self):
         data = {}
         for attr in dir(self):
             if isinstance(getattr(self, attr), Field):
-                data[attr] = getattr(self, attr).dump()
+                attr_data = getattr(self, attr).dump()
+                if attr_data:
+                    data[attr] = attr_data
         return data
 
     def __eq__(self, other):
@@ -88,7 +91,7 @@ class LinkItem(ItemBase):
 
 
 class RichTextItem(ItemBase):
-    anchor = Field('type', str, nullable=False)
+    type = Field('type', str, nullable=False)
     content = Field('content', str, nullable=False)
 
 
@@ -96,91 +99,91 @@ class BasicInfo(ItemBase):
     name = Field('name', str, nullable=False)
     surnames = Field('surnames', str, nullable=False)
     profession = Field('profession', str, nullable=False)
-    birthday = Field('birthday', datetime.date, nullable=False)
-    birthplace = Field('birthplace', str, nullable=False)
-    residence = Field('residence', str, nullable=False)
-    marital_status = Field('marital_status', str, nullable=False)
-    biography = Field('biography', str, nullable=False)
-    hobbies = Field('hobbies', str, nullable=False)
+    birthday = Field('birthday', datetime.date)
+    birthplace = Field('birthplace', str)
+    residence = Field('residence', str)
+    marital_status = Field('marital_status', str)
+    biography = Field('biography', str)
+    hobbies = Field('hobbies', str)
 
 
 class ContactInfo(ItemBase):
     email = Field('email', str, nullable=False)
     phone = Field('phone', str, nullable=False)
-    personal_website = Field('personal_website', LinkItem, nullable=True)
-    twitter = Field('twitter', LinkItem, nullable=True)
-    linkedin = Field('linkedin', LinkItem, nullable=True)
-    github = Field('github', LinkItem, nullable=True)
-    scholar = Field('scholar', LinkItem, nullable=True)
+    website = Field('website', LinkItem)
+    twitter = Field('twitter', LinkItem)
+    linkedin = Field('linkedin', LinkItem)
+    github = Field('github', LinkItem)
+    scholar = Field('scholar', LinkItem)
 
 
 class ExperienceItem(ItemBase):
-    institution = Field('institution', str, nullable=True)
-    position = Field('position', str, nullable=True)
-    date_start = Field('date_start', datetime.date, nullable=True)
-    date_end = Field('date_end', datetime.date, nullable=True)
+    institution = Field('institution', str, nullable=False)
+    position = Field('position', str, nullable=False)
+    date_start = Field('date_start', datetime.date, nullable=False)
+    date_end = Field('date_end', datetime.date)
     description = Field('description', RichTextItem, is_list=True)
 
 
 class EducationItem(ItemBase):
-    institution = Field('institution', str, nullable=True)
-    degree = Field('degree', str, nullable=True)
-    major = Field('major', str, nullable=True)
-    date_start = Field('date_start', datetime.date, nullable=True)
-    date_end = Field('date_end', datetime.date, nullable=True)
-    description = Field('description', str, nullable=True)
-    gpa = Field('gpa', float, nullable=True)
-    gpa_max = Field('gpa_max', float, nullable=True)
-    performance = Field('performance', float, nullable=True)
-    promotion_order = Field('promotion_order', str, nullable=True)
+    degree = Field('degree', str, nullable=False)
+    major = Field('major', str)
+    institution = Field('institution', str, nullable=False)
+    date_start = Field('date_start', datetime.date, nullable=False)
+    date_end = Field('date_end', datetime.date)
+    description = Field('description', str)
+    gpa = Field('gpa', float)
+    gpa_max = Field('gpa_max', float)
+    performance = Field('performance', float)
+    promotion_order = Field('promotion_order', str)
 
 
 class AwardItem(ItemBase):
-    institution = Field('institution', str, nullable=True)
-    name = Field('name', str, nullable=True)
-    date = Field('date', datetime.date, nullable=True)
-    description = Field('description', str, nullable=True)
-    diploma = Field('diploma', LinkItem, nullable=True)
+    name = Field('name', str, nullable=False)
+    description = Field('description', str)
+    institution = Field('institution', str, nullable=False)
+    date = Field('date', datetime.date, nullable=False)
+    diploma = Field('diploma', LinkItem)
 
 
 class PublicationItem(ItemBase):
-    title = Field('title', str, nullable=True)
-    abstract = Field('abstract', str, nullable=True)
-    authors = Field('authors', str, nullable=True)
-    conference = Field('conference', str, nullable=True)
-    date = Field('date', datetime.date, nullable=True)
-    manuscript_link = Field('manuscript_link', LinkItem, nullable=True)
-    code_link = Field('code_link', LinkItem, nullable=True)
+    title = Field('title', str, nullable=False)
+    authors = Field('authors', str, nullable=False)
+    conference = Field('conference', str)
+    date = Field('date', datetime.date)
+    abstract = Field('abstract', str)
+    manuscript_link = Field('manuscript_link', LinkItem)
+    code_link = Field('code_link', LinkItem)
 
 
 class LanguageItem(ItemBase):
-    name = Field('name', str, nullable=True)
-    level = Field('level', str, nullable=True)
-    diploma = Field('diploma', LinkItem, nullable=True)
+    name = Field('name', str, nullable=False)
+    level = Field('level', str)
+    diploma = Field('diploma', LinkItem)
 
 
 class CourseItem(ItemBase):
-    institution = Field('institution', str, nullable=True)
-    name = Field('name', str, nullable=True)
-    date = Field('date', datetime.date, nullable=True)
-    diploma = Field('diploma', LinkItem, nullable=True)
+    institution = Field('institution', str)
+    name = Field('name', str, nullable=False)
+    date = Field('date', datetime.date)
+    diploma = Field('diploma', LinkItem)
 
 
 class ProjectItem(ItemBase):
-    featured = Field('featured', bool, nullable=True)
-    name = Field('name', str, nullable=True)
-    description = Field('description', str, nullable=True)
-    link = Field('link', LinkItem, nullable=True)
+    featured = Field('featured', bool)
+    name = Field('name', str, nullable=False)
+    description = Field('description', str)
+    link = Field('link', LinkItem)
 
 
 class SkillItem(ItemBase):
-    name = Field('name', str, nullable=True)
-    type = Field('type', str, nullable=True)
-    category = Field('category', str, nullable=True)
-    score = Field('score', int, nullable=True)
+    name = Field('name', str, nullable=False)
+    type = Field('type', str)
+    category = Field('category', str)
+    score = Field('score', int)
 
 
-class CVModel(ItemBase):
+class Model(ItemBase):
     lang = Field('lang', str, nullable=False)
     last_update = Field('last_update', datetime.date, nullable=False)
     basic = Field('basic', BasicInfo, nullable=False)

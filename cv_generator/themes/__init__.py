@@ -1,4 +1,4 @@
-from .base import BaseTheme
 from .sitges import ThemeSitges
 
-__all__ = [BaseTheme, ThemeSitges]
+__all__ = [ThemeSitges]
+__themes_names__ = ['sitges']

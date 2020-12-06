@@ -29,23 +29,33 @@ def get_age(birthday):
 
 
 def get_skills_categories(skills):
-    categories_list = []
+    """Returns a list containing unique category names set in the skills.
+
+    Args:
+        skills (list of SkillItem): list containing SkillItem object models.
+
+    Returns:
+        list of str: list containing the identifiers of the different
+        categories.
+    """
+    cat_list = []
     for item in skills:
-        if item.category is not None and item.category not in categories_list:
-            categories_list.append(item.category)
-    return categories_list
+        if item.get('category') and item.get('category') not in cat_list:
+            cat_list.append(item.get('category'))
+    return cat_list
 
 
 def filter_skills_by_category(skills, category):
     """Filters the skills by category.
 
     Args:
+        skills (list of SkillItem): list containing SkillItem object models.
         category (string): identifier of the category of the skills to
             return.
 
     Returns:
-        list: list of skills belonging to `category`.
+        list of SkillItem: list of skills belonging to `category`.
     """
     return [
-        s for s in skills if category is None or s.category == category
+        s for s in skills if category is None or s.get('category') == category
     ]

@@ -32,7 +32,8 @@
 \newcommand{\github}[2]{\newcommand{\@githuburl}{#1}\newcommand{\@githublabel}{#2}}
 \newcommand{\linkedin}[2]{\newcommand{\@linkedinurl}{#1}\newcommand{\@linkedinlabel}{#2}}
 \newcommand{\twitter}[2]{\newcommand{\@twitterurl}{#1}\newcommand{\@twitterlabel}{#2}}
-\newcommand{\website}[2]{\newcommand{\@websiteurl}{#1}\newcommand{\@websitelabel}{#2}}
+\newcommand{\website}[2]{\newcommand{\@websiteurl}{#1}\newcommand
+{\@websitelabel}{#2}}
 \newcommand{\location}[1]{\newcommand{\@location}{#1}}
 
 % Define theme colors
