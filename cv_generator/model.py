@@ -22,6 +22,7 @@ class Field:
             self.value = None
         elif self.is_list:
             self.value = [self._load_by_type(item) for item in data[self.name]]
+            self.value = self.value if len(self.value) > 0 else None
         else:
             self.value = self._load_by_type(data)
 
@@ -157,7 +158,7 @@ class PublicationItem(ItemBase):
 
 class LanguageItem(ItemBase):
     name = Field('name', str, nullable=False)
-    level = Field('level', str)
+    level = Field('level', str, nullable=False)
     diploma = Field('diploma', LinkItem)
 
 

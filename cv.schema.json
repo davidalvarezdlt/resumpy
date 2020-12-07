@@ -352,7 +352,8 @@
           }
         },
         "required": [
-          "name"
+          "name",
+          "level"
         ]
       },
       "uniqueItems": true
