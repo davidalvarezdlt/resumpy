@@ -1,42 +1,39 @@
 import cv_generator
 import json
 import os
-import logging
 import pytest
-
-base_path = os.path.join(os.path.dirname(__file__), '..')
-example_path = os.path.join(base_path, 'cv.example.json')
-schema_path = os.path.join(base_path, 'cv.example.json')
-logger = logging.getLogger('cv_generator')
+import tests
 
 
-@pytest.mark.parametrize('file_path', [example_path, schema_path])
+@pytest.mark.parametrize(
+    'file_path', [tests.get_example_path(), tests.get_schema_path()]
+)
 def test_example_schema_files(file_path):
     assert os.path.exists(file_path)
     with open(file_path) as cv_file:
         json.load(cv_file)
 
 
-def test_example_loads():
-    cv = cv_generator.CV(logger)
-    cv.load(example_path, schema_path)
+def test_model_loads_example():
+    cv = cv_generator.CV(tests.get_logger())
+    cv.load(tests.get_example_path(), tests.get_schema_path())
 
 
-def test_dumping_json():
-    cv = cv_generator.CV(logger)
-    cv.load(example_path, schema_path)
-    cv.save('cv_dumped', save_yaml=False)
-    cv_2 = cv_generator.CV(logger)
-    cv_2.load('cv_dumped.json', schema_path)
-    os.remove('cv_dumped.json')
-    assert cv == cv_2
+@pytest.mark.parametrize(
+    'cv_raw', [tests.get_minimal_cv_raw(), tests.get_reduced_cv_raw()]
+)
+def test_model_loads_extremes(cv_raw):
+    cv_generator.model.Model(cv_raw)
 
 
-def test_dumping_yaml():
-    cv = cv_generator.CV(logger)
-    cv.load(example_path, schema_path)
-    cv.save('cv_dumped', save_json=False)
-    cv_2 = cv_generator.CV(logger)
-    cv_2.load('cv_dumped.yaml', schema_path)
-    os.remove('cv_dumped.yaml')
+@pytest.mark.parametrize('format', ['json', 'yaml'])
+def test_dumping(format):
+    cv = cv_generator.CV(tests.get_logger())
+    cv.load(tests.get_example_path(), tests.get_schema_path())
+    cv.save(
+        'cv_dumped', save_json=format == 'json', save_yaml=format == 'yaml'
+    )
+    cv_2 = cv_generator.CV(tests.get_logger())
+    cv_2.load('cv_dumped.' + format, tests.get_schema_path())
+    os.remove('cv_dumped.' + format)
     assert cv == cv_2
