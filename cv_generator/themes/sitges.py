@@ -268,11 +268,11 @@ class ThemeSitges(cv_generator.theme.Theme):
                 gettext.gettext('SITGES_NATIONALITY_LABEL'),
                 model.get('basic', 'birthplace')
             ]))
-        if model.get('basic', 'birthplace'):
+        if model.get('basic', 'residence'):
             info_items.append(Command('detailitem', [
                 '\\faFlag',
                 gettext.gettext('SITGES_LOCATION_LABEL'),
-                model.get('basic', 'birthplace')
+                model.get('basic', 'residence')
             ]))
         return info_items
 
