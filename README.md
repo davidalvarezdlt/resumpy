@@ -1,7 +1,7 @@
 # Resumpy: generate your resume using Python
 ![](https://img.shields.io/github/v/release/davidalvarezdlt/resumpy)
-![](https://img.shields.io/badge/python-%3E3.7-blue)
 ![](https://github.com/davidalvarezdlt/resumpy/workflows/Unit%20Testing/badge.svg)
+![](https://img.shields.io/badge/python-%3E3.7-blue)
 ![](https://requires.io/github/davidalvarezdlt/resumpy/requirements.svg)
 ![](https://www.codefactor.io/repository/github/davidalvarezdlt/resumpy/badge)
 ![](https://img.shields.io/github/license/davidalvarezdlt/resumpy)
