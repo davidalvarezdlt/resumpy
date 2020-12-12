@@ -1,11 +1,11 @@
 import argparse
-import cv_generator.themes
+import resumpy.themes
 import logging
 import os
 import random
 
 # Create the ArgumentParse and parse the arguments inside `args`
-parser = argparse.ArgumentParser(description='Run CV Generator')
+parser = argparse.ArgumentParser(description='Run Resumpy')
 parser.add_argument(
     '--cv-file', required=True,
     help='Relative or absolute path to the raw .json or .yaml resume file'
@@ -29,7 +29,7 @@ logging.basicConfig(
     format='%(asctime)s - [%(levelname)s] %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'
 )
-logger = logging.getLogger('cv_generator')
+logger = logging.getLogger('resumpy')
 logger.propagate = True
 
 # Define required files and folders
@@ -40,6 +40,6 @@ file_name = args.filename if args.filename \
 file_path = os.path.join(os.getcwd(), '{}'.format(file_name))
 
 # Create a new CV object with the data provided in the --cv-file argument
-cv = cv_generator.CV(logger)
+cv = resumpy.CV(logger)
 cv.load(args.cv_file, cv_schema_path)
 cv.generate(args.theme, file_path, args.keep_tex)

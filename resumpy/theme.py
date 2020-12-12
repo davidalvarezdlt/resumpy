@@ -23,8 +23,8 @@ class Theme:
 
         You can generate the translation base file <theme_name>.pot by calling:
         ```
-            xgettext -o cv_generator/themes/locale/<theme_name>.pot
-            cv_generator/themes/<theme_name>.py
+            xgettext -o resumpy/themes/locale/<theme_name>.pot
+            resumpy/themes/<theme_name>.py
         ```
        """
         os.environ['LANGUAGE'] = model.get('lang')
@@ -53,11 +53,11 @@ class Theme:
             logger (logging.Logger): logger used inside the theme.
 
         Returns:
-            cv_generator.theme.Theme: instance of the theme with name
+            resumpy.theme.Theme: instance of the theme with name
             `--theme-name`.
         """
-        import cv_generator.themes
+        import resumpy.themes
         themes_dict = {
-            'sitges': cv_generator.themes.ThemeSitges
+            'sitges': resumpy.themes.ThemeSitges
         }
         return themes_dict[theme_name](logger)
