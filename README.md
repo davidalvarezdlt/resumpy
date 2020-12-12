@@ -1,4 +1,4 @@
-# CV Generator
+# Resumpy: generate your resume using Python
 ![](https://img.shields.io/github/v/release/davidalvarezdlt/cv_generator)
 ![](https://img.shields.io/badge/python-%3E3.7-blue)
 ![](https://github.com/davidalvarezdlt/cv_generator/workflows/Unit%20Testing/badge.svg)

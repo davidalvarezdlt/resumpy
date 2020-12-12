@@ -261,26 +261,17 @@
     },
     {
       "featured": false,
-      "name": "DavidAlvarezDLT.com",
-      "description": "Personal website designed and implemented from scratch using Angular in the front-end and Prismic in the back-end. Available in multiple languages with or without server-side rendering."
-    },
-    {
-      "featured": false,
-      "name": "CV Generator",
+      "name": "Resumpy",
       "description": "Easy-to-use tool to transform plain JSON or YML files into a fully-formatted CV. Available using different design templates and supports different languages natively.",
       "link": {
         "anchor": "Repository",
-        "href": "https://github.com/davidalvarezdlt/cv-generator"
+        "href": "https://github.com/davidalvarezdlt/resumpy"
       }
     },
     {
       "featured": false,
-      "name": "Speech Dataset Creator",
-      "description": "Tool to create custom speech datasets using YouTube videos. It uses the official YouTube API to find the videos and a self-designed pipeline to cut them and their transcriptions into short audio chunks.",
-      "link": {
-        "anchor": "Repository",
-        "href": "https://github.com/davidalvarezdlt/speech_dataset_creator"
-      }
+      "name": "DavidAlvarezDLT.com",
+      "description": "Personal website designed and implemented from scratch using Angular in the front-end and Prismic in the back-end. Available in multiple languages with or without server-side rendering."
     }
   ],
   "skills": [
