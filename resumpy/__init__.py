@@ -1,5 +1,5 @@
-import cv_generator.model
-import cv_generator.theme
+import resumpy.model
+import resumpy.theme
 import json
 import jsonschema
 import os
@@ -45,7 +45,7 @@ class CV:
         cv_raw = json.load(open(cv_file_path)) if file_extension == '.json' \
             else yaml.full_load(open(cv_file_path))
         jsonschema.validate(cv_raw, json.load(open(cv_schema_path)))
-        self.model = cv_generator.model.Model(cv_raw)
+        self.model = resumpy.model.Model(cv_raw)
 
     def save(self, cv_file_path, save_json=True, save_yaml=True):
         """Dumps the loaded CV into JSON and YAML files.
@@ -74,7 +74,7 @@ class CV:
             file_path (str): path where the generated file should be stored.
             keep_tex (bool): whether to keep the generated .tex file.
         """
-        theme_obj = cv_generator.theme.Theme.create_theme_by_name(
+        theme_obj = resumpy.theme.Theme.create_theme_by_name(
             theme_name, self.logger
         )
 

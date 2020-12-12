@@ -1,13 +1,13 @@
-import cv_generator
-import cv_generator.theme
-import cv_generator.utils
+import resumpy
+import resumpy.theme
+import resumpy.utils
 import gettext
 import pylatex
 import pylatex.lists
 from pylatex import Command, UnsafeCommand
 
 
-class ThemeSitges(cv_generator.theme.Theme):
+class ThemeSitges(resumpy.theme.Theme):
     class Paracol(pylatex.base_classes.Environment):
         _latex_name = 'paracol'
 
@@ -192,7 +192,7 @@ class ThemeSitges(cv_generator.theme.Theme):
                         publication_subtitle.append(Command('quad'))
                     publication_subtitle.append(
                         Command('texttt', UnsafeCommand('href', [
-                            cv_generator.utils.escape_link(
+                            resumpy.utils.escape_link(
                                 publication_item.get(link_id, 'href')
                             ),
                             pylatex.utils.escape_latex(
@@ -226,7 +226,7 @@ class ThemeSitges(cv_generator.theme.Theme):
                 award_subtitle.append(pylatex.NoEscape('\\,|\\,'))
                 award_subtitle.append(Command('quad'))
                 award_subtitle.append(Command('texttt', UnsafeCommand('href', [
-                    cv_generator.utils.escape_link(
+                    resumpy.utils.escape_link(
                         award_item.get('diploma', 'href')
                     ),
                     pylatex.utils.escape_latex(
@@ -260,7 +260,7 @@ class ThemeSitges(cv_generator.theme.Theme):
             info_items.append(Command('detailitem', [
                 '\\faCalendar',
                 gettext.gettext('SITGES_AGE_LABEL'),
-                cv_generator.utils.get_age(model.get('basic', 'birthday'))
+                resumpy.utils.get_age(model.get('basic', 'birthday'))
             ]))
         if model.get('basic', 'birthplace'):
             info_items.append(Command('detailitem', [
@@ -284,7 +284,7 @@ class ThemeSitges(cv_generator.theme.Theme):
             languages_items.append(Command('languageitem', [
                 languages_item.get('name'),
                 languages_item.get('level'),
-                cv_generator.utils.get_language_score(
+                resumpy.utils.get_language_score(
                     languages_item.get('level')
                 ) / 100
             ]))
@@ -298,7 +298,7 @@ class ThemeSitges(cv_generator.theme.Theme):
         )]
         for i, courses_item in enumerate(model.get('courses')):
             diploma_link = UnsafeCommand('href', [
-                cv_generator.utils.escape_link(
+                resumpy.utils.escape_link(
                     courses_item.get('diploma', 'href')
                 ),
                 pylatex.utils.escape_latex(
@@ -319,9 +319,9 @@ class ThemeSitges(cv_generator.theme.Theme):
             'cvsidebarsection', gettext.gettext('SITGES_SKILLS_TITLE')
         )]
         for i, skills_category in enumerate(
-                cv_generator.utils.get_skills_categories(model.get('skills'))
+                resumpy.utils.get_skills_categories(model.get('skills'))
         ):
-            skills_filtered = cv_generator.utils.filter_skills_by_category(
+            skills_filtered = resumpy.utils.filter_skills_by_category(
                 model.get('skills'), skills_category
             )
             skills_str = ', '.join([s.get('name') for s in skills_filtered])
@@ -338,7 +338,7 @@ class ThemeSitges(cv_generator.theme.Theme):
         )]
         for i, project_item in enumerate(model.get('projects')):
             project_link = UnsafeCommand('href', [
-                cv_generator.utils.escape_link(
+                resumpy.utils.escape_link(
                     project_item.get('link', 'href')
                 ),
                 pylatex.utils.escape_latex(

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-06 18:24+0100\n"
-"PO-Revision-Date: 2020-12-06 18:30+0100\n"
+"POT-Creation-Date: 2020-12-12 11:13+0100\n"
+"PO-Revision-Date: 2020-12-12 11:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -18,74 +18,74 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: cv_generator/themes/sitges.py:75
+#: resumpy/themes/sitges.py:75
 msgid "SITGES_LAST_UPDATE_LABEL"
 msgstr "Last Update:"
 
-#: cv_generator/themes/sitges.py:107
+#: resumpy/themes/sitges.py:101
 msgid "SITGES_EXPERIENCE_TITLE"
 msgstr "Experience"
 
-#: cv_generator/themes/sitges.py:120 cv_generator/themes/sitges.py:146
+#: resumpy/themes/sitges.py:108 resumpy/themes/sitges.py:134
 msgid "SITGES_DATES_NOW"
 msgstr "Now"
 
-#: cv_generator/themes/sitges.py:139
+#: resumpy/themes/sitges.py:127
 msgid "SITGES_EDUCATION_TITLE"
 msgstr "Education"
 
-#: cv_generator/themes/sitges.py:159
+#: resumpy/themes/sitges.py:147
 msgid "SITGES_GPA_LABEL"
 msgstr "GPA"
 
-#: cv_generator/themes/sitges.py:172
+#: resumpy/themes/sitges.py:160
 msgid "SITGES_PERFORMANCE_LABEL"
 msgstr "Performance"
 
-#: cv_generator/themes/sitges.py:192
+#: resumpy/themes/sitges.py:179
 msgid "SITGES_PUBLICATIONS_TITLE"
 msgstr "Publications"
 
-#: cv_generator/themes/sitges.py:232
+#: resumpy/themes/sitges.py:215
 msgid "SITGES_AWARDS_TITLE"
 msgstr "Awards, Recognitions and Scholarships"
 
-#: cv_generator/themes/sitges.py:268
+#: resumpy/themes/sitges.py:250
 msgid "SITGES_EMAIL_LABEL"
 msgstr "Email"
 
-#: cv_generator/themes/sitges.py:273
+#: resumpy/themes/sitges.py:255
 msgid "SITGES_PHONE_LABEL"
 msgstr "Phone"
 
-#: cv_generator/themes/sitges.py:278
+#: resumpy/themes/sitges.py:262
 msgid "SITGES_AGE_LABEL"
 msgstr "Age"
 
-#: cv_generator/themes/sitges.py:283
+#: resumpy/themes/sitges.py:268
 msgid "SITGES_NATIONALITY_LABEL"
 msgstr "Birthplace"
 
-#: cv_generator/themes/sitges.py:288
+#: resumpy/themes/sitges.py:274
 msgid "SITGES_LOCATION_LABEL"
 msgstr "Location"
 
-#: cv_generator/themes/sitges.py:296
+#: resumpy/themes/sitges.py:281
 msgid "SITGES_LANGUAGES_TITLE"
 msgstr "Languages"
 
-#: cv_generator/themes/sitges.py:315
+#: resumpy/themes/sitges.py:297
 msgid "SITGES_COURSES_TITLE"
 msgstr "Courses"
 
-#: cv_generator/themes/sitges.py:336
+#: resumpy/themes/sitges.py:319
 msgid "SITGES_SKILLS_TITLE"
 msgstr "Skills"
 
-#: cv_generator/themes/sitges.py:355
+#: resumpy/themes/sitges.py:337
 msgid "SITGES_PROJECTS_TITLE"
 msgstr "Projects"
 
-#: cv_generator/themes/sitges.py:377
+#: resumpy/themes/sitges.py:359
 msgid "SITGES_HOBBIES_TITLE"
 msgstr "Hobbies"

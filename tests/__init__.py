@@ -14,12 +14,12 @@ def get_schema_path():
 
 def get_cls_path(theme_name):
     return os.path.join(
-        base_path, 'cv_generator', 'themes', 'cls', theme_name + '.cls'
+        base_path, 'resumpy', 'themes', 'cls', theme_name + '.cls'
     )
 
 
 def get_logger():
-    return logging.getLogger('cv_generator')
+    return logging.getLogger('resumpy')
 
 
 def get_minimal_cv_raw():
