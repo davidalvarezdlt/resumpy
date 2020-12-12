@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-12 11:13+0100\n"
+"PO-Revision-Date: 2020-12-12 11:20+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: resumpy/themes/sitges.py:75
+msgid "SITGES_LAST_UPDATE_LABEL"
+msgstr "Last Update:"
+
+#: resumpy/themes/sitges.py:101
+msgid "SITGES_EXPERIENCE_TITLE"
+msgstr "Experience"
+
+#: resumpy/themes/sitges.py:108 resumpy/themes/sitges.py:134
+msgid "SITGES_DATES_NOW"
+msgstr "Now"
+
+#: resumpy/themes/sitges.py:127
+msgid "SITGES_EDUCATION_TITLE"
+msgstr "Education"
+
+#: resumpy/themes/sitges.py:147
+msgid "SITGES_GPA_LABEL"
+msgstr "GPA"
+
+#: resumpy/themes/sitges.py:160
+msgid "SITGES_PERFORMANCE_LABEL"
+msgstr "Performance"
+
+#: resumpy/themes/sitges.py:179
+msgid "SITGES_PUBLICATIONS_TITLE"
+msgstr "Publications"
+
+#: resumpy/themes/sitges.py:215
+msgid "SITGES_AWARDS_TITLE"
+msgstr "Awards, Recognitions and Scholarships"
+
+#: resumpy/themes/sitges.py:250
+msgid "SITGES_EMAIL_LABEL"
+msgstr "Email"
+
+#: resumpy/themes/sitges.py:255
+msgid "SITGES_PHONE_LABEL"
+msgstr "Phone"
+
+#: resumpy/themes/sitges.py:262
+msgid "SITGES_AGE_LABEL"
+msgstr "Age"
+
+#: resumpy/themes/sitges.py:268
+msgid "SITGES_NATIONALITY_LABEL"
+msgstr "Birthplace"
+
+#: resumpy/themes/sitges.py:274
+msgid "SITGES_LOCATION_LABEL"
+msgstr "Location"
+
+#: resumpy/themes/sitges.py:281
+msgid "SITGES_LANGUAGES_TITLE"
+msgstr "Languages"
+
+#: resumpy/themes/sitges.py:297
+msgid "SITGES_COURSES_TITLE"
+msgstr "Courses"
+
+#: resumpy/themes/sitges.py:319
+msgid "SITGES_SKILLS_TITLE"
+msgstr "Skills"
+
+#: resumpy/themes/sitges.py:337
+msgid "SITGES_PROJECTS_TITLE"
+msgstr "Projects"
+
+#: resumpy/themes/sitges.py:359
+msgid "SITGES_HOBBIES_TITLE"
+msgstr "Hobbies"

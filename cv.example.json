@@ -1,0 +1,447 @@
+{
+  "lang": "en",
+  "last_update": "2020-10-28",
+  "basic": {
+    "name": "David",
+    "surnames": "\u00c1lvarez de la Torre",
+    "profession": "Telecommunication Engineer",
+    "birthday": "1996-01-20",
+    "birthplace": "Barcelona",
+    "residence": "Zurich",
+    "marital_status": "Single",
+    "biography": "Passionate about technology and engineering with a special interest in machine learning, software development, probability theory and algorithms. Currently at UBS working on applying the last advances on machine learning to solve some of the most important non-financial risk management challenges.\n With experience doing research in the machine learning field, with two published papers (one of them at ICLR). In 2019, I interned in both the VEU department of UPC and in Telefonica Research, one of the few industrial research laboratories of the country. In 2020, I had the opportunity to do my master's thesis at the Computer Vision Laboratory of ETH Z\u00fcrich.\n I studied both my bachelor's and master's in Telecommunications Engineering at the Polytechnic University of Catalonia (UPC), ranked first for engineering studies in Spain and 51-100 worldwide in the field of Electrical Engineering (QS World Ranking 2020).\n With experience releasing open-source projects. Passionate about sharing easy-to-use code and reproducible experiments. Also experienced in web development and digital marketing.",
+    "hobbies": "Healthy lifestyle, travel to new places, Netflix Sundays and to learn new things."
+  },
+  "contact": {
+    "email": "davidalvarezdlt@gmail.com",
+    "phone": "(+41) 66 777 88 99",
+    "website": {
+      "anchor": "davidalvarezdlt.com",
+      "href": "https://en.davidalvarezdlt.com/"
+    },
+    "twitter": {
+      "anchor": "Twitter",
+      "href": "https://twitter.com/DavidAlvarezDLT"
+    },
+    "linkedin": {
+      "anchor": "LinkedIn",
+      "href": "https://www.linkedin.com/in/davidalvarezdlt/"
+    },
+    "github": {
+      "anchor": "GitHub",
+      "href": "https://github.com/davidalvarezdlt"
+    },
+    "scholar": {
+      "anchor": "Google Scholar",
+      "href": "https://scholar.google.es/citations?user=WK4V8VUAAAAJ&hl=es"
+    }
+  },
+  "experience": [
+    {
+      "institution": "UBS",
+      "position": "Risk Modeling & Analytics Specialist",
+      "date_start": "2020-09-01",
+      "description": [
+        {
+          "type": "paragraph",
+          "content": "Member of the AI Development & Platform team. Working on applying the last advances on machine learning to solve non-financial risk management challenges."
+        },
+        {
+          "type": "paragraph",
+          "content": "\n\nKey Skills: Software Development, System Administration, Machine Learning, Python, JavaScript, React.js, HTML & CSS."
+        }
+      ]
+    },
+    {
+      "institution": "ETH Z\u00fcrich",
+      "position": "Exchange Student",
+      "date_start": "2020-02-01",
+      "date_end": "2020-07-31",
+      "description": [
+        {
+          "type": "paragraph",
+          "content": "Exchange semester at the Computer Vision Laboratory of ETH Z\u00fcrich. Worked under the supervision of Sergi Caelles, Dr. Martin Danelljan, Prof. Xavier Gir\u00f3 and Prof. Luc Van Gool."
+        },
+        {
+          "type": "itemize",
+          "content": [
+            "Published the master's thesis titled \"Temporal Copying and Local Hallucination for Video Inpainting\". The thesis was graded with a 5.25 / 6.00 at ETH Z\u00fcrich and with a 10.00 / 10.00 at the Polytechnic University of Catalonia."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Key Skills: Machine Learning, Software Development, Python, PyTorch, Numpy, Matplotlib & Research"
+        }
+      ]
+    },
+    {
+      "institution": "Telefonica Research",
+      "position": "Research Intern",
+      "date_start": "2019-06-01",
+      "date_end": "2019-11-30",
+      "description": [
+        {
+          "type": "paragraph",
+          "content": "Six-month research internship at Telefonica Research. Worked under the supervision of Dr. Joan Serr\u00e0 and Dr. Jordi Luque."
+        },
+        {
+          "type": "itemize",
+          "content": [
+            "Helped with the theoretical solution and implemented both the experiments and models (Glow and PixelCNN++) used in the paper \"Input Complexity and Out-of-Distribution Detection with Likelihood-based Generative Models\", accepted at the International Conference on Learning Representations of 2020.",
+            "Created a tool to generate speech data sets from YouTube videos, published in my GitHub profile."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Key Skills: Machine Learning, Software Development, Python, PyTorch, Numpy, Matplotlib & Research"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Polytechnic University of Catalonia",
+      "degree": "MSc. Telecommunications Engineering",
+      "major": "Multimedia Intensification",
+      "date_start": "2018-09-01",
+      "date_end": "2020-07-31",
+      "description": [
+        {
+          "type": "paragraph",
+          "content": "Official 2-year master\u2019s program (120 ECTS) leading to the title of Telecommunication Engineer."
+        },
+        {
+          "type": "itemize",
+          "content": [
+            "Coursed \"Machine Learning\", \"Computer Vision\" and \"Advanced Human Language Processing\" as intensification subjects.",
+            "54.16% of the credits with a mark equal or superior to 9.00 / 10.00.",
+            "Completed the master's thesis at ETH Z\u00fcrich, one of the most competitive universities of the exchange program. The thesis was graded with a 10.00 / 10.00.",
+            "Implemented the technical solution of a real business challenge along with students from ESADE Business School as part of the subject \"Interdisciplinary Innovation Project\", sponsored by ARAG. The subject was graded with a 9.60 / 10.00.",
+            "Published the paper \"Problem-Agnostic Speech Embeddings for Multi-Speaker Text-to-Speech with SampleRNN\" at the 10th ISCA Speech Synthesis Workshop as part of the subject \"Introduction to Research\". The subject was graded with a 10.00 / 10.00."
+          ]
+        }
+      ],
+      "gpa": 9.15,
+      "gpa_max": 10.0,
+      "performance": 100.0
+    },
+    {
+      "institution": "Polytechnic University of Catalonia",
+      "degree": "BSc. Telecommunications Technologies and Services Engineering",
+      "major": "Audiovisual Specialization",
+      "date_start": "2014-09-01",
+      "date_end": "2018-07-31",
+      "description": [
+        {
+          "type": "paragraph",
+          "content": "Official 4-year bachelor\u2019s program (240 ECTS) leading to the title of Technical Telecommunication Engineer."
+        },
+        {
+          "type": "itemize",
+          "content": [
+            "Coursed \"Audio and Voice Signal Processing\", \"Image and Video Signal Processing\", \"Audiovisual Coding\", \"Acoustics and Electroacoustic\", \"Audiovisual Technology and Production\" and \"Multimedia Communications\" as specialization subjects.",
+            "72.50% of the credits with a mark equal or superior to 7.00 / 10.00.",
+            "Published the bachelor's thesis titled \"Real-Time Stock Predictions with Deep Learning and News Scrapping\", supervised by Prof. Jos\u00e9 Adri\u00e1n Rodr\u00edguez Fonollosa. The thesis was graded with a 9.70 / 10.00.",
+            "Served as the technical lead for a team of 13 people as part of the subject \"Advanced Engineering Project\", sponsored by CaixaBank. The subject was graded with a 9.50 / 10.00.",
+            "Obtained the \"recognition of outstanding academic achievement\", awarded to students who have not failed any subject during the bachelor."
+          ]
+        }
+      ],
+      "gpa": 7.72,
+      "gpa_max": 10.0,
+      "performance": 100.0,
+      "promotion_order": "22 / 373"
+    }
+  ],
+  "awards": [
+    {
+      "institution": "Government of Spain",
+      "name": "Collaboration Scholarship",
+      "date": "2018-11-01",
+      "description": "Scholarship of \u20ac2000 whose purpose is to initiate students in research tasks in the department of their choice. Granted annually to the 2000 applicants with the best GPAs of the Spanish territory."
+    },
+    {
+      "institution": "Polytechnic University of Catalonia",
+      "name": "Recognition of Outstanding Academic Achievement",
+      "date": "2018-11-26",
+      "description": "Granted to those students who passed all subjects in the first attempt without failing any of them. Around 10-20% of the students get this distinction in each promotion.",
+      "diploma": {
+        "anchor": "Recognition",
+        "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt/661dd369-0264-40aa-9236-edbaeb32502b_sobre-mi-reconocimientos-excelencia.pdf"
+      }
+    },
+    {
+      "institution": "CARNET Barcelona",
+      "name": "Hackathon Mobility 2018 - First Place of the SEAT Challenge",
+      "date": "2018-03-11",
+      "description": "The Hackathon consisted of using both the sensors of a robot and an Amazon Alexa to create a smart driving assistant. Our solution included functionalities such as face detection, face recognition, facial gesture detection, event alerts and the inclusion of an innovative optimal refuelling algorithm. The price was composed by \u20ac2000 in cash plus the opportunity to present the solution in front of high-rank managers in the headquarters of the company.",
+      "diploma": {
+        "anchor": "Prize",
+        "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2F9c868325-3e7a-40a7-a961-6afaf25f67b3_sobre-mi-premios-hackmob2018.pdf"
+      }
+    }
+  ],
+  "publications": [
+    {
+      "title": "Temporal Copying and Local Hallucination for Video Inpainting",
+      "abstract": "Video inpainting is the task of removing objects from videos. In particular, the goal is not only to fill every frame with plausible content but also to maintain a temporal consistency so that no abrupt changes can be perceived. The current state of the art in video inpainting, which builds upon deep neural networks, suffers from the problem of handling large amounts of frames while working on decent resolutions. In our work, we propose to tackle the problem of video inpainting by dividing it into two independent sub-tasks. The first one, a Dense Flow Prediction Network (DFPN) capable of predicting the movement of the background by taking into account the movement of the object to remove. And the second one, a Copy-and-Hallucinate Network (CHN) that uses the output of the previous network to copy the regions that are visible in reference frames while hallucinating those that are not. Both networks are trained independently and mixed using one of our three algorithm proposals: the Frame-by-Frame (FF) algorithm, the Inpaint-and-Propagate (IP) algorithm, or the Copy-and-Propagate (CP) algorithm. We analyze our results by taking both an objective and a subjective approach in two different data sets. In both cases, we realize that our models are close to the state of the art but do not overpass it.",
+      "authors": "David \u00c1lvarez",
+      "conference": "ETH Z\u00fcrich (Master's Thesis)",
+      "date": "2020-08-01"
+    },
+    {
+      "title": "Input complexity and out-of-distribution detection with likelihood-based generative models",
+      "abstract": "Likelihood-based generative models are a promising resource to detect out-of-distribution (OOD) inputs which could compromise the robustness or reliability of a machine learning system. However, likelihoods derived from such models have been shown to be problematic for detecting certain types of inputs that significantly differ from training data. In this paper, we pose that this problem is due to the excessive influence that input complexity has in generative models' likelihoods. We report a set of experiments supporting this hypothesis, and use an estimate of input complexity to derive an efficient and parameter-free OOD score, which can be seen as a likelihood-ratio, akin to Bayesian model comparison. We find such score to perform comparably to, or even better than, existing OOD detection approaches under a wide range of data sets, models, model sizes, and complexity estimates.",
+      "authors": "Joan Serr\u00e0, David \u00c1lvarez, Vicen\u00e7 G\u00f3mez, Olga Slizovskaia, Jos\u00e9 F N\u00fa\u00f1ez and Jordi Luque",
+      "conference": "International Conference on Learning Representations 2020",
+      "date": "2020-04-20"
+    },
+    {
+      "title": "Problem-agnostic speech embeddings for multi-speaker text-to-speech with SampleRNN",
+      "abstract": "Text-to-speech (TTS) acoustic models map linguistic features into an acoustic representation out of which an audible waveform is generated. The latest and most natural TTS systems build a direct mapping between linguistic and waveform domains, like SampleRNN. This way, possible signal naturalness losses are avoided as intermediate acoustic representations are discarded. Another important dimension of study apart from naturalness is their adaptability to generate voice from new speakers that were unseen during training. In this paper we first propose the use of problem-agnostic speech embeddings in a multi-speaker acoustic model for TTS based on SampleRNN. This way we feed the acoustic model with speaker acoustically dependent representations that enrich the waveform generation more than discrete embeddings unrelated to these factors. Our first results suggest that the proposed embeddings lead to better quality voices than those obtained with discrete embeddings. Furthermore, as we can use any speech segment as an encoded representation during inference, the model is capable to generalize to new speaker identities without retraining the network. We finally show that, with a small increase of speech duration in the embedding extractor, we dramatically reduce the spectral distortion to close the gap towards the target identities.",
+      "authors": "David \u00c1lvarez, Santiago Pascual and Antonio Bonafonte",
+      "conference": "ISCA Speech Synthesis Workshop 2019",
+      "date": "2019-09-20"
+    },
+    {
+      "title": "Real-time stock predictions with deep learning and news scrapping",
+      "abstract": "To predict the stock market has always been one of the most challenging problems of the world. It is known that the market is influenced by uncountable things, however intuition says that one of the most correlated information is in fact public and accessible: the news. The goal of this thesis is to use neural networks to check if it is possible to predict the stock market using only news previous to the opening of the session. To deal with the problem first we acquire the data, pre-process it and then we test different models to check if we can improve a random predictor. Finally, the different models are compared and conclusions related with the correlation between news and stock market variations are exposed.",
+      "authors": "David \u00c1lvarez",
+      "conference": "Universitat Polit\u00e8nica de Catalunya (Bachelor's Thesis)",
+      "date": "2018-07-01"
+    }
+  ],
+  "languages": [
+    {
+      "name": "Spanish",
+      "level": "Native"
+    },
+    {
+      "name": "Catalan",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "C1",
+      "diploma": {
+        "anchor": "IELTS Diploma",
+        "href": "https://davidalvarezdlt.cdn.prismic.io/davidalvarezdlt%2Fe689f732-e9ed-4f59-a089-279498aa2d09_sobre-mi-idiomas-ingles-ielts.pdf"
+      }
+    }
+  ],
+  "courses": [
+    {
+      "institution": "Stanford University (Coursera)",
+      "name": "Algorithms Specialization",
+      "date": "2020-05-03",
+      "diploma": {
+        "anchor": "Diploma",
+        "href": "https://www.coursera.org/account/accomplishments/specialization/certificate/VMZZ8WMKEGZA"
+      }
+    },
+    {
+      "institution": "DeepLearning.ai (Coursera)",
+      "name": "Deep Learning Specialization",
+      "date": "2018-06-02",
+      "diploma": {
+        "anchor": "Diploma",
+        "href": "https://www.coursera.org/account/accomplishments/specialization/certificate/RMVAZDWUF4FN"
+      }
+    }
+  ],
+  "projects": [
+    {
+      "featured": true,
+      "name": "Skeltorch",
+      "description": "Light-weight framework that helps researchers to prototype faster using PyTorch. To do so, Skeltorch provides a set of predefined pipelines to organize projects and train/test models.",
+      "link": {
+        "anchor": "Repository",
+        "href": "https://github.com/davidalvarezdlt/skeltorch"
+      }
+    },
+    {
+      "featured": false,
+      "name": "ResumPY",
+      "description": "Easy-to-use tool to transform plain JSON or YML files into a fully-formatted CV. Available using different design templates and supports different languages natively.",
+      "link": {
+        "anchor": "Repository",
+        "href": "https://github.com/davidalvarezdlt/resumpy"
+      }
+    },
+    {
+      "featured": false,
+      "name": "DavidAlvarezDLT.com",
+      "description": "Personal website designed and implemented from scratch using Angular in the front-end and Prismic in the back-end. Available in multiple languages with or without server-side rendering."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Software Development",
+      "type": "Topic",
+      "category": "Topics",
+      "score": 100.0
+    },
+    {
+      "name": "Machine Learning",
+      "type": "Topic",
+      "category": "Topics",
+      "score": 100.0
+    },
+    {
+      "name": "Algorithms",
+      "type": "Topic",
+      "category": "Topics",
+      "score": 100.0
+    },
+    {
+      "name": "System Administration",
+      "type": "Topic",
+      "category": "Topics",
+      "score": 100.0
+    },
+    {
+      "name": "Python",
+      "type": "Tool",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "Java",
+      "type": "Tool",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "C",
+      "type": "Tool",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "PHP",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "SQL",
+      "type": "Tool",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "HTML",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "CSS",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "JavaScript",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "jQuery",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "Angular",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "React.js",
+      "type": "Topic",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "MATLAB",
+      "type": "Tool",
+      "category": "Languages, Frameworks & Systems",
+      "score": 100.0
+    },
+    {
+      "name": "PyTorch",
+      "type": "Tool",
+      "category": "Machine Learning Libraries",
+      "score": 100.0
+    },
+    {
+      "name": "Numpy",
+      "type": "Tool",
+      "category": "Machine Learning Libraries",
+      "score": 100.0
+    },
+    {
+      "name": "Pandas",
+      "type": "Tool",
+      "category": "Machine Learning Libraries",
+      "score": 100.0
+    },
+    {
+      "name": "Matplotlib",
+      "type": "Tool",
+      "category": "Machine Learning Libraries",
+      "score": 100.0
+    },
+    {
+      "name": "Research",
+      "type": "Topic",
+      "category": "Soft Skills",
+      "score": 100.0
+    },
+    {
+      "name": "Entrepreneurship",
+      "type": "Topic",
+      "category": "Soft Skills",
+      "score": 100.0
+    },
+    {
+      "name": "Leadership",
+      "type": "Topic",
+      "category": "Soft Skills",
+      "score": 100.0
+    },
+    {
+      "name": "Public Speaking",
+      "type": "Topic",
+      "category": "Soft Skills",
+      "score": 100.0
+    },
+    {
+      "name": "SEO",
+      "type": "Tool",
+      "category": "Off Topic",
+      "score": 100.0
+    },
+    {
+      "name": "Social Media Marketing",
+      "type": "Tool",
+      "category": "Off Topic",
+      "score": 100.0
+    },
+    {
+      "name": "LaTeX",
+      "type": "Topic",
+      "category": "Off Topic",
+      "score": 100.0
+    },
+    {
+      "name": "Photoshop",
+      "type": "Topic",
+      "category": "Off Topic",
+      "score": 100.0
+    }
+  ]
+}

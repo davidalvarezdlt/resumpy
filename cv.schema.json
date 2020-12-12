@@ -1,0 +1,469 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "lang": {
+      "type": "string",
+      "enum": [
+        "en",
+        "es"
+      ]
+    },
+    "last_update": {
+      "type": "string",
+      "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+    },
+    "basic": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "surnames": {
+          "type": "string"
+        },
+        "profession": {
+          "type": "string"
+        },
+        "birthday": {
+          "type": "string",
+          "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+        },
+        "birthplace": {
+          "type": "string"
+        },
+        "residence": {
+          "type": "string"
+        },
+        "marital_status": {
+          "type": "string"
+        },
+        "biography": {
+          "type": "string"
+        },
+        "hobbies": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "surnames",
+        "profession"
+      ]
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "website": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "anchor",
+            "href"
+          ]
+        },
+        "twitter": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "anchor",
+            "href"
+          ]
+        },
+        "linkedin": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "anchor",
+            "href"
+          ]
+        },
+        "github": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "anchor",
+            "href"
+          ]
+        },
+        "scholar": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "type": "string"
+            },
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "anchor",
+            "href"
+          ]
+        }
+      },
+      "required": [
+        "email",
+        "phone"
+      ]
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string"
+          },
+          "date_start": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "date_end": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "description": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "institution",
+          "position",
+          "date_start"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string"
+          },
+          "degree": {
+            "type": "string"
+          },
+          "major": {
+            "type": "string"
+          },
+          "date_start": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "date_end": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "description": {
+            "type": "array"
+          },
+          "gpa": {
+            "type": "number",
+            "minimum": 0
+          },
+          "gpa_max": {
+            "type": "number",
+            "minimum": 0
+          },
+          "performance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "promotion_order": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "institution",
+          "degree",
+          "date_start"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "awards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "description": {
+            "type": "string"
+          },
+          "diploma": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "anchor",
+              "href"
+            ]
+          }
+        },
+        "required": [
+          "institution",
+          "name",
+          "date"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "publications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "authors": {
+            "type": "string"
+          },
+          "conference": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "manuscript_link": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "anchor",
+              "href"
+            ]
+          },
+          "code_link": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "anchor",
+              "href"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "authors",
+          "date"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "parameters": {
+          "name": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "diploma": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "anchor",
+              "href"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "level"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institution": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-([0]\\d|1[0-2])-([0-2]\\d|3[01])$"
+          },
+          "diploma": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "anchor",
+              "href"
+            ]
+          }
+        },
+        "required": [
+          "institution",
+          "name",
+          "date"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "featured": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "link": {
+            "type": "object",
+            "properties": {
+              "anchor": {
+                "type": "string"
+              },
+              "href": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "anchor",
+              "href"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "unique": true
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "lang",
+    "last_update",
+    "basic",
+    "contact"
+  ]
+}

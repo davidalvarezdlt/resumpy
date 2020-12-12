@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*$py.class
+.DS_Store
+
+# Virtual Environment
+.venv
+venv/
+ENV/
+
+# PyCharm Project
+.idea/
+
+# PDF and TEX files
+*.pdf
+*.tex
+
+# Allow PDFs inside examples/
+!examples/*.pdf
