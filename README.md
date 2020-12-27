@@ -1,6 +1,7 @@
 # ResumPY: generate your resume using Python
 [![](https://img.shields.io/github/v/release/davidalvarezdlt/resumpy)](https://github.com/davidalvarezdlt/resumpy/releases)
 [![](https://github.com/davidalvarezdlt/resumpy/workflows/Unit%20Testing/badge.svg)](https://github.com/davidalvarezdlt/resumpy/actions?query=workflow%3A%22Unit+Testing%22)
+[![](https://codecov.io/gh/davidalvarezdlt/resumpy/branch/main/graph/badge.svg?token=ZX6CLBW31B)](https://codecov.io/gh/davidalvarezdlt/resumpy)
 [![](https://img.shields.io/badge/python-%3E3.7-blue)](https://www.python.org/)
 [![](https://requires.io/github/davidalvarezdlt/resumpy/requirements.svg)](https://requires.io/github/davidalvarezdlt/resumpy/requirements/)
 [![](https://www.codefactor.io/repository/github/davidalvarezdlt/resumpy/badge)](https://www.codefactor.io/repository/github/davidalvarezdlt/resumpy)
