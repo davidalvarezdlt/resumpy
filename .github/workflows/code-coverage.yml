@@ -1,4 +1,4 @@
-name: Code Linting
+name: Code Coverage
 
 on:
   push:
@@ -21,6 +21,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Code Linting with Flake8
+          pip install pytest
+          pip install pytest-cov
+      - name: Generate Code Coverage
         run: |
-          flake8 resumpy/*
+          py.test --cov-report=xml --cov=skeltorch tests/
+      - name: Upload Code Coverage
+        uses: codecov/codecov-action@v1
+        with:
+          fail_ci_if_error: true

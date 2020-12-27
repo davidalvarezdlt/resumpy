@@ -1,10 +1,10 @@
 # ResumPY: generate your resume using Python
-![](https://img.shields.io/github/v/release/davidalvarezdlt/resumpy)
-![](https://github.com/davidalvarezdlt/resumpy/workflows/Unit%20Testing/badge.svg)
-![](https://img.shields.io/badge/python-%3E3.7-blue)
-![](https://requires.io/github/davidalvarezdlt/resumpy/requirements.svg)
-![](https://www.codefactor.io/repository/github/davidalvarezdlt/resumpy/badge)
-![](https://img.shields.io/github/license/davidalvarezdlt/resumpy)
+[![](https://img.shields.io/github/v/release/davidalvarezdlt/resumpy)](https://github.com/davidalvarezdlt/resumpy/releases)
+[![](https://github.com/davidalvarezdlt/resumpy/workflows/Unit%20Testing/badge.svg)](https://github.com/davidalvarezdlt/resumpy/actions?query=workflow%3A%22Unit+Testing%22)
+[![](https://img.shields.io/badge/python-%3E3.7-blue)](https://www.python.org/)
+[![](https://requires.io/github/davidalvarezdlt/resumpy/requirements.svg)](https://requires.io/github/davidalvarezdlt/resumpy/requirements/)
+[![](https://www.codefactor.io/repository/github/davidalvarezdlt/resumpy/badge)](https://www.codefactor.io/repository/github/davidalvarezdlt/resumpy)
+[![](https://img.shields.io/github/license/davidalvarezdlt/resumpy)](https://github.com/davidalvarezdlt/resumpy/blob/main/LICENSE)
 
 Modifying your CV every time you obtain a new diploma or publish a new article
 can be tedious and time-wasting, even when using a document generator such as
@@ -74,6 +74,12 @@ Only two themes are available at the moment:
 |Sitges (`sitges`)|[Example](/examples/sitges-example.pdf)|Self-designed|
 
 ## Contribute
-I encourage open-source lovers to implement their designs and to send a pull
-request so we can all benefit from it. Always make sure that the code follows
-the same structure and that it handles possible missing fields.
+You are invited to submit your pull requests with new features or bug
+corrections. Before creating the pull request, make sure to run all pre-commits
+and unit tests.
+
+```
+pip install pytest pre-commit
+pre-commit run --all
+pytest
+```
